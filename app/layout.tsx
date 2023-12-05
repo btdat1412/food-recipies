@@ -1,9 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Barlow } from "next/font/google";
 import { ThemeProvider } from "../components/providers/theme-provider";
+import Header from "../components/layout/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const barlow = Barlow({ weight: "600", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={barlow.className}>
         {" "}
         <ThemeProvider
           attribute="class"
@@ -25,6 +26,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Header />
           {children}
         </ThemeProvider>
       </body>
