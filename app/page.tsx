@@ -1,35 +1,35 @@
-import React from "react";
-import getRecipies from "./api/recipies/recipies";
+import React from 'react';
+import SearchIngredients from '../components/search/SearchIngredients';
+import IngredientsDisplay from '../components/landing-page/IngredientsDisplay';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '../components/ui/card';
+import IngredientsPick from '../components/ingredient/IngredientsPick';
+import { ShoppingBag } from 'lucide-react';
+import ToggleIngredientsList from '../components/landing-page/ToggleIngredientsList';
 
 export default async function Home() {
-   const recipesData = await getRecipies({ query: "chicken" });
-   return (
-      <div className="flex flex-wrap justify-center">
-         {recipesData.data.hits.map((recipe: any) => (
-            <div
-               key={recipe.recipe.uri}
-               className="m-4 max-w-xs rounded overflow-hidden shadow-lg"
-            >
-               <img
-                  src={recipe.recipe.image}
-                  alt={recipe.recipe.label}
-                  className="w-full h-48 object-cover"
-               />
-               <div className="px-6 py-4">
-                  <h3 className="font-semibold text-xl mb-2">
-                     {recipe.recipe.label}
-                  </h3>
-                  <a
-                     href={recipe.recipe.url}
-                     target="_blank"
-                     rel="noopener noreferrer"
-                     className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded inline-block"
-                  >
-                     See Recipe
-                  </a>
-               </div>
-            </div>
-         ))}
+  return (
+    <div className='flex h-full justify-between gap-9 px-2 pt-4 md:px-6 md:pt-8'>
+      <div className='flex h-full w-full flex-col gap-6'>
+        <div className='relative flex flex-col gap-4 md:flex-row md:items-center md:justify-between'>
+          <h1 className='text-3xl'>Chọn Nguyên Liệu</h1>
+          <SearchIngredients />
+          <ToggleIngredientsList />
+        </div>
+        <IngredientsDisplay />
       </div>
-   );
+      <Card className='hidden h-full w-[502px] flex-col rounded-2xl bg-darkbg md:flex'>
+        <CardHeader>
+          <CardTitle className='text-xl'>Nguyên liệu đã chọn</CardTitle>
+        </CardHeader>
+        <CardContent className='h-full grow overflow-auto'>
+          <IngredientsPick />
+        </CardContent>
+      </Card>
+    </div>
+  );
 }
