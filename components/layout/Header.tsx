@@ -1,14 +1,16 @@
 "use client";
 import { useTheme } from "next-themes";
+import { useState } from "react";
 import Image from "next/image";
-import { ModeToggle } from "../theme-toggle";
+import { ModeToggle } from "../ThemeToggle";
 import { LogOut } from "lucide-react";
+import DropdownHeader from "../dropdown/DropdownHeader";
 
 const Header = () => {
   const { theme } = useTheme();
 
   return (
-    <header className="header px-2 md:px-6 md:py-2 flex items-center justify-between">
+    <header className="px-2 md:px-6 md:py-2 flex items-center justify-between dark:bg-darkbg w-full z-50">
       <div className="flex gap-5">
         {theme === "light" ? (
           <Image
@@ -44,11 +46,12 @@ const Header = () => {
           alt="avatar"
           width={50}
           height={50}
+          className="hidden md:block"
         />
-        <LogOut className="w-[30px] text-icon" />
+        <LogOut className="w-[30px] h-[30px] text-hightlight hidden md:block" />
+        <DropdownHeader />
       </div>
     </header>
   );
 };
-
 export default Header;
