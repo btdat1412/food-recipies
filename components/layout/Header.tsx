@@ -1,6 +1,6 @@
 'use client';
 import { useTheme } from 'next-themes';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { ModeToggle } from '../ThemeToggle';
 import { LogOut } from 'lucide-react';
@@ -8,25 +8,20 @@ import DropdownHeader from '../dropdown/DropdownHeader';
 
 const Header = () => {
   const { theme } = useTheme();
+  const [logoSrc, setLogoSrc] = useState('/images/logo_light.png');
+
+  useEffect(() => {
+    if (theme === 'light') {
+      setLogoSrc('/images/logo_white.png');
+    } else if (theme === 'dark') {
+      setLogoSrc('/images/logo_dark.png');
+    }
+  }, [theme]);
 
   return (
-    <header className='z-50 flex w-full items-center justify-between px-2 dark:bg-darkbg md:px-6 md:py-2'>
+    <header className='z-50 flex w-full items-center justify-between bg-white px-2 dark:bg-darkbg md:px-6 md:py-2'>
       <div className='flex gap-5'>
-        {theme === 'light' ? (
-          <Image
-            src='/images/logo_white.png'
-            alt='logo_white'
-            width={88}
-            height={88}
-          />
-        ) : (
-          <Image
-            src='/images/logo_dark.png'
-            alt='logo_dark'
-            width={88}
-            height={88}
-          />
-        )}
+        <Image src={logoSrc} alt='logo' width={88} height={88} />
         <ul className='hidden items-center gap-5 text-xl md:flex'>
           <li>
             <a href={'/'}> Đề xuất món ăn</a>

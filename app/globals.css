@@ -4,11 +4,15 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 97%;
     --foreground: 229 19% 18%;
 
     --card: 0 0% 100%;
     --card-foreground: 229 19% 18%;
+    /* hsl(0, 0%, 100%)
+    hsl(229, 19%, 18%) */
+
+    --text: 0 0% 13%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 229 19% 18%;
@@ -39,8 +43,12 @@
     --background: 229 19% 18%;
     --foreground: 210 40% 98%;
 
-    --card: 229 19% 18%;
+    --card: 249 19% 14%;
     --card-foreground: 210 40% 98%;
+    /* hsl(229, 19%, 18%)
+    hsl(210, 40%, 98%) */
+
+    --text: 0 0% 100%;
 
     --popover: 229 19% 18%;
     --popover-foreground: 210 40% 98%;
@@ -71,7 +79,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-text bg-background;
   }
 }
 

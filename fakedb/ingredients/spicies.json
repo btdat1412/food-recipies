@@ -1,0 +1,104 @@
+{
+  "spices": [
+    {
+      "name": "Hạt tiêu đen",
+      "image": "/images/ingredients/spices/black_pepper.png",
+      "kcal": 251
+    },
+    {
+      "name": "Quế",
+      "image": "/images/ingredients/spices/cinnamon.png",
+      "kcal": 247
+    },
+    {
+      "name": "Nghệ",
+      "image": "/images/ingredients/spices/turmeric.png",
+      "kcal": 354
+    },
+    {
+      "name": "Gừng",
+      "image": "/images/ingredients/spices/ginger.png",
+      "kcal": 80
+    },
+    {
+      "name": "Hạt nhục đậu khấu",
+      "image": "/images/ingredients/spices/nutmeg.png",
+      "kcal": 525
+    },
+    {
+      "name": "Ớt paprika",
+      "image": "/images/ingredients/spices/paprika.png",
+      "kcal": 289
+    },
+    {
+      "name": "Đinh hương",
+      "image": "/images/ingredients/spices/cloves.png",
+      "kcal": 274
+    },
+    {
+      "name": "Hạt cumin",
+      "image": "/images/ingredients/spices/cumin.png",
+      "kcal": 375
+    },
+    {
+      "name": "Hạt ngò gai",
+      "image": "/images/ingredients/spices/coriander.png",
+      "kcal": 298
+    },
+    {
+      "name": "Thảo quả",
+      "image": "/images/ingredients/spices/cardamom.png",
+      "kcal": 311
+    },
+    {
+      "name": "Nhụy hoa nghệ tây",
+      "image": "/images/ingredients/spices/saffron.png",
+      "kcal": 310
+    },
+    {
+      "name": "Hạt dầu dâu tây",
+      "image": "/images/ingredients/spices/fenugreek.png",
+      "kcal": 323
+    },
+    {
+      "name": "Hạt mù tạt",
+      "image": "/images/ingredients/spices/mustard_seeds.png",
+      "kcal": 508
+    },
+    {
+      "name": "Hạt hậu tây",
+      "image": "/images/ingredients/spices/fennel_seeds.png",
+      "kcal": 345
+    },
+    {
+      "name": "Hoa hồi",
+      "image": "/images/ingredients/spices/star_anise.png",
+      "kcal": 337
+    },
+    {
+      "name": "Bột ớt",
+      "image": "/images/ingredients/spices/chili_powder.png",
+      "kcal": 282
+    },
+    {
+      "name": "Vanilla",
+      "image": "/images/ingredients/spices/vanilla.png",
+      "kcal": 288
+    },
+    {
+      "name": "Thì là",
+      "image": "/images/ingredients/spices/thyme.png",
+      "kcal": 276
+    },
+    {
+      "name": "Hương nghệ",
+      "image": "/images/ingredients/spices/rosemary.png",
+      "kcal": 131
+    },
+    {
+      "name": "Húng quế",
+      "image": "/images/ingredients/spices/oregano.png",
+      "kcal": 265
+    }
+  ]
+}
