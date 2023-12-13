@@ -8,7 +8,6 @@ import {
   CardTitle,
 } from '../components/ui/card';
 import IngredientsPick from '../components/ingredient/IngredientsPick';
-import { ShoppingBag } from 'lucide-react';
 import ToggleIngredientsList from '../components/landing-page/ToggleIngredientsList';
 
 export default async function Home() {
@@ -22,7 +21,7 @@ export default async function Home() {
         </div>
         <IngredientsDisplay />
       </div>
-      <Card className='hidden h-full w-[502px] flex-col rounded-2xl bg-darkbg md:flex'>
+      <Card className='hidden h-full w-[502px] border-none shadow-lg flex-col rounded-2xl md:flex'>
         <CardHeader>
           <CardTitle className='text-xl'>Nguyên liệu đã chọn</CardTitle>
         </CardHeader>

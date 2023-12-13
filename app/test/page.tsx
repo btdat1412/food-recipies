@@ -1,5 +1,5 @@
 const Test = () => {
-  return <div>Hế lô</div>;
+  return <div className='te dark:text-red-400'>Hế lô</div>;
 };
 
 export default Test;
