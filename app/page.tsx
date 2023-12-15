@@ -18,20 +18,21 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import vegetablesData from '../fakedb/ingredients/vegetables.json';
-import meatsData from '../fakedb/ingredients/meats.json';
-import spiciesData from '../fakedb/ingredients/spicies.json';
-import othersData from '../fakedb/ingredients/others.json';
+import ingredientsData from '../fakedb/ingredients.json';
 import IngredientsCard from '../components/ingredient/IngredientsCard';
+import { Ingredient } from '@/types';
+
+const vegetablesData = ingredientsData.filter((i) => i.type === 'vegetable');
+const meatsData = ingredientsData.filter((i) => i.type === 'meat');
+const spiciesData = ingredientsData.filter((i) => i.type === 'spicy');
+const othersData = ingredientsData.filter((i) => i.type === 'other');
 
 export default function Home() {
   const [searchInput, setSearchInput] = useState('');
-  const [filteredVegetables, setFilteredVegetables] = useState(
-    vegetablesData.vegetables
-  );
-  const [filteredMeats, setFilteredMeats] = useState(meatsData.meats);
-  const [filteredSpices, setFilteredSpices] = useState(spiciesData.spices);
-  const [filteredOthers, setFilteredOthers] = useState(othersData.others);
+  const [filteredVegetables, setFilteredVegetables] = useState(vegetablesData);
+  const [filteredMeats, setFilteredMeats] = useState(meatsData);
+  const [filteredSpices, setFilteredSpices] = useState(spiciesData);
+  const [filteredOthers, setFilteredOthers] = useState(othersData);
 
   const handleSearchInputChange = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -40,34 +41,28 @@ export default function Home() {
     setSearchInput(inputValue);
 
     // Filter vegetables
-    const filteredVegetables = vegetablesData.vegetables.filter((item) =>
+    const filteredVegetables = vegetablesData.filter((item) =>
       item.name.toLowerCase().includes(inputValue.toLowerCase())
     );
     setFilteredVegetables(filteredVegetables);
 
     // Filter meats
-    const filteredMeats = meatsData.meats.filter((item) =>
+    const filteredMeats = meatsData.filter((item) =>
       item.name.toLowerCase().includes(inputValue.toLowerCase())
     );
     setFilteredMeats(filteredMeats);
 
     // Filter spices
-    const filteredSpices = spiciesData.spices.filter((item) =>
+    const filteredSpices = spiciesData.filter((item) =>
       item.name.toLowerCase().includes(inputValue.toLowerCase())
     );
     setFilteredSpices(filteredSpices);
 
     // Filter others
-    const filteredOthers = othersData.others.filter((item) =>
+    const filteredOthers = othersData.filter((item) =>
       item.name.toLowerCase().includes(inputValue.toLowerCase())
     );
     setFilteredOthers(filteredOthers);
-  };
-
-  type Ingredient = {
-    name: string;
-    kcal: number;
-    image: string;
   };
 
   const [selectedIngredients, setSelectedIngredients] = useState<Ingredient[]>(
