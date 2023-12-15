@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "rating": 2,
+    "name": "Mì quảng",
+    "image": "/images/ingredients/meats/chicken_breast.png",
+    "kcal": 165
+  },
+  {
+    "id": 2,
+    "rating": 3,
+    "name": "Cháo lòng",
+    "image": "/images/ingredients/meats/beef_steak.png",
+    "kcal": 271
+  },
+  {
+    "id": 4,
+    "rating": 2,
+    "name": "Mì quảng",
+    "image": "/images/ingredients/meats/chicken_breast.png",
+    "kcal": 165
+  },
+  {
+    "id": 5,
+    "rating": 3,
+    "name": "Cháo",
+    "image": "/images/ingredients/meats/beef_steak.png",
+    "kcal": 271
+  },
+  {
+    "id": 6,
+    "rating": 2,
+    "name": "Mì quảng",
+    "image": "/images/ingredients/meats/chicken_breast.png",
+    "kcal": 165
+  },
+  {
+    "id": 7,
+    "rating": 3,
+    "name": "Cháo hến quảng ninh",
+    "image": "/images/ingredients/meats/beef_steak.png",
+    "kcal": 271
+  },
+  {
+    "id": 8,
+    "rating": 2,
+    "name": "Mì quảng",
+    "image": "/images/ingredients/meats/chicken_breast.png",
+    "kcal": 165
+  },
+  {
+    "id": 9,
+    "rating": 3.2,
+    "name": "Cháo hến quảng ninh",
+    "image": "/images/ingredients/meats/beef_steak.png",
+    "kcal": 271
+  }
+]

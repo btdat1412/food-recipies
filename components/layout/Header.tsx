@@ -27,10 +27,10 @@ const Header = () => {
             <a href={'/'}> Đề xuất món ăn</a>
           </li>
           <li>
-            <a href={'/'}> Công thức nấu ăn</a>
+            <a href={'/recipes'}> Công thức nấu ăn</a>
           </li>
           <li>
-            <a href={'/'}> Lên Thực Đơn</a>
+            <a href={'/'}> Lên thực đơn</a>
           </li>
         </ul>
       </div>
