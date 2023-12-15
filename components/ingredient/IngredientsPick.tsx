@@ -1,19 +1,22 @@
 import { Trash } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '../ui/button';
+import { Ingredient } from '@/types';
+import { useRouter } from 'next/navigation';
+
 type IngredientsPickProps = {
-  selectedIngredients: Array<{
-    name: string;
-    kcal: number;
-    image: string;
-  }>;
-  onRemove: (ingredient: { name: string; kcal: number; image: string }) => void;
+  showBackButton?: boolean;
+  selectedIngredients: Array<Ingredient>;
+  onRemove: (ingredient: Ingredient) => void;
 };
 
 const IngredientsPick = ({
+  showBackButton,
   selectedIngredients,
   onRemove,
 }: IngredientsPickProps) => {
+  const router = useRouter();
+
   return (
     <div className='flex h-full flex-col'>
       <div className='flex flex-none items-center justify-between'>
@@ -23,7 +26,7 @@ const IngredientsPick = ({
           <Trash className='hidden h-8 w-8 rounded-sm border border-hightlight p-2 text-hightlight md:block md:h-12 md:w-12 md:rounded-xl md:p-[14px] md:opacity-0' />
         </div>
       </div>
-      <div className='no-scrollbar h-full grow overflow-y-scroll border-b border-t border-[#c4c4c4] py-6'>
+      <div className='h-full grow overflow-y-scroll border-b border-t border-[#c4c4c4] py-6'>
         <div className='flex flex-col gap-6'>
           {selectedIngredients.map((ingredient, index) => (
             <div key={index} className='flex items-center justify-between'>
@@ -45,7 +48,7 @@ const IngredientsPick = ({
                 </div>
                 <Trash
                   onClick={() => onRemove(ingredient)}
-                  className='h-8 w-8 rounded-sm border border-hightlight p-2 text-hightlight md:h-12 md:w-12 md:rounded-xl md:p-[14px]'
+                  className='h-8 w-8 cursor-pointer rounded-sm border border-hightlight p-2 text-hightlight md:h-12 md:w-12 md:rounded-xl md:p-[14px]'
                 />
               </div>
             </div>
@@ -66,9 +69,25 @@ const IngredientsPick = ({
         <Button
           className='mt-6 bg-hightlight text-lg text-white md:text-xl'
           size={'xl'}
+          onClick={() =>
+            router.push(
+              `/suggest?ingredients=${selectedIngredients
+                .map((i) => i.id)
+                .join(',')}`
+            )
+          }
         >
           ĐỀ XUẤT MÓN ĂN
         </Button>
+        {showBackButton && (
+          <Button
+            className='mt-6 bg-white text-lg text-black shadow-[0_8px_24px_-0px_rgba(234,124,105,0.3)] md:text-xl'
+            size={'xl'}
+            onClick={() => router.push(`/`)}
+          >
+            QUAY VỀ
+          </Button>
+        )}
       </div>
     </div>
   );

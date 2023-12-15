@@ -36,7 +36,7 @@ const DropdownHeader = () => {
             </li>
             <li>
               <a href={'/'} className='block px-4 py-2 text-sm '>
-                Lên Thực Đơn
+                Lên thực đơn
               </a>
             </li>
           </ul>
