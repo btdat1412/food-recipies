@@ -35,10 +35,10 @@ const DishCard = ({
   ingredients,
   steps,
   stepDescription,
-  onClick,
-}: IngredientsCardProps) => {
+} // onClick,
+: IngredientsCardProps) => {
   return (
-    <Card className='flex flex-col rounded-2xl border-hightlight'>
+    <Card className='border-highlight flex flex-col rounded-2xl'>
       <CardHeader className='flex flex-row justify-center p-0'>
         <Image src={image} alt={name} width={130} height={130} className='' />
       </CardHeader>
@@ -56,13 +56,14 @@ const DishCard = ({
         />
       </CardContent>
       <CardFooter
-        className='dark:text- rounded-b-2xl bg-[#FAE0DB] p-3 text-hightlight underline dark:bg-[#50343A]'
-        onClick={onClick}
+        className='dark:text- text-highlight rounded-b-2xl bg-[#FAE0DB] p-3 underline dark:bg-[#50343A]'
+        // onClick={onClick}
       >
         {/* <p className='w-full cursor-pointer text-center' onClick={onClick}>Xem chi tiết</p> */}
         <RecipeDialog
           name={name}
           image={image}
+          rating={rating}
           ingredients={ingredients}
           steps={steps}
           stepDescription={stepDescription}

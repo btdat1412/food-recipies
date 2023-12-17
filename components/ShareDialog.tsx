@@ -18,7 +18,7 @@ export function ShareDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Card className='flex min-h-[250px] cursor-pointer flex-col items-center justify-center rounded-2xl border-dashed border-hightlight text-hightlight'>
+        <Card className='border-highlight text-highlight flex min-h-[250px] cursor-pointer flex-col items-center justify-center rounded-2xl border-dashed'>
           <Plus className='mb-2 h-6 w-6' />
           <p>Chia sẻ công thức</p>
         </Card>
@@ -28,14 +28,14 @@ export function ShareDialog() {
         <DialogHeader className='flex justify-center'>
           <Input
             placeholder='Tên món ăn'
-            className='w-1/3 border-0 border-b-4 border-hightlight'
+            className='border-highlight w-1/3 border-0 border-b-4'
           />
         </DialogHeader>
         <div className='grid grid-cols-4 gap-4'>
-          {/* <div className='col-span-2 col-start-2 text-hightlight'>
+          {/* <div className='col-span-2 col-start-2 text-highlight'>
             <Input
               placeholder='Tên món ăn'
-              className='border-0 border-b-4 border-hightlight'
+              className='border-0 border-b-4 border-highlight'
             />
           </div> */}
 
@@ -45,7 +45,7 @@ export function ShareDialog() {
         </div>
         <DialogFooter>
           <Button
-            className='mt-6 bg-hightlight text-lg text-white md:text-xl'
+            className='bg-highlight mt-6 text-lg text-white md:text-xl'
             size={'lg'}
             onClick={() => console.log('Share')}
           >

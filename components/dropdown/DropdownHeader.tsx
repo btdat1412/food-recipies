@@ -15,12 +15,12 @@ const DropdownHeader = () => {
     <div className='text-left'>
       <AlignJustify
         onClick={toggleDropdown}
-        className='block h-[30px] w-[30px] text-hightlight md:hidden'
+        className='text-highlight block h-[30px] w-[30px] md:hidden'
       />
 
       {isOpen && (
         <div
-          className='absolute left-0 top-[88px] z-10 flex w-full origin-top scale-100 
+          className='absolute left-0 top-[88px] z-10 flex w-full origin-top scale-100
         flex-col items-start rounded-md bg-darkbg shadow-lg transition-transform duration-300 ease-in-out'
         >
           <ul>

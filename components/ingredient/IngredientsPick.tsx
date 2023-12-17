@@ -23,7 +23,7 @@ const IngredientsPick = ({
         <p>Nguyên liệu</p>
         <div className='flex items-center gap-2 md:gap-[18px]'>
           <p>Khối lượng(gam)</p>
-          <Trash className='hidden h-8 w-8 rounded-sm border border-hightlight p-2 text-hightlight md:block md:h-12 md:w-12 md:rounded-xl md:p-[14px] md:opacity-0' />
+          <Trash className='border-highlight text-highlight hidden h-8 w-8 rounded-sm border p-2 md:block md:h-12 md:w-12 md:rounded-xl md:p-[14px] md:opacity-0' />
         </div>
       </div>
       <div className='h-full grow overflow-y-scroll border-b border-t border-[#c4c4c4] py-6'>
@@ -48,7 +48,7 @@ const IngredientsPick = ({
                 </div>
                 <Trash
                   onClick={() => onRemove(ingredient)}
-                  className='h-8 w-8 cursor-pointer rounded-sm border border-hightlight p-2 text-hightlight md:h-12 md:w-12 md:rounded-xl md:p-[14px]'
+                  className='border-highlight text-highlight h-8 w-8 cursor-pointer rounded-sm border p-2 md:h-12 md:w-12 md:rounded-xl md:p-[14px]'
                 />
               </div>
             </div>
@@ -67,7 +67,7 @@ const IngredientsPick = ({
           </p>
         </div>
         <Button
-          className='mt-6 bg-hightlight text-lg text-white md:text-xl'
+          className='bg-highlight mt-6 text-lg text-white md:text-xl'
           size={'xl'}
           onClick={() =>
             router.push(

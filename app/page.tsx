@@ -140,25 +140,25 @@ export default function Home() {
           <TabsList className='flex justify-center gap-8 rounded-none border-b border-[#aaaaaa] bg-inherit px-0 text-left text-foreground dark:border-[#393c49] md:justify-start'>
             <TabsTrigger
               value='vegetable'
-              className='px-0 py-0.5 pr-1 text-left text-2xl data-[state=active]:rounded-none data-[state=active]:border-b-[3px] data-[state=active]:border-hightlight data-[state=active]:text-hightlight'
+              className='data-[state=active]:border-highlight data-[state=active]:text-highlight px-0 py-0.5 pr-1 text-left text-2xl data-[state=active]:rounded-none data-[state=active]:border-b-[3px]'
             >
               Rau
             </TabsTrigger>
             <TabsTrigger
               value='meat'
-              className='px-0 py-0.5 pr-1 text-left text-2xl data-[state=active]:rounded-none data-[state=active]:border-b-[3px] data-[state=active]:border-hightlight data-[state=active]:text-hightlight'
+              className='data-[state=active]:border-highlight data-[state=active]:text-highlight px-0 py-0.5 pr-1 text-left text-2xl data-[state=active]:rounded-none data-[state=active]:border-b-[3px]'
             >
               Thịt
             </TabsTrigger>
             <TabsTrigger
               value='spice'
-              className='px-0 py-0.5 pr-1 text-left text-2xl data-[state=active]:rounded-none data-[state=active]:border-b-[3px] data-[state=active]:border-hightlight data-[state=active]:text-hightlight'
+              className='data-[state=active]:border-highlight data-[state=active]:text-highlight px-0 py-0.5 pr-1 text-left text-2xl data-[state=active]:rounded-none data-[state=active]:border-b-[3px]'
             >
               Gia Vị
             </TabsTrigger>
             <TabsTrigger
               value='other'
-              className='px-0 py-0.5 pr-1 text-left text-2xl data-[state=active]:rounded-none data-[state=active]:border-b-[3px] data-[state=active]:border-hightlight data-[state=active]:text-hightlight'
+              className='data-[state=active]:border-highlight data-[state=active]:text-highlight px-0 py-0.5 pr-1 text-left text-2xl data-[state=active]:rounded-none data-[state=active]:border-b-[3px]'
             >
               Khác
             </TabsTrigger>
