@@ -117,7 +117,9 @@ export default function Suggest() {
                 rating={item.rating}
                 name={item.name}
                 kcal={item.kcal}
-                onClick={() => console.log(item)}
+                ingredients={item.ingredients}
+                steps={item.steps}
+                stepDescription={item.stepDescription}
               />
             ))}
           </div>

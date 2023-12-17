@@ -106,7 +106,6 @@ export default function Recipes() {
               ingredients={item.ingredients}
               steps={item.steps}
               stepDescription={item.stepDescription}
-              // onClick={() => console.log(item.ingredients)}
             />
           ))}
         </div>
