@@ -10,19 +10,31 @@ import {
 } from '../ui/card';
 import StarRatings from 'react-star-ratings';
 
+import RecipeDialog from '@/components/RecipeDialog';
+
 type IngredientsCardProps = {
   image: string;
   name: string;
-  kcal: number;
   rating: number;
+  kcal: number;
+  ingredients: string[];
+  steps: {
+    [key: string]: string;
+  };
+  stepDescription: {
+    [key: string]: string[];
+  };
   onClick: () => void;
 };
 
 const DishCard = ({
   image,
   name,
-  kcal,
   rating,
+  kcal,
+  ingredients,
+  steps,
+  stepDescription,
   onClick,
 }: IngredientsCardProps) => {
   return (
@@ -43,10 +55,18 @@ const DishCard = ({
           name='rating'
         />
       </CardContent>
-      <CardFooter className='dark:text- rounded-b-2xl bg-[#FAE0DB] p-3 text-hightlight underline dark:bg-[#50343A]'>
-        <p className='w-full cursor-pointer text-center' onClick={onClick}>
-          Xem chi tiết
-        </p>
+      <CardFooter
+        className='dark:text- rounded-b-2xl bg-[#FAE0DB] p-3 text-hightlight underline dark:bg-[#50343A]'
+        onClick={onClick}
+      >
+        {/* <p className='w-full cursor-pointer text-center' onClick={onClick}>Xem chi tiết</p> */}
+        <RecipeDialog
+          name={name}
+          image={image}
+          ingredients={ingredients}
+          steps={steps}
+          stepDescription={stepDescription}
+        />
       </CardFooter>
     </Card>
   );
