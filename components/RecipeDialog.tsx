@@ -83,8 +83,7 @@ const RecipeDialog = ({
                 className='ml-2 bg-[#FEBC0B] text-sm text-white md:text-xl'
                 size={'sm'}
                 onClick={() => {
-                  // toast({ title: 'Tính năng này hiện đang được phát triển.' });
-                  console.log(typeof ingredients);
+                  toast({ title: 'Tính năng này hiện đang được phát triển.' });
                 }}
               >
                 Gửi
