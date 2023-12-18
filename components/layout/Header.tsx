@@ -43,7 +43,7 @@ const Header = () => {
           height={50}
           className='hidden md:block'
         />
-        <LogOut className='hidden h-[30px] w-[30px] text-hightlight md:block' />
+        <LogOut className='text-highlight hidden h-[30px] w-[30px] md:block' />
         <DropdownHeader />
       </div>
     </header>

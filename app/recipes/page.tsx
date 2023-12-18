@@ -4,9 +4,11 @@ import { Search as SearchButton } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Filter, ChevronDown, Plus } from 'lucide-react';
-import dishesData from '../../fakedb/dishes.json';
+import dishesData from '../../fakedb/recipes.json';
 import DishCard from '@/components/dish/DishCard';
 import { Card } from '@/components/ui/card';
+
+import { ShareDialog } from '@/components/ShareDialog';
 
 let timeoutId: ReturnType<typeof setTimeout>;
 
@@ -25,7 +27,7 @@ export default function Recipes() {
   return (
     <div className=' h-full w-full flex-1 overflow-y-auto px-12 py-10'>
       <div className='flex justify-between'>
-        <h1 className='text-3xl'>Món ăn đề xuất</h1>
+        <h1 className='text-3xl'>Công thức</h1>
         <div className='flex gap-4'>
           <div className='relative'>
             <SearchButton
@@ -86,13 +88,8 @@ export default function Recipes() {
           </Button>
         </div>
         <div className='grid-custom gap-5'>
-          <Card
-            className='flex min-h-[250px] cursor-pointer flex-col items-center justify-center rounded-2xl border-dashed border-hightlight text-hightlight'
-            onClick={() => console.log('Open modal share')}
-          >
-            <Plus className='mb-2 h-6 w-6' />
-            <p>Chia sẻ công thức</p>
-          </Card>
+          <ShareDialog />
+          
           {filterDishes.map((item, index) => (
             <DishCard
               key={index}
@@ -100,7 +97,9 @@ export default function Recipes() {
               rating={item.rating}
               name={item.name}
               kcal={item.kcal}
-              onClick={() => console.log(item)}
+              ingredients={item.ingredients}
+              steps={item.steps}
+              stepDescription={item.stepDescription}
             />
           ))}
         </div>

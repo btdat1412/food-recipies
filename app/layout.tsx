@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Barlow } from 'next/font/google';
 import { ThemeProvider } from '../components/providers/ThemeProvider';
 import Header from '../components/layout/Header';
+import { Toaster } from "@/components/ui/toaster"
 
 const barlow = Barlow({ weight: '600', subsets: ['latin'] });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
             <main className='flex-1 overflow-auto'>{children}</main>
           </div>
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );

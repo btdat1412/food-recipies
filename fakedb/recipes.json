@@ -1,0 +1,390 @@
+[
+  {
+    "id": 1,
+    "rating": 2,
+    "name": "Mì quảng",
+    "image": "/images/recipes/mi_quang.png",
+    "kcal": 165,
+    "ingredients": [
+      "Sợi mì quảng - 800g",
+      "Gà - 1 con (khoảng 1.5kg)",
+      "Trứng cút - 15 quả",
+      "Nước dừa - 500ml",
+      "Đậu phộng rang - 50g"
+    ],
+    "steps": {
+      "1": "Sơ chế nguyên liệu",
+      "2": "Ướp gà và luộc trứng cút",
+      "3": "Nấu nước dùng mì quảng",
+      "4": "Hoàn thành"
+    },
+    "stepDescription": {
+      "1": [
+        "Mua gà nguyên con đã làm sẵn về, khử mùi hôi bằng cách ngâm trong nước muối loãng khoảng 10 phút rồi rửa sạch lại với nước, cắt miếng vừa ăn.",
+        "Củ hành tây, củ nén lột vỏ, rửa sạch, băm nhuyễn.",
+        "Rau chuối, hành lá, xà lách, rau húng lủi rửa sạch. Hành lá cắt nhỏ, đập dập đậu phộng rang."
+      ],
+      "2": [
+        "Ướp gà với 1/2 phần hành tây và củ nén băm, 1/2  muỗng canh bột nghệ, 1/2 muỗng canh hạt nêm, trộn đều, để yên 15 phút để thịt gà thấm gia vị.",
+        "Trứng cút cho vào nồi nước và luộc 7 - 10 phút rồi lấy ra để nguội, bóc vỏ."
+      ],
+      "3": [
+        "Bắc chảo  lên bếp với 1 muỗng canh dầu màu điều. Khi dầu nóng bạn cho vào phần hành tây và củ nén băm còn lại, 1/2 muỗng canh bột nghệ, phi thơm.",
+        "Tiếp theo cho thịt gà đã ướp vào xào đến khi thịt săn lại. Cho vào 700ml nước lọc, 500ml nước dừa tươi, đảo đều trên lửa lớn.",
+        "Khi nước sôi thì nêm vào 2 muỗng canh nước mắm, 1 muỗng canh đường phèn, đảo đều rồi giảm lửa vừa và nấu khoảng 15 - 20 phút.",
+        "Nêm nếm gia vị lại cho vừa ăn rồi cho trứng cút vào, nấu thêm 5 phút nữa thì tắt bếp."
+      ],
+      "4": [
+        "Bắc nồi nước sôi lên bếp rồi cho 1 lượng mì vừa ăn vào trụng khoảng 1 - 2 phút rồi vớt ra tô.",
+        "Sau đó cho thịt gà, trứng cút, 1 ít hành lá, đậu phộng rang vào rồi chan nước dùng lên là có thể thưởng thức được rồi."
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "rating": 5,
+    "name": "Cơm tấm sườn bì chả",
+    "image": "/images/recipes/com_tam.png",
+    "kcal": 179,
+    "ingredients": [
+      "Gạo tấm - 300g",
+      "Gạo trắng - 60g (để làm thính)",
+      "Cốt lết - 4 miếng",
+      "Bì heo - 100g",
+      "Trứng gà - 3 quả",
+      "Nạc heo xay - 50g",
+      "Miến - 50g",
+      "Nấm mèo khô",
+      "Sả - 5 cây",
+      "Tỏi băm, hành tím băm, ớt băm",
+      "Hành lá",
+      "Dưa leo, cà chua",
+      "Gia vị: mật ong, nước mắm, bột ngọt, muối, đường, giấm, dầu hào, tiêu xay"
+    ],
+    "steps": {
+      "1": "Nấu cơm",
+      "2": "Ướp sườn cốt lết",
+      "3": "Nướng sườn",
+      "4": "Làm chả trứng",
+      "5": "Làm thính và bì heo",
+      "6": "Làm đồ chua",
+      "7": "Làm mỡ hành",
+      "8": "Pha nước mắm",
+      "9": "Trang trí đĩa cơm"
+    },
+    "stepDescription": {
+      "1": [
+        "Gạo tấm mua về vo sạch qua 2 - 3 lần và nấu trong nồi cơm điện như bình thường."
+      ],
+      "2": [
+        "Thịt cốt lết mua về rửa sạch và dùng khăn thấm cho ráo. Tiếp đến, dùng búa đập thịt để làm thịt mỏng và mềm hơn (Nếu không có búa đập thịt bạn  có thể dùng chày).",
+        "Ướp thịt theo công thức: 5 cây sả đập dập, ½ muỗng bột ngọt, 1 muỗng hạt nêm, 1 muỗng mật ong, 2 muỗng dầu hào, 1 muỗng nước mắm, ¼ muỗng tiêu xay, 1 muỗng hành tím băm, 1 muỗng tỏi băm.",
+        "Trộn đều và ướp thịt trong 1 tiếng."
+      ],
+      "3": [
+        "Nướng từng miếng thịt trên bếp than đến khi chín vàng đều hai mặt. Nếu nướng bằng lò nướng / nồi chiên không dầu, bạn có thể chỉnh nhiệt độ 180 độ C từ 30 - 45 phút."
+      ],
+      "4": [
+        "Ngâm nấm mèo khô trong nước ấm 20 phút cho nở, sau đó rửa sạch, cắt bỏ phần chân và băm nhỏ. Miến ngâm trong 10 phút và cũng mang đi xắt nhỏ.",
+        "Trộn đều thịt nạc heo xay, mộc nhĩ và miến đã xắt nhỏ. Đập thêm vào 2 quả trứng gà và 1 lòng trắng (1 lòng đỏ còn lại để tạo màu cho lớp bề mặt). Sau đó nêm với 2 muỗng muối, 1 muỗng đường, 1 muỗng nước mắm và 1 muỗng hành tím băm. Trộn đều để các nguyên liệu thấm đều gia vị.",
+        "Cho phần chả trứng vào hấp cách thủy trong 30 phút. Sau đó cho lòng đỏ trứng còn lại lên bề mặt và hấp thêm 10 phút là hoàn tất."
+      ],
+      "5": [
+        "Bì heo mua về rửa sạch và mang đi luộc nhanh trong 15 phút để bì giữ được độ dai.",
+        "Sau khi vớt ra cho ngay bì heo vào nước đá để giữ được độ giòn. Ngâm bì heo trong 5 phút và vớt ra để ráo. Xắt mỏng phần bì heo.",
+        "Làm thính: Rang 60g gạo trắng đến khi chuyển sang màu vàng nâu. Để gạo cho nguội hoàn toàn và bỏ vào máy xay nhuyễn.",
+        "Trộn thính vào phần bì đã xắt nhuyễn"
+      ],
+      "6": [
+        "Củ cải trắng và cà rốt mua về rửa sạch, gọt vỏ và bào thành sợi nhỏ.",
+        "Pha 100ml giấm, 3 muỗng đường và nửa muỗng muối và đổ vào phần củ đã thái sợi. Trộn đều và ngâm trong 1 tiếng."
+      ],
+      "7": [
+        "Hành lá xắt nhuyễn cho thêm ¼ muỗng muối, ¼ muỗng đường và trộn đều.",
+        "Dầu ăn nấu sôi và chế vào phần hành lá đã chuẩn bị. Trộn cho phần hành lá chín hết."
+      ],
+      "8": [
+        "Đun sôi và khuấy đều hỗn hợp 3 muỗng nước mắm, 3 muỗng đường, 3 muỗng nước ấm và 1 muỗng giấm. Để hỗn hợp nguội, sau đó thêm ½ muỗng mắm và ½ muỗng giấm vào, nêm vừa miệng.",
+        "Ớt trái rửa sạch, đổ nước lạnh vừa đủ qua mặt ớt và đun sôi đến khi ớt mềm.",
+        "Dùng thìa dầm ớt nhỏ ra. Đun nóng 1 muỗng dầu ăn, cho 1 muỗng tỏi vào phi thơm, sau đó cho phần ớt đã dầm nhuyễn vào. Thêm vào 1 muỗng đường, 1 muỗng giấm, đun sôi khoảng 5 phút, tắt bếp để nguội rồi cho hỗn hợp ớt vào cùng phần nước mắm đã nấu."
+      ],
+      "9": [
+        "Cho cơm đã nấu chín vào chén và úp ngược vào dĩa để có hình đẹp mắt. Rưới thêm mỡ hành lên cơm để tạo màu sắc.",
+        "Xắt lát cà chua, dưa leo và lấy phần đồ chua đã ngâm ra. Đặt phần sườn nướng, chả trứng, bì và chén nước mắm pha xung quanh phần cơm trên đĩa."
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "rating": 4.5,
+    "name": "Bún bò Huế",
+    "image": "/images/recipes/bun_bo.png",
+    "kcal": 347,
+    "ingredients": [
+      "Chân giò heo - 1kg",
+      "Nạm bò - 500g",
+      "Bún sợi to - 200g",
+      "Huyết (không bắt buộc) - 1 tô",
+      "Chả cua (không bắt buộc) - 200g",
+      "Dầu màu điểu - 3 muỗng canh",
+      "Sả - 7 cây",
+      "Hành tây - 2 củ",
+      "Tỏi - 1 củ",
+      "Gừng - 1 củ",
+      "Mắm ruốc - 2 muỗng canh",
+      "Hành lá, giá đỗ, mùi tàu, hoa chuối, chanh mỗi thứ một ít"
+    ],
+    "steps": {
+      "1": "Sơ chế chân giò, nạm bò",
+      "2": "Sơ chế các nguyên liệu khác",
+      "3": "Bắt đầu nấu",
+      "4": "Trình bày món ăn"
+    },
+    "stepDescription": {
+      "1": [
+        "Chân giò heo nếu thích nhiều thịt thì chọn chân sau, thích da và gân sần sật thì chọn chân trước, chặt thành những khoanh tròn, rửa sạch.",
+        "Luộc chân giò qua nước sôi cho hết chất bẩn sau đó rửa lại bằng nước sạch.",
+        "Nạm bò rửa sạch, luộc riêng cùng 1/2 củ gừng thái lát cho thơm. Ninh lửa nhỏ khoảng 2 tiếng, dùng đũa xiên thử miếng nạm, nếu xiên qua được là đạt yêu cầu. Đợi thịt nạm nguội thái miếng mỏng."
+      ],
+      "2": [
+        "Huyết bò hoặc heo có thể mua sẵn hoặc mua huyết về luộc chín, thái miếng vừa ăn. (Lưu ý mua huyết ở những địa chỉ uy tín để đảm bảo an toàn thực phẩm). Nếu không ăn huyết có thể bỏ qua.",
+        "Chả cua nặn thành từng viên tròn nhỏ thả vào nồi nước luộc nạm, chả nổi lên là đã chín, bạn vớt ra để riêng. Có thể thay thế chả cua bằng chả bò, chả giò hoặc không cho chả cũng được.",
+        "Với 4 cây sả băm nhỏ, còn lại cắt khúc, đập dập. Hành tây chia 2 phần, một nữa cắt đôi, nữa còn lại thái mỏng.",
+        "Hành lá, mùi tàu, húng quế rửa sạch thái nhỏ. Các loại rau ăn kèm rửa sạch, để ráo nước."
+      ],
+      "3": [
+        "Hòa 2 muỗng canh mắm ruốc với 100 ml nước lạnh.",
+        "Phi 4 cây sả băm cho thơm cùng 2 thìa dầu ăn, lấy bớt sả ra, cho 3 muỗng canh dầu màu điều vào. Băm nhuyễn 1 củ hành, 1 củ tỏi kèm 2 trái ớt rồi cho vào chảo phi vàng thì tắt bếp.",
+        "Chân giò heo đã sơ chế bạn cho lên bếp ninh lửa nhỏ cùng 1 củ hành tây cắt đôi và 3 cây sả đập dập cho nước dùng thơm ngọt, ra hết chất trong xương. (Lưu ý thỉnh thoảng hớt bọt nồi nước dùng để nước được trong).",
+        "Lấy phần trên của nước mắm ruốc cho vào nồi, bỏ phần cặn đi. Cho 2 muỗng canh đường, 2 muỗng canh hạt nêm, 1 muỗng canh muối vào, nêm nếm cho vừa miệng.",
+        "Thêm chén ớt sa tế đã làm ở trên vào."
+      ],
+      "4": [
+        "Trụng bún qua nước sôi, để ráo và trút ra tô.",
+        "Thêm thịt nạm, móng giò, chả cua, huyết, mùi tàu, hành lá thái nhỏ, một chút hành tây thái mỏng rồi chan nước dùng.",
+        "Bún bò Huế ăn kèm giá đỗ, hoa chuối, húng quế, ớt chưng thì tuyệt ngon bạn nhé."
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "rating": 3,
+    "name": "Mì Ý sốt bò bằm",
+    "image": "/images/recipes/mi_y.png",
+    "kcal": 221,
+    "ingredients": [
+      "Mì Ý - 200g",
+      "Thịt bò bằm - 200g",
+      "Cà chua - 3 trái",
+      "Hành tây - 1/2 củ",
+      "Tỏi băm - 2 củ",
+      "Dầu ô liu - 2 muỗng canh",
+      "Muối, tiêu xay mỗi thứ một ít"
+    ],
+    "steps": {
+      "1": "Sơ chế nguyên liệu",
+      "2": "Luộc mì",
+      "3": "Ướp và xào thịt bò",
+      "4": "Làm sốt",
+      "5": "Trình bày món ăn"
+    },
+    "stepDescription": {
+      "1": [
+        "Cà chua rửa sạch rồi dùng dao cắt nhỏ thành hạt lựu.",
+        "Hành tây lột vỏ rồi cắt hạt lựu."
+      ],
+      "2": [
+        "Bắc nồi lên bếp, cho vào 650ml nước, đợi nước sôi bạn cho 1/3 muỗng cà phê muối và 200gr mì ý vào luộc với lửa vừa trong vòng 10 phút đến khi mì mềm thì vớt ra để cho ráo nước."
+      ],
+      "3": [
+        "Cho thịt bò vào một cái tô, nêm thêm 1/3 muỗng cà phê muối và 1/3 muỗng cà phê tiêu xay rồi trộn đều, mang đi ướp khoảng 8 - 10 phút.",
+        "Bắc chảo lên bếp, cho vào 1 muỗng canh dầu ô liu, đợi dầu nóng thì cho 1 củ tỏi băm vào phi cho thơm.",
+        "Tiếp đó cho thịt bò đã ướp gia vị vào xào với lửa vừa khoảng 3 phút cho thịt chín thì đổ ra tô."
+      ],
+      "4": [
+        "Bắc chảo lên bếp, cho vào 1 muỗng canh dầu ô liu đợi dầu nóng cho vào 1 củ tỏi băm nhuyễn phi cho thơm vàng.",
+        "Tiếp đó cho hành tây đã cắt hạt lựu vào đảo đều khoảng 30 giây rồi cho tiếp cà chua cắt hạt lựu vào xào khoảng 10 phút với lửa nhỏ.",
+        "Cho thịt bò vào xào cùng rồi nêm nếm lại cho vừa ăn là được. Cuối cùng bạn rắc 1/3 muỗng cà phê tiêu xay vào rồi tắt bếp."
+      ],
+      "5": [
+        "Cho mì ý ra dĩa, cho sốt thịt bò bằm lên trên phần mì, trang trí thêm 1 ít lá bạc hà và cà chua cắt lát lên cho đẹp mắt là hoàn thành."
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "rating": 4,
+    "name": "Há cảo nhân tôm thịt",
+    "image": "/images/recipes/ha_cao.png",
+    "kcal": 271,
+    "ingredients": [
+      "Thịt heo xay - 200g",
+      "Tôm xay - 300g",
+      "Bột tàn mì - 110g",
+      "Bột năng - 20g",
+      "Củ sắn - 50g",
+      "Hành lá",
+      "Dầu mè - 1 muỗng canh",
+      "Gia vị: đường, hạt nêm, tiêu xay mỗi thứ một ít"
+    ],
+    "steps": {
+      "1": "Sơ chế nguyên liệu",
+      "2": "làm nhân tôm thịt",
+      "3": "Trộn và nhào bột",
+      "4": "Tạo hình cho bánh",
+      "5": "Hấp bánh",
+      "6": "Trang trí món ăn"
+    },
+    "stepDescription": {
+      "1": [
+        "Củ sắn gọt vỏ, rửa sạch rồi cắt hạt lựu.",
+        "Hành lá nhặt sạch lá hư, bỏ rễ rồi rửa qua với nước, sau đó cắt nhỏ."
+      ],
+      "2": [
+        "Cho tôm và thịt băm vào tô, nêm thêm 1 muỗng canh hạt nêm, 1 muỗng canh đường, hành lá cắt nhỏ, 1 muỗng canh dầu mè, 1 muỗng cà phê tiêu cùng phần củ sắn cắt hạt lựu rồi trộn đều lên cho các nguyên liệu hòa quyện."
+      ],
+      "3": [
+        "Cho vào tô 110gr bột tàn mì, 20gr bột năng rồi trộn đều. Tiếp theo bạn cho 175ml nước sôi vào, trộn đều lên đến khi bột quánh dẻo thì dùng màng bọc thực phẩm bịt kín miệng tô và ủ bột khoảng 5 phút.",
+        "Tiếp tục nhào bột nhiều lần cho đến khi bột dẻo mịn là được. Chia bột thành từng phần nhỏ, mỗi phần khoảng 2 ngón tay."
+      ],
+      "4": [
+        "Lấy 1 phần bột nhỏ, cán mỏng ra thành hình tròn, cho vào giữa bột 1 muỗng cà phê nhân tôm thịt. Gấp các mép bột lại và tạo hình theo ý thích."
+      ],
+      "5": [
+        "Cho bánh vào nồi hấp và hấp khoảng 10 phút với lửa lớn đến khi bột trong lại, bánh dậy mùi thơm là hoàn thành."
+      ],
+      "6": [
+        "Xếp há cảo ra dĩa, dùng kèm với nước tương pha một chút giấm, thêm chút rau răm, dưa leo để tăng hương vị."
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "rating": 2,
+    "name": "Cơm chiên trứng",
+    "image": "/images/recipes/com_chien.png",
+    "kcal": 175,
+    "ingredients": [
+      "Cơm nguội - 3 chén",
+      "Trứng gà - 2 quả",
+      "Hành lá",
+      "Hành tím - 1 củ",
+      "Nước mắm 1 muỗng canh",
+      "Dầu ăn - 2 muỗng canh",
+      "Dưa leo, cà chua (không bắt buộc) - 1 quả mỗi loại",
+      "Gia vị: hạt nêm, tiêu mỗi thứ một ít"
+    ],
+    "steps": {
+      "1": "Sơ chế nguyên liệu",
+      "2": "Đánh trứng",
+      "3": "Chiên cơm",
+      "4": "Trang trí món ăn"
+    },
+    "stepDescription": {
+      "1": [
+        "Hành lá cắt bỏ rễ và lá úa sau đó rửa sạch và cắt nhỏ.",
+        "Hành tím lột vỏ, rửa sạch rồi cắt thành các lát mỏng."
+      ],
+      "2": [
+        "Đập 2 quả trứng bỏ vào tô sau đó cho thêm 1 muỗng cà phê hạt nêm và 1 muỗng cà phê tiêu đen vào. Dùng đũa đánh thật đều tay để lòng trắng và đỏ hòa quyện vào nhau."
+      ],
+      "3": [
+        "Bắc chảo lên bếp, cho vào chảo 2 muỗng canh dầu ăn, đợi đến khi dầu nóng bạn cho hành tím vào, đảo đều tới khi hành chuyển sang màu vàng nâu và dậy mùi thơm thì bạn cho cơm vào, đảo đều với lửa vừa khoảng 5 phút cho hạt cơm săn lại.",
+        "Sau đó, rưới trứng vừa đánh lên trên bề mặt cơm, trộn đều tay với lửa vừa khoảng 5 phút rồi nêm thêm 1 muỗng cà phê hạt nêm và 1 muỗng canh nước mắm vào.",
+        "Tiếp tục trộn đều đến khi hạt tơi rời, khô lại hoàn toàn thì bạn cho hành lá cắt nhỏ vào, nêm nếm lại gia vị cho vừa ăn rồi tắt bếp."
+      ],
+      "4": [
+        "Cho cơm đã nấu chín vào chén và úp ngược vào dĩa để có hình đẹp mắt. Có thể dùng kèm dưa leo, cà chua cho đỡ ngán"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "rating": 4.6,
+    "name": "Thịt kho trứng",
+    "image": "/images/recipes/thit_kho_trung.png",
+    "kcal": 271,
+    "ingredients": [
+      "Ba chỉ lợn - 400g",
+      "Trứng gà - 4 quả",
+      "Nước dừa - 1 lít",
+      "Đường - 3 muỗng cà phê",
+      "Hành khô - 1 củ",
+      "Nước mắm",
+      "Gia vị: hạt nêm, tiêu xay mỗi thứ một ít"
+    ],
+    "steps": {
+      "1": "Sơ chế nguyên liệu",
+      "2": "Luộc trứng",
+      "3": "Kho thịt"
+    },
+    "stepDescription": {
+      "1": [
+        "Thịt đem rửa sạch, thái miếng to vuông sao cho vừa ăn.",
+        "Lấy thịt vừa nãy ướp với nước mắm, hạt nêm, hành băm nhỏ và hạt tiêu (nếu thích ăn ngọt thì cho vào thịt một ít đường)."
+      ],
+      "2": [
+        "Trứng rửa sạch, luộc với nước sôi khoảng 5 phút, trứng nguội vớt ra, bóc bỏ vỏ."
+      ],
+      "3": [
+        "Phi tỏi cho thơm sau đó cho thịt vào, đảo qua khoảng 3 - 4 phút rồi đổ nước dừa vào cho ngập mặt thịt. Đun sôi nước, sau đó hạ nhỏ lửa để cho đến khi thịt chín mềm.",
+        "Khi thịt đã chín mềm thì cho trứng vào, đun thêm khoảng 15 phút nữa cho trứng ngấm gia vị rồi tắt bếp."
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "rating": 3.7,
+    "name": "Phở bò kho",
+    "image": "/images/recipes/pho_bo_kho.png",
+    "kcal": 350,
+    "ingredients": [
+      "Bánh phở tươi - 1kg",
+      "Sườn bò - 2kg",
+      "Hành lá, ngò rí",
+      "Gừng - 20g",
+      "Tỏi - 1 tép",
+      "Thảo quả - 2 quả",
+      "Hoa hồi - 3g",
+      "Quế - 1 nhánh",
+      "Ngũ vị hương - 1/2 muỗng cà phê",
+      "Bột màu điều - 1/4 muỗng cà phê",
+      "Nước mắm - 2 muỗng canh",
+      "Dầu ăn - 2 muỗng canh",
+      "Gia vị: hạt nêm/ muối/ đường mỗi thứ một ít"
+    ],
+    "steps": {
+      "1": "Sơ chế sườn bò",
+      "2": "Sơ chế các nguyên liệu khác",
+      "3": "Ướp thịt bò",
+      "4": "Bắt đầu nấu",
+      "5": "Trang trí thành phẩm"
+    },
+    "stepDescription": {
+      "1": [
+        "Đầu tiên, với 2kg sườn bò mua về bạn đem rửa sơ với nước cho sạch, để ráo hoặc dùng khăn khô sạch lau sơ qua bề mặt, rồi dùng dao cắt khúc vừa ăn.",
+        "Kế đến, bạn bắc nồi lên bếp cùng 1 lít nước, phần sườn bò vừa sơ chế, 1/2 số gừng đập dập và 1 muỗng cà phê muối vào, tiến hành chần sơ khoảng 7 - 10 phút với lửa lớn.",
+        "Thấy bọt đã nổi trên bề mặt, thì bạn tắt bếp, vớt sườn bò ra, đem rửa lại vài lần với nước sạch, để ráo."
+      ],
+      "2": [
+        "Bạn lấy khay nướng rồi cho toàn bộ phần hoa hồi, quế, thảo quả và gừng còn lại vào, đặt vào lò nướng thùng, tiến hành nướng ở nhiệt độ 180 độ C trong vòng 4 - 5 phút, thấy các nguyên liệu đã tỏa hương thơm thì bạn tắt lò, lấy khay nướng ra để nguội.",
+        "Sau đó, bạn lấy phần gừng vừa nướng dùng dao đập dập. Tỏi bạn lột vỏ rồi băm nhuyễn.",
+        "Cuối cùng, hành lá và ngò rí bạn bỏ rễ, rửa sạch, để ráo, dùng dao cắt nhuyễn."
+      ],
+      "3": [
+        "Kế đến, bạn cho sườn bò đã chần sơ ra thau cùng 1.5 muỗng canh hạt nêm, 1 muỗng canh đường, 1/2 muỗng cà phê bột ngũ vị hương, 1/4 muỗng cà phê bột màu điều, toàn bộ phần hoa hồi, quế, thảo quả và gừng vừa nướng vào.",
+        "Dùng đũa trộn đều lên rồi để cho sườn bò được thấm đều gia vị trong vòng 45 phút."
+      ],
+      "4": [
+        "Bạn bắc nồi lên bếp cùng 2 muỗng canh dầu ăn đun với lửa vừa. Dầu lăn tăn sôi bạn cho 1 tép tỏi băm nhuyễn vào phi thơm.",
+        "Kế đến, bạn cho toàn bộ phần sườn bò vừa ướp vào, dùng đũa xào đều khoảng 3 - 5 phút, đến khi sườn bò hơi săn lại thì bạn thêm 2 lít nước vào, tiếp tục nấu 10 - 15 phút.",
+        "Thấy nước sôi bạn giảm xuống lửa nhỏ, nấu thêm trong vòng 30 - 40 phút, rồi bạn nêm 2 muỗng canh nước mắm và 1 muỗng cà phê muối vào, dùng vá đảo đều lần nữa.",
+        "Sau đó, khi sườn bò đã chín mềm thì bạn nêm nếm gia vị vừa ăn nữa là được."
+      ],
+      "5": [
+        "Bắc nồi khác lên bếp cùng 500ml nước đun với lửa lớn. Nước sôi bạn cho 1 lượng vừa phải bánh phở vào chần sơ 2 - 3 phút. Khi bánh phở chín mềm thì bạn tắt bếp, cho ra tô.",
+        "Xếp sườn bò vào tô, cho nước dùng, trang trí thêm hành lá và ngò rí."
+      ]
+    }
+  }
+]
