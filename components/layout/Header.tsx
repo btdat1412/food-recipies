@@ -5,10 +5,12 @@ import Image from 'next/image';
 import { ModeToggle } from '../ThemeToggle';
 import { LogOut } from 'lucide-react';
 import DropdownHeader from '../dropdown/DropdownHeader';
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
   const { theme } = useTheme();
   const [logoSrc, setLogoSrc] = useState('/images/logo_light.png');
+  const router = useRouter();
 
   useEffect(() => {
     if (theme === 'light') {
@@ -21,7 +23,14 @@ const Header = () => {
   return (
     <header className='z-50 flex w-full items-center justify-between bg-white px-2 dark:bg-darkbg md:px-6 md:py-2'>
       <div className='flex gap-5'>
-        <Image src={logoSrc} alt='logo' width={88} height={88} />
+        <Image
+          src={logoSrc}
+          alt='Logo'
+          width={88}
+          height={88}
+          className='cursor-pointer'
+          onClick={() => router.push(`/`)}
+        />
         <ul className='hidden items-center gap-5 text-xl md:flex'>
           <li>
             <a href={'/'}> Đề xuất món ăn</a>
@@ -43,7 +52,7 @@ const Header = () => {
           height={50}
           className='hidden md:block'
         />
-        <LogOut className='text-highlight hidden h-[30px] w-[30px] md:block' />
+        <LogOut className='hidden h-[30px] w-[30px] text-highlight md:block' />
         <DropdownHeader />
       </div>
     </header>
