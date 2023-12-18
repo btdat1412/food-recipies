@@ -101,11 +101,11 @@ const RecipeDialog = ({
           <div className='col-span-3'>
             <div className='grid grid-cols-12'>
               <div></div>
-              
+
               <div className='col-span-11'>
                 <h3 className='text-2xl text-highlight'>Nguyên liệu</h3>
 
-                <ul className='list-inside list-disc pb-3 indent-6'>
+                <ul className='list-inside list-disc pb-6 indent-6'>
                   {ingredients.map((item, index) => (
                     <li key={index} className='text-lg'>
                       {item}
