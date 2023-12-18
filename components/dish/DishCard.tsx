@@ -24,7 +24,6 @@ type IngredientsCardProps = {
   stepDescription: {
     [key: string]: string[];
   };
-  onClick: () => void;
 };
 
 const DishCard = ({
@@ -35,10 +34,9 @@ const DishCard = ({
   ingredients,
   steps,
   stepDescription,
-} // onClick,
-: IngredientsCardProps) => {
+}: IngredientsCardProps) => {
   return (
-    <Card className='border-highlight flex flex-col rounded-2xl'>
+    <Card className='flex flex-col rounded-2xl border-highlight'>
       <CardHeader className='flex flex-row justify-center p-0'>
         <Image src={image} alt={name} width={130} height={130} className='' />
       </CardHeader>
@@ -55,10 +53,7 @@ const DishCard = ({
           name='rating'
         />
       </CardContent>
-      <CardFooter
-        className='dark:text- text-highlight rounded-b-2xl bg-[#FAE0DB] p-3 underline dark:bg-[#50343A]'
-        // onClick={onClick}
-      >
+      <CardFooter className='dark:text- rounded-b-2xl bg-[#FAE0DB] p-3 text-highlight underline dark:bg-[#50343A]'>
         {/* <p className='w-full cursor-pointer text-center' onClick={onClick}>Xem chi tiết</p> */}
         <RecipeDialog
           name={name}

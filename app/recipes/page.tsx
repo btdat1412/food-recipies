@@ -88,14 +88,8 @@ export default function Recipes() {
           </Button>
         </div>
         <div className='grid-custom gap-5'>
-          {/* <Card
-            className='flex min-h-[250px] cursor-pointer flex-col items-center justify-center rounded-2xl border-dashed border-highlight text-highlight'
-            onClick={() => console.log('Open modal share')}
-          >
-            <Plus className='mb-2 h-6 w-6' />
-            <p>Chia sẻ công thức</p>
-          </Card> */}
           <ShareDialog />
+          
           {filterDishes.map((item, index) => (
             <DishCard
               key={index}
