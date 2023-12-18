@@ -20,10 +20,10 @@ type RecipeDialogProps = {
   rating: number;
   ingredients: string[];
   steps: {
-    [key: string]: string;
+    [key: string]: string | undefined;
   };
   stepDescription: {
-    [key: string]: string[];
+    [key: string]: string[] | undefined;
   };
 };
 
@@ -83,7 +83,8 @@ const RecipeDialog = ({
                 className='ml-2 bg-[#FEBC0B] text-sm text-white md:text-xl'
                 size={'sm'}
                 onClick={() => {
-                  toast({ title: 'Tính năng này hiện đang được phát triển.' });
+                  // toast({ title: 'Tính năng này hiện đang được phát triển.' });
+                  console.log(typeof ingredients);
                 }}
               >
                 Gửi
@@ -139,7 +140,7 @@ const RecipeDialog = ({
                     <h3 className='pb-2 text-xl'>{value}</h3>
 
                     <ul className='list-inside list-disc pb-4 indent-6'>
-                      {stepDescription[key].map((item, index) => (
+                      {stepDescription?.[key]?.map((item, index) => (
                         <li key={index}>{item}</li>
                       ))}
                     </ul>

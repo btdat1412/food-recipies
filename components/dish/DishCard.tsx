@@ -19,10 +19,10 @@ type IngredientsCardProps = {
   kcal: number;
   ingredients: string[];
   steps: {
-    [key: string]: string;
+    [key: string]: string | undefined;
   };
   stepDescription: {
-    [key: string]: string[];
+    [key: string]: string[] | undefined;
   };
 };
 
