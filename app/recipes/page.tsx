@@ -4,7 +4,7 @@ import { Search as SearchButton } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Filter, ChevronDown, Plus } from 'lucide-react';
-import dishesData from '../../fakedb/dishes.json';
+import dishesData from '../../fakedb/recipes.json';
 import DishCard from '@/components/dish/DishCard';
 import { Card } from '@/components/ui/card';
 

@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Filter, ChevronDown } from 'lucide-react';
 import ingredientsData from '../../fakedb/ingredients.json';
-import dishesData from '../../fakedb/dishes.json';
+import dishesData from '../../fakedb/recipes.json';
 import DishCard from '@/components/dish/DishCard';
 
 let timeoutId: ReturnType<typeof setTimeout>;
