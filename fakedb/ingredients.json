@@ -3,560 +3,560 @@
     "id": 1,
     "type": "meat",
     "name": "Ức gà",
-    "image": "/images/ingredients/meats/chicken_breast.png",
+    "image": "https://utfs.io/f/3c39c994-dfdd-4eb6-b96f-3e861fd8b4a0-xvt149.png",
     "kcal": 165
   },
   {
     "id": 2,
     "type": "meat",
     "name": "Thăn bò",
-    "image": "/images/ingredients/meats/beef_steak.png",
+    "image": "https://utfs.io/f/a2f75fe9-dd62-4900-a1a7-601085c8facd-j1ubgt.png",
     "kcal": 271
   },
   {
     "id": 3,
     "type": "meat",
     "name": "Thịt lợn nạc vai",
-    "image": "/images/ingredients/meats/pork_loin.png",
+    "image": "https://utfs.io/f/9c02f2d1-5eee-428d-9538-582666aecba7-e6kndb.png",
     "kcal": 242
   },
   {
     "id": 4,
     "type": "meat",
     "name": "Ức gà tây",
-    "image": "/images/ingredients/meats/turkey_breast.png",
+    "image": "https://utfs.io/f/3c23aced-35cb-4570-b4f6-60a62b9040f9-6r5lvm.png",
     "kcal": 135
   },
   {
     "id": 5,
     "type": "meat",
     "name": "Thịt vịt",
-    "image": "/images/ingredients/meats/duck_meat.png",
+    "image": "https://utfs.io/f/f35159a6-5236-4bb9-9583-5c107f05c785-thucmn.png",
     "kcal": 337
   },
   {
     "id": 6,
     "type": "meat",
     "name": "Thịt cừu",
-    "image": "/images/ingredients/meats/lamb_meat.png",
+    "image": "https://utfs.io/f/bb27efcc-bf61-4579-a85b-3873396dcbe6-7qgs9s.png",
     "kcal": 294
   },
   {
     "id": 7,
     "type": "meat",
     "name": "Cá hồi",
-    "image": "/images/ingredients/meats/salmon.png",
+    "image": "https://utfs.io/f/c0b6a221-9004-480f-ad1d-f83a27a1ad82-f1m6xe.png",
     "kcal": 208
   },
   {
     "id": 8,
     "type": "meat",
     "name": "Cá ngừ",
-    "image": "/images/ingredients/meats/tuna.png",
+    "image": "https://utfs.io/f/1890daa9-5122-43df-9b48-bb38ab0d9f3c-24jxw.png",
     "kcal": 144
   },
   {
     "id": 9,
     "type": "meat",
     "name": "Tôm",
-    "image": "/images/ingredients/meats/shrimp.png",
+    "image": "https://utfs.io/f/7d0103b4-ea4f-4b90-a0d7-852703a02942-exnvv5.png",
     "kcal": 99
   },
   {
     "id": 10,
     "type": "meat",
     "name": "Thịt cua",
-    "image": "/images/ingredients/meats/crab_meat.png",
+    "image": "https://utfs.io/f/541b694c-cd3b-4d1b-a3be-8b53dbb5706a-mdf6xm.png",
     "kcal": 87
   },
   {
     "id": 11,
     "type": "meat",
     "name": "Ba chỉ lợn",
-    "image": "/images/ingredients/meats/bacon.png",
+    "image": "https://utfs.io/f/eb301028-1e5c-4804-9993-1f176cfaea4f-1jnw0z.png",
     "kcal": 541
   },
   {
     "id": 12,
     "type": "meat",
     "name": "Giăm bông",
-    "image": "/images/ingredients/meats/ham.png",
+    "image": "https://utfs.io/f/b17cb3f3-adf0-4052-a120-2b2a51815395-27is.png",
     "kcal": 145
   },
   {
     "id": 13,
     "type": "meat",
     "name": "Xúc xích",
-    "image": "/images/ingredients/meats/sausage.png",
+    "image": "https://utfs.io/f/7a744f0c-7a82-4db6-bd19-a8c5c8f26691-uyq3v7.png",
     "kcal": 301
   },
   {
     "id": 14,
     "type": "meat",
     "name": "Thịt bò băm nhuyễn",
-    "image": "/images/ingredients/meats/ground_beef.png",
+    "image": "https://utfs.io/f/f6fd255c-b23d-4f10-b8d6-258842f14bb7-92sbok.png",
     "kcal": 250
   },
   {
     "id": 15,
     "type": "meat",
     "name": "Thịt hươu",
-    "image": "/images/ingredients/meats/venison.png",
+    "image": "https://utfs.io/f/6a207b4c-dae6-41bd-85bc-486c5ccc65d7-5qytns.png",
     "kcal": 158
   },
   {
     "id": 16,
     "type": "meat",
     "name": "Thịt thỏ",
-    "image": "/images/ingredients/meats/rabbit.png",
+    "image": "https://utfs.io/f/6253ca3a-16e6-4820-835c-5a622ce8e962-fiufhi.png",
     "kcal": 173
   },
   {
     "id": 17,
     "type": "meat",
     "name": "Thịt dê",
-    "image": "/images/ingredients/meats/goat_meat.png",
+    "image": "https://utfs.io/f/dc8c4545-64ef-45cc-9dc3-35caa723240d-x2v0cx.png",
     "kcal": 143
   },
   {
     "id": 18,
     "type": "meat",
     "name": "Cá tuyết",
-    "image": "/images/ingredients/meats/cod.png",
+    "image": "https://utfs.io/f/d9f58dbc-a3a9-42fc-bcab-c0807d95643b-2454.png",
     "kcal": 82
   },
   {
     "id": 19,
     "type": "meat",
     "name": "Cá haddock",
-    "image": "/images/ingredients/meats/haddock.png",
+    "image": "https://utfs.io/f/7f5fbafd-96f8-4a71-80f8-f88a7439a876-bazari.png",
     "kcal": 90
   },
   {
     "id": 20,
     "type": "meat",
     "name": "Cá thu",
-    "image": "/images/ingredients/meats/mackerel.png",
+    "image": "https://utfs.io/f/e0e11a76-cc8f-4519-8915-e62c3d58908f-30mvw0.png",
     "kcal": 205
   },
   {
     "id": 21,
     "type": "spicy",
     "name": "Hạt tiêu đen",
-    "image": "/images/ingredients/spices/black_pepper.png",
+    "image": "https://utfs.io/f/d52d07f8-cdbf-41df-89d7-7404bc5143bb-xwszfm.png",
     "kcal": 251
   },
   {
     "id": 22,
     "type": "spicy",
     "name": "Quế",
-    "image": "/images/ingredients/spices/cinnamon.png",
+    "image": "https://utfs.io/f/f296f400-961a-4723-ba90-07e253ee2af5-qieo27.png",
     "kcal": 247
   },
   {
     "id": 23,
     "type": "spicy",
     "name": "Nghệ",
-    "image": "/images/ingredients/spices/turmeric.png",
+    "image": "https://utfs.io/f/b544257f-c5d8-4cf3-a65d-b487aba0ef1c-27nncz.png",
     "kcal": 354
   },
   {
     "id": 24,
     "type": "spicy",
     "name": "Gừng",
-    "image": "/images/ingredients/spices/ginger.png",
+    "image": "https://utfs.io/f/f34542b6-468b-42cb-a991-c4d20d20c2bd-klq5mg.png",
     "kcal": 80
   },
   {
     "id": 25,
     "type": "spicy",
     "name": "Hạt nhục đậu khấu",
-    "image": "/images/ingredients/spices/nutmeg.png",
+    "image": "https://utfs.io/f/5de9a97a-0463-43e9-ad84-14c5914a3cfd-h3pbdq.png",
     "kcal": 525
   },
   {
     "id": 26,
     "type": "spicy",
     "name": "Ớt paprika",
-    "image": "/images/ingredients/spices/paprika.png",
+    "image": "https://utfs.io/f/13ac7721-1991-485f-9429-55d4ffab9373-d586qc.png",
     "kcal": 289
   },
   {
     "id": 27,
     "type": "spicy",
     "name": "Đinh hương",
-    "image": "/images/ingredients/spices/cloves.png",
+    "image": "https://utfs.io/f/92a5d37c-5faa-4fd9-8158-aa117b284e3d-mg8bb6.png",
     "kcal": 274
   },
   {
     "id": 28,
     "type": "spicy",
     "name": "Hạt cumin",
-    "image": "/images/ingredients/spices/cumin.png",
+    "image": "https://utfs.io/f/7730813f-f02a-4fde-9604-1f13be9258b1-1kknmo.png",
     "kcal": 375
   },
   {
     "id": 29,
     "type": "spicy",
     "name": "Hạt ngò gai",
-    "image": "/images/ingredients/spices/coriander.png",
+    "image": "https://utfs.io/f/b726cb4f-7a7e-4a38-8e91-43979daf0c83-obm03j.png",
     "kcal": 298
   },
   {
     "id": 30,
     "type": "spicy",
     "name": "Thảo quả",
-    "image": "/images/ingredients/spices/cardamom.png",
+    "image": "https://utfs.io/f/42cf3271-b601-473c-89d3-45b8dd299d1b-4oa92.png",
     "kcal": 311
   },
   {
     "id": 31,
     "type": "spicy",
     "name": "Nhụy hoa nghệ tây",
-    "image": "/images/ingredients/spices/saffron.png",
+    "image": "https://utfs.io/f/f720ded6-85a2-4007-b306-d299151ddc45-uq98xv.png",
     "kcal": 310
   },
   {
     "id": 32,
     "type": "spicy",
     "name": "Hạt dầu dâu tây",
-    "image": "/images/ingredients/spices/fenugreek.png",
+    "image": "https://utfs.io/f/520fa89d-a3c1-4cf0-98f4-87d199d4a926-sz6t52.png",
     "kcal": 323
   },
   {
     "id": 33,
     "type": "spicy",
     "name": "Hạt mù tạt",
-    "image": "/images/ingredients/spices/mustard_seeds.png",
+    "image": "https://utfs.io/f/6da4b059-a60b-4d3a-b37a-7b8c7972b0e8-t2djrh.png",
     "kcal": 508
   },
   {
     "id": 34,
     "type": "spicy",
     "name": "Hạt hậu tây",
-    "image": "/images/ingredients/spices/fennel_seeds.png",
+    "image": "https://utfs.io/f/38df1b91-7a50-4abc-a07b-5ec2e3809e48-vidirt.png",
     "kcal": 345
   },
   {
     "id": 35,
     "type": "spicy",
     "name": "Hoa hồi",
-    "image": "/images/ingredients/spices/star_anise.png",
+    "image": "https://utfs.io/f/0fbed38b-5445-4c33-a9d8-09115808b353-z3jsap.png",
     "kcal": 337
   },
   {
     "id": 36,
     "type": "spicy",
     "name": "Bột ớt",
-    "image": "/images/ingredients/spices/chili_powder.png",
+    "image": "https://utfs.io/f/480cac71-0f49-4a9f-a184-7ee391cdfcd4-fhsqs7.png",
     "kcal": 282
   },
   {
     "id": 37,
     "type": "spicy",
     "name": "Vanilla",
-    "image": "/images/ingredients/spices/vanilla.png",
+    "image": "https://utfs.io/f/cc1ceeea-c26d-4b1a-ad3f-46937698c4df-3us6t7.png",
     "kcal": 288
   },
   {
     "id": 38,
     "type": "spicy",
     "name": "Thì là",
-    "image": "/images/ingredients/spices/thyme.png",
+    "image": "https://utfs.io/f/c8cc5204-643a-458e-a81c-380b678dc340-1tp3vh.png",
     "kcal": 276
   },
   {
     "id": 39,
     "type": "spicy",
     "name": "Hương nghệ",
-    "image": "/images/ingredients/spices/rosemary.png",
+    "image": "https://utfs.io/f/51d39637-3d75-4024-85d3-5af8210beb49-12yuza.png",
     "kcal": 131
   },
   {
     "id": 40,
     "type": "spicy",
     "name": "Húng quế",
-    "image": "/images/ingredients/spices/oregano.png",
+    "image": "https://utfs.io/f/721f3a6c-cf4b-440d-b43b-f7fe7bf274d4-jy3thf.png",
     "kcal": 265
   },
   {
     "id": 41,
     "type": "other",
     "name": "Gạo",
-    "image": "/images/ingredients/others/rice.png",
+    "image": "https://utfs.io/f/881679e0-dc8f-46e0-83e9-5df594b2059d-230t5.png",
     "kcal": 130
   },
   {
     "id": 42,
     "type": "other",
     "name": "Mì Ý",
-    "image": "/images/ingredients/others/pasta.png",
+    "image": "https://utfs.io/f/23f2eb6c-690e-49e2-91e0-d7dca50e5a08-1rdcb3.png",
     "kcal": 131
   },
   {
     "id": 43,
     "type": "other",
     "name": "Bánh mì",
-    "image": "/images/ingredients/others/bread.png",
+    "image": "https://utfs.io/f/6634041c-bb24-4cff-91c8-c70c8f6c390b-1jyry0.png",
     "kcal": 265
   },
   {
     "id": 44,
     "type": "other",
     "name": "Khoai tây",
-    "image": "/images/ingredients/others/potatoes.png",
+    "image": "https://utfs.io/f/b9bbf760-1d72-4717-b03b-9ea0a459bc91-cpvfv9.png",
     "kcal": 77
   },
   {
     "id": 45,
     "type": "other",
     "name": "Bún",
-    "image": "/images/ingredients/others/noodles.png",
+    "image": "https://utfs.io/f/6fe6d58c-7b81-4839-9fee-8b5543d91a3e-z4xc04.png",
     "kcal": 138
   },
   {
     "id": 46,
     "type": "other",
     "name": "Phô mai",
-    "image": "/images/ingredients/others/cheese.png",
+    "image": "https://utfs.io/f/f41cfca3-83c8-4340-ba98-f065fe0fd7fc-mim7u1.png",
     "kcal": 402
   },
   {
     "id": 47,
     "type": "other",
     "name": "Trứng",
-    "image": "/images/ingredients/others/eggs.png",
+    "image": "https://utfs.io/f/2f49d3c6-7ed1-47f7-9e88-02c7fda705ea-1uolq.png",
     "kcal": 155
   },
   {
     "id": 48,
     "type": "other",
     "name": "Sữa",
-    "image": "/images/ingredients/others/milk.png",
+    "image": "https://utfs.io/f/c2cb4866-119f-4d85-83c1-c4db466b06f2-1zu3f.png",
     "kcal": 42
   },
   {
     "id": 49,
     "type": "other",
     "name": "Dầu ô liu",
-    "image": "/images/ingredients/others/olive_oil.png",
+    "image": "https://utfs.io/f/30adf2ce-8263-4121-be2e-b11e93f77519-r4yw0i.png",
     "kcal": 884
   },
   {
     "id": 50,
     "type": "other",
     "name": "Đường",
-    "image": "/images/ingredients/others/sugar.png",
+    "image": "https://utfs.io/f/6fd53864-278e-4311-a9b9-9c0965e3e8fa-1td8hi.png",
     "kcal": 387
   },
   {
     "id": 51,
     "type": "other",
     "name": "Muối",
-    "image": "/images/ingredients/others/salt.png",
+    "image": "https://utfs.io/f/04a92f11-e97c-4e21-89f1-7ff989c8b434-23i3a.png",
     "kcal": 0
   },
   {
     "id": 52,
     "type": "other",
     "name": "Tiêu",
-    "image": "/images/ingredients/others/pepper.png",
+    "image": "https://utfs.io/f/7127adeb-99ec-4698-b8ab-082f2546dd26-geh9su.png",
     "kcal": 251
   },
   {
     "id": 53,
     "type": "other",
     "name": "Nước tương",
-    "image": "/images/ingredients/others/soy_sauce.png",
+    "image": "https://utfs.io/f/17ab03d2-a49a-4fb2-a85a-b9ad5736f723-lva353.png",
     "kcal": 53
   },
   {
     "id": 54,
     "type": "other",
     "name": "Giấm",
-    "image": "/images/ingredients/others/vinegar.png",
+    "image": "https://utfs.io/f/0454d484-ad6b-4938-ba61-5a5cb7aa21bc-7n2i26.png",
     "kcal": 18
   },
   {
     "id": 55,
     "type": "other",
     "name": "Mật ong",
-    "image": "/images/ingredients/others/honey.png",
+    "image": "https://utfs.io/f/4f948ce1-01ec-4c8d-8296-84d15d9861e1-1n7tbv.png",
     "kcal": 304
   },
   {
     "id": 56,
     "type": "other",
     "name": "Sữa chua",
-    "image": "/images/ingredients/others/yogurt.png",
+    "image": "https://utfs.io/f/6a638b91-e869-4c52-83b4-d1a11600b362-bzqd6i.png",
     "kcal": 61
   },
   {
     "id": 57,
     "type": "other",
     "name": "Bơ",
-    "image": "/images/ingredients/others/butter.png",
+    "image": "https://utfs.io/f/de6d2474-f946-4e02-ba50-abf221b74ae5-ms8mww.png",
     "kcal": 717
   },
   {
     "id": 58,
     "type": "other",
     "name": "Bột cacao",
-    "image": "/images/ingredients/others/cocoa_powder.png",
+    "image": "https://utfs.io/f/2f6968cf-266c-4106-92d6-433278cfcae3-3x8qpb.png",
     "kcal": 228
   },
   {
     "id": 59,
     "type": "other",
     "name": "Nước chanh",
-    "image": "/images/ingredients/others/lemon_juice.png",
+    "image": "https://utfs.io/f/65d779aa-14b5-4d1b-989c-667b90228a9e-ho42r0.png",
     "kcal": 22
   },
   {
     "id": 60,
     "type": "other",
     "name": "Cà chua đóng hộp",
-    "image": "/images/ingredients/others/canned_tomatoes.png",
+    "image": "https://utfs.io/f/b02b82d7-646b-4cf3-adb9-07bcd42d3922-4s9bwa.png",
     "kcal": 18
   },
   {
     "id": 61,
     "type": "vegetable",
     "name": "Bông Cải Xanh",
-    "image": "/images/ingredients/vegetables/brocolli.png",
+    "image": "https://utfs.io/f/36c61060-40ea-4640-8f85-c46281ad8c17-61o5ry.png",
     "kcal": 34
   },
   {
     "id": 62,
     "type": "vegetable",
     "name": "Rau Mòng Tơi",
-    "image": "/images/ingredients/vegetables/spinach.png",
+    "image": "https://utfs.io/f/2f554d64-dde8-4b81-9fec-128a9e839a11-x5eccc.png",
     "kcal": 23
   },
   {
     "id": 63,
     "type": "vegetable",
     "name": "Cà Rốt",
-    "image": "/images/ingredients/vegetables/carrots.png",
+    "image": "https://utfs.io/f/3f67a112-9f1f-4c58-acda-b16c8e5478d2-96205s.png",
     "kcal": 41
   },
   {
     "id": 64,
     "type": "vegetable",
     "name": "Cà Chua",
-    "image": "/images/ingredients/vegetables/tomatoes.png",
+    "image": "https://utfs.io/f/fc225e84-5bd4-4f4e-83be-08bcd2a7d448-hd64lk.png",
     "kcal": 18
   },
   {
     "id": 65,
     "type": "vegetable",
     "name": "Dưa Leo",
-    "image": "/images/ingredients/vegetables/cucumbers.png",
+    "image": "https://utfs.io/f/5a77574b-6a3b-4a24-9587-70b24113f61b-5c7zyl.png",
     "kcal": 15
   },
   {
     "id": 66,
     "type": "vegetable",
     "name": "Ớt Chuông",
-    "image": "/images/ingredients/vegetables/bell_peppers.png",
+    "image": "https://utfs.io/f/cb38fc2a-3765-4606-8bb1-47a265ef543e-m65l7v.png",
     "kcal": 20
   },
   {
     "id": 67,
     "type": "vegetable",
     "name": "Súp Lơ Xanh",
-    "image": "/images/ingredients/vegetables/cauliflower.png",
+    "image": "https://utfs.io/f/1ca6a2e8-f565-46ce-92eb-cac649ea7ee8-97ef3j.png",
     "kcal": 25
   },
   {
     "id": 68,
     "type": "vegetable",
     "name": "Măng Tây",
-    "image": "/images/ingredients/vegetables/asparagus.png",
+    "image": "https://utfs.io/f/11f7d1a0-ef6e-48ed-b156-bc00ed007ff5-o75fyl.png",
     "kcal": 20
   },
   {
     "id": 69,
     "type": "vegetable",
     "name": "Đậu Xanh",
-    "image": "/images/ingredients/vegetables/green_beans.png",
+    "image": "https://utfs.io/f/ed99ac1e-41fc-46a6-aef9-e922a44f07cf-vkygs9.png",
     "kcal": 31
   },
   {
     "id": 70,
     "type": "vegetable",
     "name": "Đậu Hà Lan",
-    "image": "/images/ingredients/vegetables/peas.png",
+    "image": "https://utfs.io/f/14d48d52-05f1-4cc1-b231-7b0b9a367c7f-21ntz.png",
     "kcal": 81
   },
   {
     "id": 71,
     "type": "vegetable",
     "name": "Rau Diếp",
-    "image": "/images/ingredients/vegetables/lettuce.png",
+    "image": "https://utfs.io/f/0c082687-1186-403b-ae4c-22660cc02808-14pwzi.png",
     "kcal": 15
   },
   {
     "id": 72,
     "type": "vegetable",
     "name": "Bí Xanh",
-    "image": "/images/ingredients/vegetables/zucchini.png",
+    "image": "https://utfs.io/f/64968810-f5c2-4d69-a0cd-15dcab6448e4-pu1uc7.png",
     "kcal": 17
   },
   {
     "id": 73,
     "type": "vegetable",
     "name": "Hành Tím",
-    "image": "/images/ingredients/vegetables/onion.png",
+    "image": "https://utfs.io/f/b67fb65c-1581-40dd-9dc2-69e95b3432c1-1r1n0p.png",
     "kcal": 40
   },
   {
     "id": 74,
     "type": "vegetable",
     "name": "Củ Dền",
-    "image": "/images/ingredients/vegetables/beetroot.png",
+    "image": "https://utfs.io/f/55c89386-d1ba-4b2d-92b6-8e82764d1a78-nusw7o.png",
     "kcal": 43
   },
   {
     "id": 75,
     "type": "vegetable",
     "name": "Cà Tím",
-    "image": "/images/ingredients/vegetables/eggplant.png",
+    "image": "https://utfs.io/f/b64c96fb-58ae-4cf8-9567-1b72e1c4110b-1hza0q.png",
     "kcal": 25
   },
   {
     "id": 76,
     "type": "vegetable",
     "name": "Hành Tỏi",
-    "image": "/images/ingredients/vegetables/garlic.png",
+    "image": "https://utfs.io/f/f9ff228f-7354-42dd-937e-9c4a24e9ff4b-kq1umq.png",
     "kcal": 149
   },
   {
     "id": 77,
     "type": "vegetable",
     "name": "Cải Xoong",
-    "image": "/images/ingredients/vegetables/kale.png",
+    "image": "https://utfs.io/f/3fd33781-5dab-403b-a8fd-3ff08ae98aeb-1ye6n.png",
     "kcal": 49
   },
   {
     "id": 78,
     "type": "vegetable",
     "name": "Cần Tây",
-    "image": "/images/ingredients/vegetables/celery.png",
+    "image": "https://utfs.io/f/55fb0f11-7d0c-4a7d-81d2-6c7fbe8f628a-mk54pq.png",
     "kcal": 16
   },
   {
     "id": 79,
     "type": "vegetable",
     "name": "Nấm",
-    "image": "/images/ingredients/vegetables/mushrooms.png",
+    "image": "https://utfs.io/f/6d5d3801-bb18-4154-ba73-9e7eb9173bc7-67yrkr.png",
     "kcal": 22
   },
   {
     "id": 80,
     "type": "vegetable",
     "name": "Bắp",
-    "image": "/images/ingredients/vegetables/corn.png",
+    "image": "https://utfs.io/f/ef89ef54-5411-4423-87e2-d811d2c410b6-1tktk.png",
     "kcal": 86
   }
 ]
