@@ -21,7 +21,7 @@ const Header = () => {
   }, [theme]);
 
   return (
-    <header className='z-50 flex w-full items-center justify-between bg-white px-2 dark:bg-darkbg md:px-6 md:py-2'>
+    <header className='z-50 flex w-full items-center justify-between bg-white px-2 dark:bg-darkbg md:px-12 md:py-2'>
       <div className='flex gap-5'>
         <Image
           src={logoSrc}

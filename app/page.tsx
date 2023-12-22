@@ -99,7 +99,7 @@ export default function Home() {
   }, [selectedIngredients]);
 
   return (
-    <div className='flex h-full justify-between gap-9 px-2 pt-4 md:px-6 md:pt-8'>
+    <div className='flex h-full justify-between gap-9 px-2 pt-4 md:px-12 md:pt-8'>
       <div className='relative flex h-full w-full flex-col gap-6'>
         <div className='relative flex flex-col gap-4 md:flex-row md:items-center md:justify-between'>
           <h1 className='text-3xl'>Chọn Nguyên Liệu</h1>
@@ -140,32 +140,32 @@ export default function Home() {
           <TabsList className='flex justify-center gap-8 rounded-none border-b border-[#aaaaaa] bg-inherit px-0 text-left text-foreground dark:border-[#393c49] md:justify-start'>
             <TabsTrigger
               value='vegetable'
-              className='data-[state=active]:border-highlight data-[state=active]:text-highlight px-0 py-0.5 pr-1 text-left text-2xl data-[state=active]:rounded-none data-[state=active]:border-b-[3px]'
+              className='px-0 py-0.5 pr-1 text-left text-2xl data-[state=active]:rounded-none data-[state=active]:border-b-[3px] data-[state=active]:border-highlight data-[state=active]:text-highlight'
             >
               Rau
             </TabsTrigger>
             <TabsTrigger
               value='meat'
-              className='data-[state=active]:border-highlight data-[state=active]:text-highlight px-0 py-0.5 pr-1 text-left text-2xl data-[state=active]:rounded-none data-[state=active]:border-b-[3px]'
+              className='px-0 py-0.5 pr-1 text-left text-2xl data-[state=active]:rounded-none data-[state=active]:border-b-[3px] data-[state=active]:border-highlight data-[state=active]:text-highlight'
             >
               Thịt
             </TabsTrigger>
             <TabsTrigger
               value='spice'
-              className='data-[state=active]:border-highlight data-[state=active]:text-highlight px-0 py-0.5 pr-1 text-left text-2xl data-[state=active]:rounded-none data-[state=active]:border-b-[3px]'
+              className='px-0 py-0.5 pr-1 text-left text-2xl data-[state=active]:rounded-none data-[state=active]:border-b-[3px] data-[state=active]:border-highlight data-[state=active]:text-highlight'
             >
               Gia Vị
             </TabsTrigger>
             <TabsTrigger
               value='other'
-              className='data-[state=active]:border-highlight data-[state=active]:text-highlight px-0 py-0.5 pr-1 text-left text-2xl data-[state=active]:rounded-none data-[state=active]:border-b-[3px]'
+              className='px-0 py-0.5 pr-1 text-left text-2xl data-[state=active]:rounded-none data-[state=active]:border-b-[3px] data-[state=active]:border-highlight data-[state=active]:text-highlight'
             >
               Khác
             </TabsTrigger>
           </TabsList>
           <TabsContent value='vegetable'>
             <Card className='flex-1 border-none'>
-              <CardContent className='grid grid-cols-2 gap-4 bg-background p-0 md:grid-cols-4 '>
+              <CardContent className='grid-custom gap-6 bg-background p-0 '>
                 {filteredVegetables.map((item, index) => (
                   <IngredientsCard
                     key={index}
