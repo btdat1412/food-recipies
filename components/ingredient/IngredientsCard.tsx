@@ -29,23 +29,18 @@ const IngredientsCard = ({
   };
 
   const cardClasses = clsx(
-    'mt-auto flex h-56 w-44 flex-col rounded-2xl md:h-[226px] md:w-48',
+    'absolute bottom-0 flex h-56 flex-col rounded-2xl md:min-h-[226px] w-full transition-bg duration-300',
     {
-      'border-2 border-blue-500 shadow-lg': isSelected,
+      'bg-hightlight': isSelected,
+      'bg-default': !isSelected,
     }
   );
   return (
     <div
-      className='relative mt-4 flex h-60 w-44 cursor-pointer flex-col items-center bg-inherit md:mt-6 md:h-[260px] md:w-48'
+      className='relative mt-4 flex h-60 cursor-pointer flex-col items-center bg-inherit md:mt-6 md:min-h-[260px]'
       onClick={handleCardClick}
     >
-      <Image
-        src={image}
-        alt={name}
-        width={150}
-        height={150}
-        className='absolute top-0 z-10'
-      />
+      <Image src={image} alt={name} width={130} height={130} className='z-10' />
       <Card className={cardClasses}>
         <CardContent className='mt-auto pb-0'>
           <CardHeader className='flex flex-col items-center px-0 pb-6 text-center md:pb-9'>
