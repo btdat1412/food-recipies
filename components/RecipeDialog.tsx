@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/dialog';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
-import { Minus } from 'lucide-react';
+import { Minus, Play } from 'lucide-react';
 import StarRatings from 'react-star-ratings';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
@@ -122,7 +122,21 @@ const RecipeDialog = ({
                   ))}
                 </ul>
 
-                <h3 className='text-2xl text-highlight'>Công thức</h3>
+                <div className='mb-2 flex items-center'>
+                  <h3 className='text-2xl text-highlight'>Công thức</h3>
+
+                  <Button
+                    className='ml-12 animate-bounce bg-highlight text-sm text-white md:text-xl'
+                    onClick={() => {
+                      toast({
+                        title: 'Tính năng này hiện đang được phát triển.',
+                      });
+                    }}
+                  >
+                    Xem chi tiết các bước
+                    <Play className='ml-1 h-4 w-4 md:h-6 md:w-6' />
+                  </Button>
+                </div>
               </div>
             </div>
 
