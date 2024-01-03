@@ -4,13 +4,10 @@ import {
   Dialog,
   DialogContent,
   DialogFooter,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Card } from '@/components/ui/card';
 import { Plus, Image, Video } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -30,7 +27,7 @@ export function ShareDialog() {
       </DialogTrigger>
 
       <DialogContent className='max-h-screen overflow-auto sm:max-w-[60vw]'>
-        <div className='flex justify-center pb-3'>
+        <div className='flex justify-center pb-6'>
           <Input
             placeholder='Tên món ăn'
             className='w-4/5 rounded-none border-0 border-b-4 border-highlight text-center text-3xl text-highlight placeholder:text-highlight placeholder:opacity-75 lg:w-1/3'
@@ -39,7 +36,6 @@ export function ShareDialog() {
 
         {/* 1st row */}
         <div className='grid grid-cols-1 gap-0 gap-y-4 xl:grid-cols-4'>
-          {/* 1st column */}
           <div className='flex justify-center'>
             <Card
               className='flex aspect-square w-1/2 cursor-pointer select-none flex-col items-center justify-center rounded-2xl border-dashed border-highlight text-highlight xl:w-full'
@@ -53,7 +49,6 @@ export function ShareDialog() {
             </Card>
           </div>
 
-          {/* 2nd column */}
           <div className='col-span-3 grid grid-cols-1 xl:grid-cols-12'>
             <div></div>
 
@@ -76,16 +71,15 @@ export function ShareDialog() {
 
         {/* 2nd row */}
         <div className='grid grid-cols-1 gap-0 gap-y-4 xl:grid-cols-4'>
-          {/* 1st column (empty column) */}
-          <div className='bg-red-500'>DP</div>
+          <div></div>
 
-          {/* 2nd columns */}
           <div className='col-span-3 grid grid-cols-12'>
-            <div className='bg-green-500'>DP</div>
+            <div></div>
 
-            <div className='col-span-11 bg-yellow-500'>
+            <div className='col-span-11'>
               <h3 className='pb-2 text-2xl text-highlight'>Nguyên liệu</h3>
 
+              {/* Ingredients list */}
               <ul>
                 <li>
                   <Input
@@ -107,24 +101,24 @@ export function ShareDialog() {
                 <Plus />
               </Button>
 
-              <h3 className='pb-2 pt-6 text-2xl text-highlight'>Công thức</h3>
+              <h3 className='pb-2 pt-8 text-2xl text-highlight'>Công thức</h3>
             </div>
           </div>
         </div>
 
         {/* 3rd row */}
         <div className='grid grid-cols-1 gap-0 gap-y-4 xl:grid-cols-4'>
-          {/* 1st column (empty column) */}
-          <div className='bg-red-500'>DP</div>
+          <div></div>
 
-          <div className='col-span-3 bg-green-500'>
+          <div className='col-span-3'>
+            {/* Steps list */}
             <ul>
               <li className='grid grid-cols-12'>
-                <div className='justify-self-center bg-green-500'>
+                <div className='justify-self-center'>
                   <Badge className='text-xl'>1</Badge>
                 </div>
 
-                <div className='col-span-11 bg-yellow-500'>
+                <div className='col-span-11'>
                   <Input
                     placeholder='Tên bước'
                     className='mb-4 rounded-none border-0 border-b-2 border-white p-2 text-xl md:p-0'
@@ -157,12 +151,12 @@ export function ShareDialog() {
 
         {/* 4th row */}
         <div className='grid grid-cols-1 gap-0 gap-y-4 xl:grid-cols-4'>
-          <div className='bg-red-500'>DP</div>
+          <div></div>
 
           <div className='col-span-3 grid grid-cols-12'>
-            <div className='bg-green-500'>DP</div>
+            <div></div>
 
-            <div className='col-span-11 bg-yellow-500'>
+            <div className='col-span-11'>
               <Button
                 variant={'default'}
                 className='bg-transparent text-highlight hover:bg-highlight hover:text-white'
