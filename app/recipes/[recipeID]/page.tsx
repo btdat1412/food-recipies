@@ -1,13 +1,12 @@
-type RecipeDetailParams = {
+import { db } from '../../../lib/prismaDb';
+import RecipeDetailPage from '@/components/recipe/RecipeDetailPage';
+
+export default async function RecipeDetail({
+  params,
+}: {
   params: { recipeID: string };
-};
+}) {
+  const recipes = await db.recipe.findMany();
 
-const RecipeDetail = ({ params }: RecipeDetailParams) => {
-  return (
-    <div>
-      <h1>Recipe ID: {params.recipeID}</h1>
-    </div>
-  );
-};
-
-export default RecipeDetail;
+  return <RecipeDetailPage recipeID={params.recipeID} />;
+}
