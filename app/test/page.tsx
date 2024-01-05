@@ -1,5 +1,10 @@
-const Test = () => {
-  return <div className='te dark:text-red-400'>Hế lô</div>;
-};
+import TestComponent from '../../components/TestComponent';
+import { db } from '../../lib/prismaDb';
 
-export default Test;
+export default async function Test() {
+  const ingredients = await db.ingredient.findMany();
+
+  const recipes = await db.recipe.findMany();
+
+  return <TestComponent ingredients={ingredients} recipes={recipes} />;
+}
