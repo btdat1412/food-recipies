@@ -58,12 +58,12 @@ const RecipeDialog = ({
 
             <h3 className='pb-2 pt-2 text-2xl text-highlight'>Người chia sẻ</h3>
 
-            <div className='flex items-center justify-between pb-6'>
+            <div className='flex items-center justify-between space-x-2 pb-6'>
               <Image
                 src='/images/avatar_placeholder.png'
                 alt='avatar'
-                width={50}
-                height={50}
+                width={40}
+                height={40}
                 className='hidden md:block'
               />
               <Minus />

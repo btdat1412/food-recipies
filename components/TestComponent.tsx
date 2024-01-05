@@ -17,6 +17,7 @@ const TestComponent = ({
     <div>
       {recipes.map((recipe: any) => (
         <div key={recipe.id}>
+          <h2>{recipe.id}</h2>
           <h2>{recipe.name}</h2>
           <img src={recipe.image} alt={recipe.name} />
           <p>Calories: {recipe.kcal}</p>

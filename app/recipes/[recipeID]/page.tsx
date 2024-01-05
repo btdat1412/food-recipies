@@ -6,7 +6,15 @@ export default async function RecipeDetail({
 }: {
   params: { recipeID: string };
 }) {
-  const recipes = await db.recipe.findMany();
+  const recipe = await db.recipe.findUnique({
+    where: {
+      id: params.recipeID,
+    },
+  });
 
-  return <RecipeDetailPage recipeID={params.recipeID} />;
+  if (!recipe) {
+    return <div>Loading...</div>;
+  }
+
+  return <RecipeDetailPage recipe={recipe} />;
 }
