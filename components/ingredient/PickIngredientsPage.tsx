@@ -99,7 +99,7 @@ export default function PickIngredientsPage({
   return (
     <div className='flex h-full justify-between gap-9 px-2 pt-4 md:px-12 md:pt-8'>
       <div className='relative flex h-full w-full flex-col gap-6'>
-        <div className='relative flex flex-col gap-4 md:flex-row md:items-center md:justify-between'>
+        <div className='flex flex-col gap-4 md:flex-row md:items-center md:justify-between '>
           <h1 className='text-3xl'>Chọn Nguyên Liệu</h1>
           <div className='relative'>
             <SearchButton

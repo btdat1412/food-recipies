@@ -4,7 +4,6 @@ import { Barlow } from 'next/font/google';
 import { ThemeProvider } from '../components/providers/ThemeProvider';
 import Header from '../components/layout/Header';
 import { Toaster } from '@/components/ui/toaster';
-import '@uploadthing/react/styles.css';
 
 const barlow = Barlow({ weight: '600', subsets: ['latin'] });
 
