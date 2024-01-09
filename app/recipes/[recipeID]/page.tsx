@@ -16,5 +16,16 @@ export default async function RecipeDetail({
     return <div>Loading...</div>;
   }
 
-  return <RecipeDetailPage recipe={recipe} />;
+  // Convert the rating quantity from a BigInt (string) to a number (int
+  const quantity = Number(recipe.rating.quantity);
+
+  const modifiedRecipe = {
+    ...recipe,
+    rating: {
+      ...recipe.rating,
+      quantity: quantity,
+    },
+  };
+
+  return <RecipeDetailPage recipe={modifiedRecipe} />;
 }
