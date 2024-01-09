@@ -10,7 +10,7 @@ import {
 } from '../ui/card';
 import StarRatings from 'react-star-ratings';
 
-import RecipeDialog from '@/components/RecipeDialog';
+import RecipeDialog from '@/components/recipe/RecipeDialog';
 
 type IngredientsCardProps = {
   image: string;
