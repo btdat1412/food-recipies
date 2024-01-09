@@ -19,14 +19,13 @@ const IngredientsPick = ({
 
   return (
     <div className='flex h-full flex-col'>
-      <div className='flex flex-none items-center justify-between'>
+      <div className='flex flex-none items-center justify-between px-2'>
         <p>Nguyên liệu</p>
-        <div className='flex items-center gap-2 md:gap-[18px]'>
-          <p>Khối lượng(gam)</p>
-          <Trash className='border-highlight text-highlight hidden h-8 w-8 rounded-sm border p-2 md:block md:h-12 md:w-12 md:rounded-xl md:p-[14px] md:opacity-0' />
+        <div className='flex items-center justify-between gap-2'>
+          <p className='pr-4'>Bỏ chọn</p>
         </div>
       </div>
-      <div className='h-full grow overflow-y-scroll border-b border-t border-[#c4c4c4] py-6'>
+      <div className='h-full grow overflow-y-scroll border-b border-t border-[#c4c4c4] py-6 pr-3'>
         <div className='flex flex-col gap-6'>
           {selectedIngredients.map((ingredient, index) => (
             <div key={index} className='flex items-center justify-between'>
@@ -43,12 +42,9 @@ const IngredientsPick = ({
                 </div>
               </div>
               <div className='flex items-center gap-2 md:gap-[18px]'>
-                <div className='flex h-12 w-20 items-center justify-center rounded-xl bg-[#f4bdb4] dark:bg-background md:w-[114px]'>
-                  100
-                </div>
                 <Trash
                   onClick={() => onRemove(ingredient)}
-                  className='border-highlight text-highlight h-8 w-8 cursor-pointer rounded-sm border p-2 md:h-12 md:w-12 md:rounded-xl md:p-[14px]'
+                  className='h-8 w-8 cursor-pointer rounded-sm border border-highlight p-2 text-highlight md:h-12 md:w-12 md:rounded-xl md:p-[14px]'
                 />
               </div>
             </div>
@@ -67,7 +63,7 @@ const IngredientsPick = ({
           </p>
         </div>
         <Button
-          className='bg-highlight mt-6 text-lg text-white md:text-xl'
+          className='mt-6 bg-highlight text-lg text-white md:text-xl'
           size={'xl'}
           onClick={() =>
             router.push(
