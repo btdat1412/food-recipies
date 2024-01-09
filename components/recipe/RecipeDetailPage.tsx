@@ -45,31 +45,44 @@ export default function RecipeDetailPage({ recipe }: RecipeDetailPageParams) {
         {recipe.steps.map((step: any, index: any) => (
           <li
             key={index}
-            className={`mb-16 flex items-center space-x-8 ${
-              index % 2 === 0 ? 'flex-row' : 'flex-row-reverse space-x-reverse'
+            className={`mb-28 flex items-center space-x-8 ${
+              index % 2 === 0
+                ? 'flex-col lg:flex-row'
+                : 'flex-col lg:flex-row-reverse lg:space-x-reverse'
             }`}
           >
-            <div className=''>
+            <div className='flex flex-col items-center lg:items-start'>
               <Badge className='text-4xl font-extrabold'>{index + 1}</Badge>
 
-              <p className='mb-4 mt-4 text-3xl font-bold'>{step.title}</p>
+              <p className='mb-4 mt-4 text-center text-3xl font-bold'>
+                {step.title}
+              </p>
 
-              <ul className='list-inside list-disc pb-6 indent-6'>
+              <ul className='list-outside list-disc pb-6'>
                 {step.descriptions.map((desc: any, descIndex: any) => (
                   <li key={descIndex}>{desc}</li>
                 ))}
               </ul>
             </div>
 
-            <Image
-              src={step.imageUrl}
-              alt={`Image of step ${index + 1}`}
-              width={600}
-              height={400}
-            />
+            <div>
+              <Image
+                src={step.imageUrl}
+                alt={`Image of step ${index + 1}`}
+                width={700}
+                height={400}
+                className='rounded-md object-cover'
+              />
+            </div>
           </li>
         ))}
       </ul>
+
+      <h1 className='mb-16 text-4xl text-highlight'>Ý kiến (5)</h1>
+
+      <div className='grid grid-cols-2 gap-4'>
+        
+      </div>
     </div>
   );
 }
