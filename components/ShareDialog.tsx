@@ -9,7 +9,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
-import { Plus, Image, Video } from 'lucide-react';
+import { Plus, ImagePlus, Video } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
@@ -43,7 +43,7 @@ export function ShareDialog() {
                 toast({ title: 'Tính năng này hiện đang được phát triển.' });
               }}
             >
-              <Image className='mb-2 h-6 w-6' />
+              <ImagePlus className='mb-2 h-6 w-6' />
 
               <p className='text-sm lg:text-base'>Thêm hình ảnh món ăn</p>
             </Card>
@@ -137,7 +137,7 @@ export function ShareDialog() {
                       });
                     }}
                   >
-                    <Image className='mb-2 h-6 w-6' />
+                    <ImagePlus className='mb-2 h-6 w-6' />
 
                     <p className='text-sm lg:text-base'>
                       Thêm hình ảnh cho bước 1
