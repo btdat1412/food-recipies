@@ -25,6 +25,8 @@ type RecipeDialogProps = {
   stepDescription: {
     [key: string]: string[] | undefined;
   };
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
 };
 
 const RecipeDialog = ({
@@ -34,15 +36,13 @@ const RecipeDialog = ({
   ingredients,
   steps,
   stepDescription,
+  open,
+  onOpenChange,
 }: RecipeDialogProps) => {
   const { toast } = useToast();
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <p className='w-full cursor-pointer text-center'>Xem chi tiết</p>
-      </DialogTrigger>
-
+    <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className='max-h-screen overflow-auto sm:max-w-[80vw]'>
         {/* name */}
         <DialogHeader className='pb-3'>
