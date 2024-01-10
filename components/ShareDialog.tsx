@@ -9,13 +9,98 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
-import { Plus, ImagePlus, Video } from 'lucide-react';
+import { Plus, ImagePlus, Video, X, Trash2 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
+import { UploadDropzone } from '@/lib/uploadThing';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+
+type Ingredient = {
+  name: string;
+  quantity: string;
+};
+
+type Step = {
+  title: string;
+  description: string;
+  imageUrl: string;
+};
 
 export function ShareDialog() {
   const { toast } = useToast();
+  const [imageUrl, setImageUrl] = useState<string>('');
+  const [ingredients, setIngredients] = useState<Ingredient[]>([
+    { name: '', quantity: '' },
+  ]);
+
+  const [steps, setSteps] = useState<Step[]>([
+    { title: '', description: '', imageUrl: '' },
+  ]);
+
+  const handleDeleteImage = () => {
+    setImageUrl('');
+  };
+
+  const handleIngredientChange = (
+    index: number,
+    field: keyof Ingredient,
+    value: string
+  ) => {
+    const newIngredients = ingredients.map((ingredient, i) => {
+      if (i === index) {
+        return { ...ingredient, [field]: value };
+      }
+      return ingredient;
+    });
+
+    setIngredients(newIngredients);
+  };
+
+  const handleAddIngredient = () => {
+    setIngredients([...ingredients, { name: '', quantity: '' }]);
+  };
+
+  const handleRemoveIngredient = (index: number) => {
+    const newIngredients = ingredients.filter((_, i) => i !== index);
+    setIngredients(newIngredients);
+  };
+
+  const handleStepChange = (
+    index: number,
+    field: keyof Step,
+    value: string
+  ) => {
+    const newSteps = steps.map((step, i) =>
+      i === index ? { ...step, [field]: value } : step
+    );
+    setSteps(newSteps);
+  };
+
+  // Function to add a new step
+  const handleAddStep = () => {
+    setSteps([...steps, { title: '', description: '', imageUrl: '' }]);
+  };
+
+  // Function to remove a step
+  const handleRemoveStep = (index: number) => {
+    const newSteps = steps.filter((_, i) => i !== index);
+    setSteps(newSteps);
+  };
+
+  const handleSetStepImageUrl = (index: number, url: string) => {
+    handleStepChange(index, 'imageUrl', url);
+  };
+
+  const handleRemoveStepImage = (index: number) => {
+    handleStepChange(index, 'imageUrl', '');
+  };
+
+  useEffect(() => {
+    console.log(ingredients);
+    console.log(steps);
+  }, [ingredients, steps]);
 
   return (
     <Dialog>
@@ -26,27 +111,58 @@ export function ShareDialog() {
         </Card>
       </DialogTrigger>
 
-      <DialogContent className='max-h-screen overflow-auto sm:max-w-[60vw]'>
+      <DialogContent className='max-h-screen overflow-auto pl-[80px] sm:max-w-[80vw]'>
         <div className='flex justify-center pb-6'>
           <Input
             placeholder='Tên món ăn'
-            className='w-4/5 rounded-none border-0 border-b-4 border-highlight text-center text-3xl text-highlight placeholder:text-highlight placeholder:opacity-75 lg:w-1/3'
+            className='w-4/5 rounded-none border-0 border-b-2 border-highlight text-center text-3xl text-highlight placeholder:text-highlight placeholder:opacity-75 lg:w-1/3'
           />
         </div>
 
         {/* 1st row */}
         <div className='grid grid-cols-1 gap-0 gap-y-4 xl:grid-cols-4'>
-          <div className='flex justify-center'>
-            <Card
-              className='flex aspect-square w-1/2 cursor-pointer select-none flex-col items-center justify-center rounded-2xl border-dashed border-highlight text-highlight xl:w-full'
-              onClick={() => {
-                toast({ title: 'Tính năng này hiện đang được phát triển.' });
-              }}
-            >
-              <ImagePlus className='mb-2 h-6 w-6' />
-
-              <p className='text-sm lg:text-base'>Thêm hình ảnh món ăn</p>
-            </Card>
+          <div className='relative flex w-full flex-col justify-center'>
+            {imageUrl.length > 0 ? (
+              <>
+                <div className=' flex w-full items-center justify-center'>
+                  <Image
+                    src={imageUrl}
+                    alt='Uploaded Image'
+                    width={500}
+                    height={500}
+                    className='rounded-2xl'
+                  />
+                </div>
+                <X
+                  className='absolute right-2 top-0 z-10 h-8 w-8 hover:text-red-500'
+                  onClick={handleDeleteImage}
+                />
+              </>
+            ) : (
+              <UploadDropzone
+                endpoint='imageUploader'
+                content={{
+                  uploadIcon() {
+                    return <ImagePlus className='h-8 w-8' />;
+                  },
+                  label: 'Thêm hình ảnh món ăn',
+                }}
+                appearance={{
+                  container:
+                    'mt-0 flex aspect-square w-1/2 cursor-pointer select-none flex-col items-center justify-center rounded-2xl border-dashed border-highlight text-highlight xl:w-full',
+                  label:
+                    'text-highlight text-sm lg:text-base hover:text-hightlight',
+                  button:
+                    'text-white text-sm lg:text-base bg-hightlight ut-uploading:bg-hightlight ',
+                }}
+                onClientUploadComplete={(res) => {
+                  setImageUrl(res[0].url);
+                }}
+                onUploadError={(error: Error) => {
+                  alert(`ERROR! ${error.message}`);
+                }}
+              />
+            )}
           </div>
 
           <div className='col-span-3 grid grid-cols-1 xl:grid-cols-12'>
@@ -81,22 +197,48 @@ export function ShareDialog() {
 
               {/* Ingredients list */}
               <ul>
-                <li>
-                  <Input
-                    placeholder='Nguyên liệu'
-                    className='mb-4 rounded-none border-0 border-b-2 border-white p-0 text-2xl'
-                  />
-                </li>
+                {ingredients.map((ingredient, index) => (
+                  <li key={index} className='mb-4 flex items-center'>
+                    <div className='flex-grow'>
+                      <Input
+                        value={ingredient.name}
+                        onChange={(e) =>
+                          handleIngredientChange(index, 'name', e.target.value)
+                        }
+                        placeholder='Chọn nguyên liệu...'
+                        className='rounded-none border-0 border-b-2 border-highlight p-0 text-2xl'
+                      />
+                    </div>
+                    <span className='mx-3 text-highlight'>—</span>
+                    <div className='flex-grow'>
+                      <Input
+                        value={ingredient.quantity}
+                        onChange={(e) =>
+                          handleIngredientChange(
+                            index,
+                            'quantity',
+                            e.target.value
+                          )
+                        }
+                        placeholder='Khối lượng'
+                        className='rounded-none border-0 border-b-2 border-highlight p-0 text-2xl'
+                      />
+                    </div>
+                    <Button
+                      variant={'outline'}
+                      onClick={() => handleRemoveIngredient(index)}
+                      className='ml-2 border-dashed border-highlight text-highlight hover:bg-highlight hover:text-white'
+                    >
+                      <X className='h-6 w-6' />
+                    </Button>
+                  </li>
+                ))}
               </ul>
 
               <Button
-                variant={'default'}
-                className='bg-transparent text-highlight hover:bg-highlight hover:text-white'
-                onClick={() => {
-                  toast({
-                    title: 'Tính năng này hiện đang được phát triển.',
-                  });
-                }}
+                variant={'outline'}
+                className='border-dashed border-highlight bg-transparent text-highlight hover:bg-highlight hover:text-white'
+                onClick={handleAddIngredient}
               >
                 <Plus />
               </Button>
@@ -113,43 +255,92 @@ export function ShareDialog() {
           <div className='col-span-3'>
             {/* Steps list */}
             <ul>
-              <li className='grid grid-cols-12'>
-                <div className='justify-self-center'>
-                  <Badge className='text-xl'>1</Badge>
-                </div>
+              {steps.map((step, index) => (
+                <li key={index} className='mb-4 grid grid-cols-12'>
+                  <div className='w-full pr-8'>
+                    <Badge className='flex justify-center rounded-lg text-xl'>
+                      {index + 1}
+                    </Badge>
+                  </div>
 
-                <div className='col-span-11'>
-                  <Input
-                    placeholder='Tên bước'
-                    className='mb-4 rounded-none border-0 border-b-2 border-white p-2 text-xl md:p-0'
-                  />
+                  <div className='col-span-11 md:col-span-8'>
+                    <div className='relative flex h-full flex-col gap-4'>
+                      <Input
+                        placeholder='Tên bước'
+                        className='w-min rounded-none border-0 border-b-[1px] border-white p-2 text-xl focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent'
+                        value={step.title}
+                        onChange={(e) =>
+                          handleStepChange(index, 'title', e.target.value)
+                        }
+                      />
+                      <Textarea
+                        placeholder='Mô tả chi tiết'
+                        className='h-full w-full rounded-none border-[1px] border-white p-2 text-lg focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent'
+                        value={step.description}
+                        onChange={(e) =>
+                          handleStepChange(index, 'description', e.target.value)
+                        }
+                      />
+                      <Button
+                        variant={'outline'}
+                        onClick={() => handleRemoveStep(index)}
+                        className='absolute right-0 top-0 z-10 border-dashed border-highlight text-highlight hover:bg-highlight hover:text-white'
+                      >
+                        <X className='h-6 w-6' />
+                      </Button>
+                    </div>
+                  </div>
 
-                  <Textarea
-                    placeholder='Mô tả chi tiết'
-                    className='mb-4 rounded-none border-2 border-white text-lg'
-                  />
-
-                  <Card
-                    className='flex aspect-square w-3/5 cursor-pointer select-none flex-col items-center justify-center rounded-2xl border-dashed border-highlight text-highlight xl:w-1/3'
-                    onClick={() => {
-                      toast({
-                        title: 'Tính năng này hiện đang được phát triển.',
-                      });
-                    }}
-                  >
-                    <ImagePlus className='mb-2 h-6 w-6' />
-
-                    <p className='text-sm lg:text-base'>
-                      Thêm hình ảnh cho bước 1
-                    </p>
-                  </Card>
-                </div>
-              </li>
+                  <div className=' col-span-12 md:col-span-3'>
+                    <div className='relative flex w-full flex-col justify-center px-4'>
+                      {step.imageUrl.length > 0 ? (
+                        <>
+                          <div className='flex w-full items-center justify-center'>
+                            <Image
+                              src={step.imageUrl}
+                              alt='Uploaded Image'
+                              width={200}
+                              height={200}
+                              className='rounded-2xl'
+                            />
+                          </div>
+                          <X
+                            className='absolute right-5 top-0 z-10 h-8 w-8 hover:text-red-500'
+                            onClick={() => handleRemoveStepImage(index)}
+                          />
+                        </>
+                      ) : (
+                        <UploadDropzone
+                          endpoint='imageUploader'
+                          content={{
+                            uploadIcon() {
+                              return <ImagePlus className='h-8 w-8' />;
+                            },
+                            label: 'Thêm ảnh hướng dẫn',
+                          }}
+                          appearance={{
+                            container:
+                              'cursor-pointer aspect-square select-none rounded-2xl border-dashed border-highlight text-highlight',
+                            label:
+                              'text-highlight text-sm lg:text-base hover:text-hightlight',
+                            button:
+                              'text-white text-sm lg:text-base bg-hightlight ut-uploading:bg-hightlight ',
+                          }}
+                          onClientUploadComplete={(res) => {
+                            handleSetStepImageUrl(index, res[0].url);
+                          }}
+                          onUploadError={(error: Error) => {
+                            alert(`ERROR! ${error.message}`);
+                          }}
+                        />
+                      )}
+                    </div>
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
-
-        {/* 4th row */}
         <div className='grid grid-cols-1 gap-0 gap-y-4 xl:grid-cols-4'>
           <div></div>
 
@@ -158,13 +349,9 @@ export function ShareDialog() {
 
             <div className='col-span-11'>
               <Button
-                variant={'default'}
-                className='bg-transparent text-highlight hover:bg-highlight hover:text-white'
-                onClick={() => {
-                  toast({
-                    title: 'Tính năng này hiện đang được phát triển.',
-                  });
-                }}
+                variant={'outline'}
+                className='border-dashed border-highlight bg-transparent text-highlight hover:bg-highlight hover:text-white'
+                onClick={handleAddStep}
               >
                 <Plus />
               </Button>
@@ -174,7 +361,7 @@ export function ShareDialog() {
 
         <DialogFooter>
           <Button
-            className='mt-6 bg-highlight text-lg text-white md:text-xl'
+            className=' bg-highlight text-lg text-white md:text-xl'
             size={'lg'}
             onClick={() => {
               toast({ title: 'Tính năng này hiện đang được phát triển.' });
