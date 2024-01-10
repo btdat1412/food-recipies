@@ -43,7 +43,7 @@ const RecipeDialog = ({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className='max-h-screen overflow-auto sm:max-w-[80vw]'>
+      <DialogContent className='max-h-[90vh] overflow-auto sm:max-w-[80vw]'>
         {/* name */}
         <DialogHeader className='pb-3'>
           <DialogTitle>

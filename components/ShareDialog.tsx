@@ -26,7 +26,7 @@ export function ShareDialog() {
         </Card>
       </DialogTrigger>
 
-      <DialogContent className='max-h-screen overflow-auto sm:max-w-[60vw]'>
+      <DialogContent className='max-h-[90vh] overflow-auto sm:max-w-[60vw]'>
         <div className='flex justify-center pb-6'>
           <Input
             placeholder='Tên món ăn'
