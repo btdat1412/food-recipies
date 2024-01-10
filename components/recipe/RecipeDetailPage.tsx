@@ -30,10 +30,6 @@ type RecipeDetailPageParams = {
 };
 
 export default function RecipeDetailPage({ recipe }: RecipeDetailPageParams) {
-  if (!recipe) {
-    return <div>No recipe found</div>;
-  }
-
   const { toast } = useToast();
 
   const reviews = [
@@ -43,6 +39,10 @@ export default function RecipeDetailPage({ recipe }: RecipeDetailPageParams) {
     'Tùy dòng mỳ bạn nấu, nếu nấu mỳ Quảng kiểu Phú Triêm (tôm, thịt mỡ, trứng) thì phải có dầu phi củ nén. Còn dòng mỳ Quảng Đà Nẵng hoặc Túy Loan thì không dùng dầu phi củ nén.',
     'Nhìn thèm quá. Mình nghe nói rằng mì Quảng nhất định phải có củ nén, không thì nó sẽ không ra mì Quảng nên chưa dám thử nấu bao giờ.',
   ];
+
+  if (!recipe) {
+    return <div>No recipe found</div>;
+  }
 
   return (
     <div className='container flex flex-col items-center pt-5'>
@@ -129,7 +129,7 @@ export default function RecipeDetailPage({ recipe }: RecipeDetailPageParams) {
         </Card>
 
         {reviews.map((review, index) => (
-          <Card className='flex flex-col rounded-2xl bg-gray-600'>
+          <Card className='flex flex-col rounded-2xl bg-gray-600' key={index}>
             <CardHeader>
               <div className='flex flex-row items-center space-x-2'>
                 <Image
