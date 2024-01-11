@@ -47,8 +47,8 @@ async function seedRecipes() {
 }
 
 async function main() {
-  await seedIngredients();
-  // await seedRecipes();
+  // await seedIngredients();
+  await seedRecipes();
 }
 
 main()

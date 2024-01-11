@@ -132,6 +132,7 @@ export function ShareDialog({
         try {
           const newIngredient = await createIngredient({
             name: ingredient.name,
+            
           });
           return {
             ingredientId: newIngredient.id,

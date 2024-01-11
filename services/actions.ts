@@ -33,9 +33,9 @@ export async function createIngredient(ingredientData: any) {
     const ingredient = await db.ingredient.create({
       data: {
         name: ingredientData.name,
-        image: ingredientData.image || null,
-        kcal: ingredientData.kcal || null,
-        type: ingredientData.type || 'other',
+        image: ingredientData.image,
+        kcal: ingredientData.kcal,
+        type: ingredientData.type,
       },
     });
     return ingredient;
