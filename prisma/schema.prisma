@@ -12,7 +12,7 @@ type RecipeRating {
   quantity BigInt
 }
 
-type RecipeRecipeItems {
+type RecipeItems {
   amount       String
   ingredientId String
 }
@@ -25,18 +25,18 @@ type RecipeSteps {
 
 model Ingredient {
   id    String @id @default(auto()) @map("_id") @db.ObjectId
-  image String
-  kcal  Float
+  image String @default("https://via.placeholder.com/400")
+  kcal  Float  @default(0)
   name  String
-  type  String
+  type  String @default("other")
 }
 
 model Recipe {
   id          String              @id @default(auto()) @map("_id") @db.ObjectId
-  image       String
-  kcal        Float
+  image       String              @default("https://via.placeholder.com/400")
+  kcal        Float               @default(0)
   name        String
   rating      RecipeRating
-  recipeItems RecipeRecipeItems[]
+  recipeItems RecipeItems[]
   steps       RecipeSteps[]
 }

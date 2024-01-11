@@ -1,11 +1,8 @@
 import { ShareDialog } from '../../components/ShareDialog';
+import { getAllIngredients } from '../../services';
 
-const Dialog = () => {
-  return (
-    <div>
-      <ShareDialog />
-    </div>
-  );
-};
+export default async function Dialog() {
+  const ingredients = await getAllIngredients();
 
-export default Dialog;
+  return <ShareDialog dbIngredients={ingredients} />;
+}
