@@ -251,12 +251,12 @@ export function ShareDialog({
             </div>
 
             {/* Calories input, filter values */}
-            <div className='col-span-full bg-red-500 xl:col-span-3'>
+            <div className='col-span-full mt-10 bg-red-500 xl:col-span-3'>
               Calories input, filter values
             </div>
 
             {/* Ingredient header */}
-            <div className='col-start-1 col-end-13 xl:col-start-5'>
+            <div className='col-start-1 col-end-13 mt-10 xl:col-start-5'>
               <h3 className='text-2xl text-highlight'>Nguyên liệu</h3>
             </div>
 
@@ -272,7 +272,7 @@ export function ShareDialog({
                         handleIngredientSearchChange(e);
                       }}
                       placeholder='Chọn nguyên liệu...'
-                      className='rounded-none border-0 border-b-2 border-highlight p-0 text-xl focus:ring-0 focus:ring-offset-0'
+                      className='rounded-none border-0 border-b-2 border-highlight p-0 text-xl focus-visible:ring-transparent focus-visible:ring-offset-transparent'
                     />
 
                     {ingredientSearch && (
@@ -298,7 +298,7 @@ export function ShareDialog({
                         )
                       }
                       placeholder='Khối lượng'
-                      className='rounded-none border-0 border-b-2 border-highlight p-0 text-xl'
+                      className='rounded-none border-0 border-b-2 border-highlight p-0 text-xl focus-visible:ring-transparent focus-visible:ring-offset-transparent'
                     />
                   </div>
 
@@ -327,25 +327,122 @@ export function ShareDialog({
               </Button>
             </div>
 
+            {/* Step header */}
+            <div className='col-start-1 col-end-13 mt-10 xl:col-start-5'>
+              <h3 className='text-2xl text-highlight'>Công thức</h3>
+            </div>
+
             {/* Steps list */}
             <ul className='col-span-full'>
-              <li className='grid grid-cols-12 gap-0 gap-y-4'>
-                {/* Steps ordinal number */}
-                <div className='col-start-1 col-end-2 bg-green-500 xl:col-start-4 xl:col-end-5'>
-                  Number
-                </div>
+              {steps.map((step, index) => (
+                <li
+                  key={index}
+                  className='mb-4 grid grid-cols-12 gap-0 gap-y-4'
+                >
+                  {/* Steps ordinal number */}
+                  <div className='col-start-1 col-end-3 xl:col-start-4 xl:col-end-5'>
+                    <div className='flex justify-center'>
+                      <Badge className='flex aspect-square w-1/2 justify-center rounded-lg text-xl md:w-1/3'>
+                        {index + 1}
+                      </Badge>
+                    </div>
+                  </div>
 
-                {/* Step description */}
-                <div className='col-start-2 col-end-11 bg-blue-500 xl:col-start-5'>
-                  Step
-                </div>
+                  {/* Step description */}
+                  <div className='col-span-full col-start-3 xl:col-start-5 xl:col-end-11'>
+                    <div className='relative mr-3 flex h-full flex-col gap-4'>
+                      <Input
+                        placeholder='Tên bước'
+                        className='w-min rounded-none border-0 border-b-[1px] border-white p-2 text-xl focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent'
+                        value={step.title}
+                        onChange={(e) =>
+                          handleStepChange(index, 'title', e.target.value)
+                        }
+                      />
 
-                {/* Step image uploader */}
-                <div className='col-start-11 col-end-13 bg-yellow-500'>
-                  Step image
-                </div>
-              </li>
+                      <Textarea
+                        placeholder='Mô tả chi tiết'
+                        className='h-full w-full rounded-none border-[1px] border-white p-2 text-lg focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent'
+                        value={step.description}
+                        onChange={(e) =>
+                          handleStepChange(index, 'description', e.target.value)
+                        }
+                      />
+
+                      <Button
+                        variant={'outline'}
+                        onClick={() => handleRemoveStep(index)}
+                        className='absolute right-0 top-0 z-10 border-dashed border-highlight text-highlight hover:bg-highlight hover:text-white'
+                        type='button'
+                      >
+                        <X className='h-6 w-6' />
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Step image uploader */}
+                  <div className='col-span-full col-start-3 xl:col-start-11 xl:col-end-13'>
+                    {step.imageUrl.length > 0 ? (
+                      <div className='relative w-4/5 md:w-1/2 xl:w-full'>
+                        <div>
+                          <Image
+                            src={step.imageUrl}
+                            alt='Uploaded Image'
+                            width={500}
+                            height={500}
+                            className='rounded-2xl'
+                          />
+                        </div>
+
+                        <X
+                          className='absolute right-2 top-2 z-10 h-5 w-5 cursor-pointer hover:text-red-500'
+                          onClick={() => handleRemoveStepImage(index)}
+                        />
+                      </div>
+                    ) : (
+                      <UploadDropzone
+                        endpoint='imageUploader'
+                        content={{
+                          uploadIcon() {
+                            return <ImagePlus className='h-8 w-8' />;
+                          },
+                          label: `Thêm hình ảnh bước ${index + 1}`,
+                          allowedContent: 'Dưới 4MB thôi nhen!',
+                          button: 'Tải ảnh lên',
+                        }}
+                        appearance={{
+                          container:
+                            'mt-0 flex aspect-square w-4/5 cursor-pointer select-none flex-col items-center justify-center rounded-2xl border-dashed border-highlight text-highlight md:w-1/2 xl:w-full',
+                          label:
+                            'text-highlight text-xs lg:text-base hover:text-hightlight',
+                          allowedContent: 'text-xs',
+                          button:
+                            'text-white text-sm lg:text-base bg-hightlight ut-uploading:bg-hightlight ',
+                        }}
+                        onClientUploadComplete={(res) => {
+                          handleSetStepImageUrl(index, res[0].url);
+                        }}
+                        onUploadError={(error: Error) => {
+                          alert(`ERROR! ${error.message}`);
+                        }}
+                      />
+                    )}
+                  </div>
+                </li>
+              ))}
             </ul>
+
+            {/* Add-more-step button */}
+            <div className='col-start-1 col-end-13 xl:col-start-5'>
+              <Button
+                variant={'outline'}
+                className='border-dashed border-highlight bg-transparent text-highlight hover:bg-highlight hover:text-white'
+                onClick={handleAddStep}
+                type='button'
+              >
+                <Plus />
+              </Button>
+            </div>
           </div>
 
           <div className='grid grid-cols-12 gap-0 gap-y-4'>
