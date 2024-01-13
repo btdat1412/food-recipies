@@ -40,8 +40,11 @@ const DishCard = ({
   const [open, setOpen] = useState(false);
 
   return (
-    <Card className='flex flex-col rounded-2xl border-highlight'>
-      <CardHeader className='flex flex-row justify-center p-2'>
+    <Card className='flex cursor-pointer flex-col rounded-2xl border-highlight'>
+      <CardHeader
+        className='flex flex-row justify-center p-2'
+        onClick={() => setOpen(true)}
+      >
         <Image src={image} alt={name} width={130} height={130} className='' />
       </CardHeader>
       <CardContent className='flex flex-1 flex-col text-center'>
