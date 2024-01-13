@@ -43,6 +43,7 @@ export default function RecipeDetailPage({ recipe }: RecipeDetailPageParams) {
   if (!recipe) {
     return <div>No recipe found</div>;
   }
+  console.log(recipe.steps[2].descriptions);
 
   return (
     <div className='container flex flex-col items-center pt-5'>
@@ -63,18 +64,24 @@ export default function RecipeDetailPage({ recipe }: RecipeDetailPageParams) {
 
       <h1 className='mb-16 text-4xl text-highlight'>Các bước thực hiện</h1>
 
-      <ul className=''>
+      <ul className='container'>
         {recipe.steps.map((step: any, index: any) => (
           <li
             key={index}
-            className={`mb-28 flex items-center space-x-8 ${
+            className={`mb-16 flex items-center justify-between space-x-8 ${
               index % 2 === 0
                 ? 'flex-col lg:flex-row'
                 : 'flex-col lg:flex-row-reverse lg:space-x-reverse'
             }`}
           >
-            <div className='flex flex-col items-center lg:items-start'>
-              <Badge className='text-4xl font-extrabold'>{index + 1}</Badge>
+            <div
+              className={`flex flex-col items-center ${
+                index % 2 === 0 ? 'lg:items-start' : 'lg:items-end'
+              }`}
+            >
+              <Badge className='flex aspect-square w-12 justify-center rounded-lg text-4xl lg:w-14'>
+                {index + 1}
+              </Badge>
 
               <p className='mb-4 mt-4 text-center text-3xl font-bold'>
                 {step.title}
@@ -93,7 +100,7 @@ export default function RecipeDetailPage({ recipe }: RecipeDetailPageParams) {
                 alt={`Image of step ${index + 1}`}
                 width={700}
                 height={400}
-                className='rounded-md object-cover'
+                className='rounded-2xl object-cover'
               />
             </div>
           </li>
