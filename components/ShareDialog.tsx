@@ -9,7 +9,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
-import { Plus, ImagePlus, Video, X } from 'lucide-react';
+import { Plus, ImagePlus, Video, X, Minus } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
@@ -20,6 +20,21 @@ import { Ingredient, InputIngredient, Step } from '../types';
 import { Dropdown } from './Dropdown';
 import { createIngredient, addRecipe } from '../services/actions';
 import { useRouter } from 'next/navigation';
+import { difficulty, healthy, time } from '@/lib/constants';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from '@/components/ui/dropdown-menu';
 
 export function ShareDialog({
   dbIngredients,
@@ -178,7 +193,7 @@ export function ShareDialog({
               placeholder='Tên món ăn'
               value={recipeName}
               onChange={(e) => setRecipeName(e.target.value)}
-              className='w-4/5 rounded-none border-0 border-b-2 border-highlight text-center text-3xl text-highlight placeholder:text-highlight lg:w-1/3'
+              className='w-4/5 rounded-none border-0 border-b-2 border-highlight text-center text-3xl text-highlight placeholder:text-highlight focus-visible:ring-transparent focus-visible:ring-offset-transparent lg:w-1/3'
             />
           </div>
 
@@ -210,7 +225,7 @@ export function ShareDialog({
                       return <ImagePlus className='h-8 w-8' />;
                     },
                     label: 'Thêm hình ảnh món ăn',
-                    allowedContent: 'Dưới 4MB thôi nhen!',
+                    allowedContent: 'Dưới 4MB thôi nha!',
                     button: 'Tải ảnh lên',
                   }}
                   appearance={{
@@ -251,8 +266,63 @@ export function ShareDialog({
             </div>
 
             {/* Calories input, filter values */}
-            <div className='col-span-full mt-10 bg-red-500 xl:col-span-3'>
-              Calories input, filter values
+            <div className='col-start-1 col-end-13 xl:col-start-5'>
+              <div className='flex'>
+                <Select>
+                  <SelectTrigger className=''>
+                    <SelectValue placeholder='Buổi' />
+                  </SelectTrigger>
+
+                  <SelectContent>
+                    <SelectGroup>
+                      {time.map((item) => (
+                        <SelectItem key={item} value={item}>
+                          {item}
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+
+                <Select>
+                  <SelectTrigger className=''>
+                    <SelectValue placeholder='Độ khó' />
+                  </SelectTrigger>
+
+                  <SelectContent>
+                    <SelectGroup>
+                      {difficulty.map((item) => (
+                        <SelectItem key={item} value={item}>
+                          {item}
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+
+                <Select>
+                  <SelectTrigger className=''>
+                    <SelectValue placeholder='Độ lành mạnh' />
+                  </SelectTrigger>
+
+                  <SelectContent>
+                    <SelectGroup>
+                      {healthy.map((item) => (
+                        <SelectItem key={item} value={item}>
+                          {item}
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <h3 className='mt-10 text-2xl text-highlight'>Calories</h3>
+
+              <Input
+                placeholder='Nhập lượng calories mà món ăn cung cấp'
+                className='rounded-none border-0 border-b-2 border-highlight p-0 text-xl focus-visible:ring-transparent focus-visible:ring-offset-transparent'
+              />
             </div>
 
             {/* Ingredient header */}
@@ -282,10 +352,12 @@ export function ShareDialog({
                           handleSelectIngredient(index, item)
                         }
                       />
-                    )}
+                    )} 
                   </div>
 
-                  <span className='mx-3 text-highlight'>—</span>
+                  <span className='mx-3 text-highlight'>
+                    <Minus />
+                  </span>
 
                   <div className='flex-grow'>
                     <Input
@@ -353,7 +425,7 @@ export function ShareDialog({
                     <div className='relative mr-3 flex h-full flex-col gap-4'>
                       <Input
                         placeholder='Tên bước'
-                        className='w-1/2 rounded-none border-0 border-b-[1px] border-white p-2 text-xl focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent'
+                        className='w-1/2 rounded-none border-0 border-b-[1px] border-white p-0 text-xl focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent'
                         value={step.title}
                         onChange={(e) =>
                           handleStepChange(index, 'title', e.target.value)
@@ -407,7 +479,7 @@ export function ShareDialog({
                             return <ImagePlus className='h-8 w-8' />;
                           },
                           label: `Thêm hình ảnh bước ${index + 1}`,
-                          allowedContent: 'Dưới 4MB thôi nhen!',
+                          allowedContent: 'Dưới 4MB thôi nha!',
                           button: 'Tải ảnh lên',
                         }}
                         appearance={{
