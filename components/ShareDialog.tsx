@@ -58,6 +58,8 @@ export function ShareDialog({
     { title: '', description: '', imageUrl: '' },
   ]);
 
+  const [activeInputIndex, setActiveInputIndex] = useState<number | null>(null);
+
   const filteredIngredients = dbIngredients.filter((ingredient) =>
     ingredient.name.toLowerCase().includes(ingredientSearch.toLowerCase())
   );
@@ -174,7 +176,7 @@ export function ShareDialog({
     };
 
     const newRecipe = await addRecipe(recipeData);
-    router.push('/');
+    router.push(`/recipes/${newRecipe.id}`);
   };
 
   return (
@@ -341,18 +343,20 @@ export function ShareDialog({
                         handleIngredientChange(index, 'name', e.target.value);
                         handleIngredientSearchChange(e);
                       }}
+                      onFocus={() => setActiveInputIndex(index)}
+                      onBlur={() => setActiveInputIndex(null)}
                       placeholder='Chọn nguyên liệu...'
                       className='rounded-none border-0 border-b-2 border-highlight p-0 text-xl focus-visible:ring-transparent focus-visible:ring-offset-transparent'
                     />
 
-                    {ingredientSearch && (
+                    {ingredientSearch && activeInputIndex === index && (
                       <Dropdown
                         items={filteredIngredients}
                         onSelectItem={(item) =>
                           handleSelectIngredient(index, item)
                         }
                       />
-                    )} 
+                    )}
                   </div>
 
                   <span className='mx-3 text-highlight'>
