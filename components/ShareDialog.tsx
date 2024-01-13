@@ -173,7 +173,7 @@ export function ShareDialog({
 
       <DialogContent className='max-h-[90vh] overflow-auto sm:max-w-[80vw]'>
         <form onSubmit={handleSubmit}>
-          <div className='flex justify-center pb-6'>
+          <div className='flex justify-center pb-10'>
             <Input
               placeholder='Tên món ăn'
               value={recipeName}
@@ -353,7 +353,7 @@ export function ShareDialog({
                     <div className='relative mr-3 flex h-full flex-col gap-4'>
                       <Input
                         placeholder='Tên bước'
-                        className='w-min rounded-none border-0 border-b-[1px] border-white p-2 text-xl focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent'
+                        className='w-1/2 rounded-none border-0 border-b-[1px] border-white p-2 text-xl focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent'
                         value={step.title}
                         onChange={(e) =>
                           handleStepChange(index, 'title', e.target.value)
