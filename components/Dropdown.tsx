@@ -13,7 +13,7 @@ export const Dropdown = ({ items, onSelectItem }: DropdownProps) => {
           <div
             key={index}
             onMouseDown={() => onSelectItem(item)}
-            className='cursor-pointer px-4 py-2 text-sm hover:bg-gray-200 hover:text-background'
+            className='cursor-pointer px-4 py-2 text-sm hover:bg-gray-200 hover:text-darkbg'
           >
             {item.name}
           </div>

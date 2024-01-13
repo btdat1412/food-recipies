@@ -252,7 +252,7 @@ export function ShareDialog({
             {/* Recipe video uploader */}
             <div className='col-start-1 col-end-13 flex justify-center xl:col-start-5'>
               <div
-                className='flex h-full min-h-[200px] w-4/5 cursor-pointer select-none flex-col items-center justify-center rounded-2xl border border-dashed border-white text-white xl:w-full'
+                className='flex h-full min-h-[200px] w-4/5 cursor-pointer select-none flex-col items-center justify-center rounded-2xl border border-dashed border-darkbg dark:border-white dark:text-white xl:w-full'
                 onClick={() => {
                   toast({
                     title: 'Tính năng này hiện đang được phát triển.',
@@ -429,7 +429,7 @@ export function ShareDialog({
                     <div className='relative mr-3 flex h-full flex-col gap-4'>
                       <Input
                         placeholder='Tên bước'
-                        className='w-1/2 rounded-none border-0 border-b-[1px] border-white p-0 text-xl focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent'
+                        className='w-1/2 rounded-none border-0 border-b-[1px] border-darkbg dark:border-white p-0 text-xl focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent'
                         value={step.title}
                         onChange={(e) =>
                           handleStepChange(index, 'title', e.target.value)
@@ -438,7 +438,7 @@ export function ShareDialog({
 
                       <Textarea
                         placeholder='Mô tả chi tiết'
-                        className='h-full w-full rounded-none border-[1px] border-white p-2 text-lg focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent'
+                        className='h-full w-full rounded-none border-[1px] border-darkbg dark:border-white p-2 text-lg focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent'
                         value={step.description}
                         onChange={(e) =>
                           handleStepChange(index, 'description', e.target.value)
