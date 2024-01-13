@@ -40,15 +40,12 @@ const DishCard = ({
   const [open, setOpen] = useState(false);
 
   return (
-    <Card className='flex cursor-pointer flex-col rounded-2xl border-highlight'>
-      <CardHeader
-        className='flex flex-row justify-center p-0'
-        onClick={() => setOpen(true)}
-      >
+    <Card className='flex flex-col rounded-2xl border-highlight'>
+      <CardHeader className='flex flex-row justify-center p-2'>
         <Image src={image} alt={name} width={130} height={130} className='' />
       </CardHeader>
-      <CardContent className='flex-1 text-center' onClick={() => setOpen(true)}>
-        <CardTitle className='text-xl md:text-2xl'>{name}</CardTitle>
+      <CardContent className='flex flex-1 flex-col text-center'>
+        <CardTitle className='flex-1 text-xl md:text-2xl'>{name}</CardTitle>
         <CardDescription className='text-sm text-text'>
           {kcal} kcal
         </CardDescription>

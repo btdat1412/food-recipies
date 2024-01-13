@@ -13,3 +13,14 @@ export interface Dish {
   kcal: number;
   image: string;
 }
+
+export type InputIngredient = {
+  name: string;
+  quantity: string;
+};
+
+export type Step = {
+  title: string;
+  description: string;
+  imageUrl: string;
+};
