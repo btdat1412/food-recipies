@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Mì quảng",
+    "image": "/images/recipes/mi_quang.png",
+    "kcal": 165,
+    "rating": {
+      "quantity": 20,
+      "average": 4.5
+    },
+    "recipeItems": [
+      {
+        "ingredientId": "65a009ef39196ef1a9e3f157",
+        "amount": "800g"
+      },
+      {
+        "ingredientId": "65a009f039196ef1a9e3f158",
+        "amount": "1 con (khoảng 1.5kg)"
+      },
+      {
+        "ingredientId": "65a009f039196ef1a9e3f159",
+        "amount": "15 quả"
+      },
+      {
+        "ingredientId": "65a009f039196ef1a9e3f15a",
+        "amount": "500ml"
+      },
+      {
+        "ingredientId": "65a009f039196ef1a9e3f15b",
+        "amount": "50g"
+      }
+    ],
+
+    "steps": [
+      {
+        "title": "Sơ chế nguyên liệu",
+        "imageUrl": "https://utfs.io/f/47beb26b-1a45-4ffc-bcaf-38c6c2280ff8-q8ioui.png",
+        "descriptions": [
+          "Mua gà nguyên con đã làm sẵn về, khử mùi hôi bằng cách ngâm trong nước muối loãng khoảng 10 phút rồi rửa sạch lại với nước, cắt miếng vừa ăn.",
+          "Củ hành tây, củ nén lột vỏ, rửa sạch, băm nhuyễn.",
+          "Rau chuối, hành lá, xà lách, rau húng lủi rửa sạch. Hành lá cắt nhỏ, đập dập đậu phộng rang."
+        ]
+      },
+      {
+        "title": "Ướp gà và luộc trứng cút",
+        "imageUrl": "https://utfs.io/f/d679dcde-7b0b-4eef-b5c3-0525bab559a2-dvsljj.jpg",
+        "descriptions": [
+          "Ướp gà với 1/2 phần hành tây và củ nén băm, 1/2  muỗng canh bột nghệ, 1/2 muỗng canh hạt nêm, trộn đều, để yên 15 phút để thịt gà thấm gia vị.",
+          "Trứng cút cho vào nồi nước và luộc 7 - 10 phút rồi lấy ra để nguội, bóc vỏ."
+        ]
+      },
+      {
+        "title": "Nấu nước dùng mì quảng",
+        "imageUrl": "https://utfs.io/f/b46c2864-c425-4c86-9596-ac8e1f414a7b-vhkkzl.png",
+        "descriptions": [
+          "Bắc chảo  lên bếp với 1 muỗng canh dầu màu điều. Khi dầu nóng bạn cho vào phần hành tây và củ nén băm còn lại, 1/2 muỗng canh bột nghệ, phi thơm.",
+          "Tiếp theo cho thịt gà đã ướp vào xào đến khi thịt săn lại. Cho vào 700ml nước lọc, 500ml nước dừa tươi, đảo đều trên lửa lớn.",
+          "Khi nước sôi thì nêm vào 2 muỗng canh nước mắm, 1 muỗng canh đường phèn, đảo đều rồi giảm lửa vừa và nấu khoảng 15 - 20 phút.",
+          "Nêm nếm gia vị lại cho vừa ăn rồi cho trứng cút vào, nấu thêm 5 phút nữa thì tắt bếp."
+        ]
+      },
+      {
+        "title": "Hoàn thành",
+        "imageUrl": "https://utfs.io/f/8896a58a-7e70-45d5-bbf0-12e6da7645a8-l2tsfd.png",
+        "descriptions": [
+          "Bắc nồi nước sôi lên bếp rồi cho 1 lượng mì vừa ăn vào trụng khoảng 1 - 2 phút rồi vớt ra tô.",
+          "Sau đó cho thịt gà, trứng cút, 1 ít hành lá, đậu phộng rang vào rồi chan nước dùng lên là có thể thưởng thức được rồi."
+        ]
+      }
+    ]
+  }
+]

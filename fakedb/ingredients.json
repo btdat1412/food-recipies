@@ -558,5 +558,40 @@
     "name": "Bắp",
     "image": "https://utfs.io/f/ef89ef54-5411-4423-87e2-d811d2c410b6-1tktk.png",
     "kcal": 86
+  },
+  {
+    "id": 81,
+    "type": "other",
+    "name": "Bánh phở",
+    "image": "https://utfs.io/f/42143f8c-b886-4dd2-918b-e5624b4ab327-2dmf.png",
+    "kcal": 120
+  },
+  {
+    "id": 82,
+    "type": "meat",
+    "name": "Nguyên con gà",
+    "image": "https://utfs.io/f/29b405df-b04b-4038-a7c6-3f5787e00061-cc5jg5.png",
+    "kcal": 239
+  },
+  {
+    "id": 83,
+    "type": "other",
+    "name": "Trứng cút",
+    "image": "https://utfs.io/f/c3fbe104-5562-4798-8a76-d6974c7e5ca0-qnhik3.png",
+    "kcal": 158
+  },
+  {
+    "id": 84,
+    "type": "other",
+    "name": "Nước dừa",
+    "image": "https://utfs.io/f/91785387-efa9-435c-ad28-d250dfd7bfe6-u8m06s.png",
+    "kcal": 18
+  },
+  {
+    "id": 85,
+    "type": "other",
+    "name": "Đậu phộng rang",
+    "image": "https://utfs.io/f/a6f7d577-21ad-4991-8f9a-10346bcb1b3c-7z3m6h.png",
+    "kcal": 36
   }
 ]
