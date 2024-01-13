@@ -178,14 +178,58 @@ export function ShareDialog({
               placeholder='Tên món ăn'
               value={recipeName}
               onChange={(e) => setRecipeName(e.target.value)}
-              className='w-4/5 rounded-none border-0 border-b-2 border-highlight text-center text-3xl text-highlight placeholder:text-highlight placeholder:opacity-75 lg:w-1/3'
+              className='w-4/5 rounded-none border-0 border-b-2 border-highlight text-center text-3xl text-highlight placeholder:text-highlight lg:w-1/3'
             />
           </div>
 
           <div className='grid grid-cols-12 gap-0 gap-y-4'>
             {/* Recipe image uploader */}
-            <div className='col-span-full bg-red-500 xl:col-span-3'>
-              Image uploader
+            <div className='col-span-full flex justify-center xl:col-span-3'>
+              {imageUrl.length > 0 ? (
+                <div className='relative w-4/5 md:w-1/2 xl:w-full'>
+                  <div className='flex items-center justify-center'>
+                    <Image
+                      src={imageUrl}
+                      alt='Uploaded Image'
+                      width={500}
+                      height={500}
+                      className='rounded-2xl'
+                    />
+                  </div>
+
+                  <X
+                    className='absolute right-2 top-2 z-10 h-5 w-5 cursor-pointer hover:text-red-500'
+                    onClick={handleDeleteImage}
+                  />
+                </div>
+              ) : (
+                <UploadDropzone
+                  endpoint='imageUploader'
+                  content={{
+                    uploadIcon() {
+                      return <ImagePlus className='h-8 w-8' />;
+                    },
+                    label: 'Thêm hình ảnh món ăn',
+                    allowedContent: 'Dưới 4MB thôi nhen!',
+                    button: 'Tải ảnh lên',
+                  }}
+                  appearance={{
+                    container:
+                      'mt-0 flex aspect-square w-4/5 cursor-pointer select-none flex-col items-center justify-center rounded-2xl border-dashed border-highlight text-highlight md:w-1/2 xl:w-full',
+                    label:
+                      'text-highlight text-sm lg:text-base hover:text-hightlight',
+                    allowedContent: 'text-sm',
+                    button:
+                      'text-white text-sm lg:text-base bg-hightlight ut-uploading:bg-hightlight ',
+                  }}
+                  onClientUploadComplete={(res) => {
+                    setImageUrl(res[0].url);
+                  }}
+                  onUploadError={(error: Error) => {
+                    alert(`ERROR! ${error.message}`);
+                  }}
+                />
+              )}
             </div>
 
             {/* Recipe video uploader */}
@@ -201,56 +245,12 @@ export function ShareDialog({
             {/* Ingredients list */}
             <ul className='col-start-1 col-end-13 bg-blue-500 xl:col-start-5'>
               <li className='bg-blue-500'>
-                <div>
-                  Ingredients list
-                </div>
-              </li>
-              <li className='bg-blue-500'>
-                <div>
-                  Ingredients list
-                </div>
-              </li>
-              <li className='bg-blue-500'>
-                <div>
-                  Ingredients list
-                </div>
+                <div>Ingredients list</div>
               </li>
             </ul>
 
             {/* Steps list */}
             <ul className='col-span-full'>
-              <li className='grid grid-cols-12 gap-0 gap-y-4'>
-                {/* Steps ordinal number */}
-                <div className='col-start-1 col-end-2 bg-green-500 xl:col-start-4 xl:col-end-5'>
-                  Number
-                </div>
-
-                {/* Step description */}
-                <div className='col-start-2 col-end-11 bg-blue-500 xl:col-start-5'>
-                  Step
-                </div>
-
-                {/* Step image uploader */}
-                <div className='col-start-11 col-end-13 bg-yellow-500'>
-                  Step image
-                </div>
-              </li>
-              <li className='grid grid-cols-12 gap-0 gap-y-4'>
-                {/* Steps ordinal number */}
-                <div className='col-start-1 col-end-2 bg-green-500 xl:col-start-4 xl:col-end-5'>
-                  Number
-                </div>
-
-                {/* Step description */}
-                <div className='col-start-2 col-end-11 bg-blue-500 xl:col-start-5'>
-                  Step
-                </div>
-
-                {/* Step image uploader */}
-                <div className='col-start-11 col-end-13 bg-yellow-500'>
-                  Step image
-                </div>
-              </li>
               <li className='grid grid-cols-12 gap-0 gap-y-4'>
                 {/* Steps ordinal number */}
                 <div className='col-start-1 col-end-2 bg-green-500 xl:col-start-4 xl:col-end-5'>
