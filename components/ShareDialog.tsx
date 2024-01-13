@@ -255,12 +255,77 @@ export function ShareDialog({
               Calories input, filter values
             </div>
 
+            {/* Ingredient header */}
+            <div className='col-start-1 col-end-13 xl:col-start-5'>
+              <h3 className='text-2xl text-highlight'>Nguyên liệu</h3>
+            </div>
+
             {/* Ingredients list */}
-            <ul className='col-start-1 col-end-13 bg-blue-500 xl:col-start-5'>
-              <li className='bg-blue-500'>
-                <div>Ingredients list</div>
-              </li>
+            <ul className='col-start-1 col-end-13 xl:col-start-5'>
+              {ingredients.map((ingredient, index) => (
+                <li key={index} className='mb-4 flex items-center'>
+                  <div className='flex-grow'>
+                    <Input
+                      value={ingredient.name}
+                      onChange={(e) => {
+                        handleIngredientChange(index, 'name', e.target.value);
+                        handleIngredientSearchChange(e);
+                      }}
+                      placeholder='Chọn nguyên liệu...'
+                      className='rounded-none border-0 border-b-2 border-highlight p-0 text-xl focus:ring-0 focus:ring-offset-0'
+                    />
+
+                    {ingredientSearch && (
+                      <Dropdown
+                        items={filteredIngredients}
+                        onSelectItem={(item) =>
+                          handleSelectIngredient(index, item)
+                        }
+                      />
+                    )}
+                  </div>
+
+                  <span className='mx-3 text-highlight'>—</span>
+
+                  <div className='flex-grow'>
+                    <Input
+                      value={ingredient.quantity}
+                      onChange={(e) =>
+                        handleIngredientChange(
+                          index,
+                          'quantity',
+                          e.target.value
+                        )
+                      }
+                      placeholder='Khối lượng'
+                      className='rounded-none border-0 border-b-2 border-highlight p-0 text-xl'
+                    />
+                  </div>
+
+                  {/* Remove-ingredient button */}
+                  <Button
+                    variant={'outline'}
+                    onClick={() => handleRemoveIngredient(index)}
+                    className='ml-2 border-dashed border-highlight text-highlight hover:bg-highlight hover:text-white'
+                    type='button'
+                  >
+                    <X className='h-6 w-6' />
+                  </Button>
+                </li>
+              ))}
             </ul>
+
+            {/* Add-more-ingredient button */}
+            <div className='col-start-1 col-end-13 xl:col-start-5'>
+              <Button
+                variant={'outline'}
+                className='border-dashed border-highlight bg-transparent text-highlight hover:bg-highlight hover:text-white'
+                onClick={handleAddIngredient}
+                type='button'
+              >
+                <Plus />
+              </Button>
+            </div>
 
             {/* Steps list */}
             <ul className='col-span-full'>
