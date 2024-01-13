@@ -233,8 +233,21 @@ export function ShareDialog({
             </div>
 
             {/* Recipe video uploader */}
-            <div className='col-start-1 col-end-13 bg-blue-500 xl:col-start-5'>
-              Video uploader
+            <div className='col-start-1 col-end-13 flex justify-center xl:col-start-5'>
+              <div
+                className='flex h-full min-h-[200px] w-4/5 cursor-pointer select-none flex-col items-center justify-center rounded-2xl border border-dashed border-white text-white xl:w-full'
+                onClick={() => {
+                  toast({
+                    title: 'Tính năng này hiện đang được phát triển.',
+                  });
+                }}
+              >
+                <Video className='mb-2 h-8 w-8' />
+
+                <p className='text-sm lg:text-base'>
+                  Thêm video hướng dẫn nấu ăn
+                </p>
+              </div>
             </div>
 
             {/* Calories input, filter values */}
