@@ -269,9 +269,9 @@ export function ShareDialog({
 
             {/* Calories input, filter values */}
             <div className='col-start-1 col-end-13 xl:col-start-5'>
-              <div className='flex'>
+              <div className='flex flex-col md:flex-row'>
                 <Select>
-                  <SelectTrigger className=''>
+                  <SelectTrigger>
                     <SelectValue placeholder='Buổi' />
                   </SelectTrigger>
 
@@ -287,7 +287,7 @@ export function ShareDialog({
                 </Select>
 
                 <Select>
-                  <SelectTrigger className=''>
+                  <SelectTrigger>
                     <SelectValue placeholder='Độ khó' />
                   </SelectTrigger>
 
@@ -303,7 +303,7 @@ export function ShareDialog({
                 </Select>
 
                 <Select>
-                  <SelectTrigger className=''>
+                  <SelectTrigger>
                     <SelectValue placeholder='Độ lành mạnh' />
                   </SelectTrigger>
 
@@ -429,7 +429,7 @@ export function ShareDialog({
                     <div className='relative mr-3 flex h-full flex-col gap-4'>
                       <Input
                         placeholder='Tên bước'
-                        className='w-1/2 rounded-none border-0 border-b-[1px] border-darkbg dark:border-white p-0 text-xl focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent'
+                        className='w-1/2 rounded-none border-0 border-b-[1px] border-darkbg p-0 text-xl focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent dark:border-white'
                         value={step.title}
                         onChange={(e) =>
                           handleStepChange(index, 'title', e.target.value)
@@ -438,7 +438,7 @@ export function ShareDialog({
 
                       <Textarea
                         placeholder='Mô tả chi tiết'
-                        className='h-full w-full rounded-none border-[1px] border-darkbg dark:border-white p-2 text-lg focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent'
+                        className='h-full w-full rounded-none border-[1px] border-darkbg p-2 text-lg focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent dark:border-white'
                         value={step.description}
                         onChange={(e) =>
                           handleStepChange(index, 'description', e.target.value)
@@ -521,24 +521,9 @@ export function ShareDialog({
             </div>
           </div>
 
-          <div className='grid grid-cols-12 gap-0 gap-y-4'>
-            <div className='bg-red-500'>1</div>
-            <div className='bg-red-500'>2</div>
-            <div className='bg-red-500'>3</div>
-            <div className='bg-red-500'>4</div>
-            <div className='bg-red-500'>5</div>
-            <div className='bg-red-500'>6</div>
-            <div className='bg-red-500'>7</div>
-            <div className='bg-red-500'>8</div>
-            <div className='bg-red-500'>9</div>
-            <div className='bg-red-500'>10</div>
-            <div className='bg-red-500'>11</div>
-            <div className='bg-red-500'>12</div>
-          </div>
-
           <DialogFooter>
             <Button
-              className='bg-highlight text-lg text-white md:text-xl'
+              className='mt-10 bg-highlight text-lg text-white md:text-xl'
               size='lg'
               type='submit'
             >
