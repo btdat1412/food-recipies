@@ -36,6 +36,9 @@ model Recipe {
   image       String              @default("https://via.placeholder.com/400")
   kcal        Float               @default(0)
   name        String
+  difficulty  String
+  healthy     String
+  time        String              
   rating      RecipeRating
   recipeItems RecipeItems[]
   steps       RecipeSteps[]
