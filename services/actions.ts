@@ -19,7 +19,7 @@ export async function addRecipe(recipeData: any) {
         })),
         steps: recipeData.steps.map((step: Step) => ({
           title: step.title,
-          descriptions: [step.description],
+          descriptions: step.description,
           imageUrl: step.imageUrl,
         })),
       },
