@@ -20,7 +20,7 @@ import { Ingredient, InputIngredient, Step } from '../types';
 import { Dropdown } from './Dropdown';
 import { createIngredient, addRecipe } from '../services/actions';
 import { useRouter } from 'next/navigation';
-import { difficulty, healthy, time } from '@/lib/constants';
+import { difficultyCreate, healthyCreate, time } from '@/lib/constants';
 import {
   Select,
   SelectContent,
@@ -163,7 +163,7 @@ export function ShareDialog({
 
     const preparedSteps = steps.map((step) => ({
       ...step,
-      description: step.description.split('\n').filter(line => line.trim()), 
+      description: step.description.split('\n').filter((line) => line.trim()),
       imageUrl: step.imageUrl || 'https://via.placeholder.com/400',
     }));
 
@@ -276,7 +276,7 @@ export function ShareDialog({
 
             {/* Calories input, filter values */}
             <div className='col-start-1 col-end-13 xl:col-start-5'>
-              <div className='flex flex-col md:flex-row'>
+              <div className='flex flex-col gap-4 md:flex-row'>
                 <Select
                   required
                   onValueChange={(value) => {
@@ -310,7 +310,7 @@ export function ShareDialog({
 
                   <SelectContent>
                     <SelectGroup>
-                      {difficulty.map((item) => (
+                      {difficultyCreate.map((item) => (
                         <SelectItem key={item} value={item}>
                           {item}
                         </SelectItem>
@@ -331,7 +331,7 @@ export function ShareDialog({
 
                   <SelectContent>
                     <SelectGroup>
-                      {healthy.map((item) => (
+                      {healthyCreate.map((item) => (
                         <SelectItem key={item} value={item}>
                           {item}
                         </SelectItem>

@@ -19,24 +19,23 @@ type IngredientsCardProps = {
   name: string;
   rating: number;
   kcal: number;
-  ingredients: string[];
-  steps: {
-    [key: string]: string | undefined;
-  };
-  stepDescription: {
-    [key: string]: string[] | undefined;
-  };
+  // ingredients: string[];
+  // steps: {
+  //   [key: string]: string | undefined;
+  // };
+  // stepDescription: {
+  //   [key: string]: string[] | undefined;
+  // };
 };
 
 const DishCard = ({
   image,
   name,
   rating,
-  kcal,
-  ingredients,
-  steps,
-  stepDescription,
-}: IngredientsCardProps) => {
+  kcal, // ingredients,
+  // stepDescription,
+} // steps,
+: IngredientsCardProps) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -45,10 +44,18 @@ const DishCard = ({
         className='flex flex-row justify-center p-2'
         onClick={() => setOpen(true)}
       >
-        <Image src={image} alt={name} width={130} height={130} className='' />
+        <Image
+          src={image}
+          alt={name}
+          width={130}
+          height={130}
+          className='min-h-[130px] min-w-[130px] rounded-[65px]'
+        />
       </CardHeader>
       <CardContent className='flex flex-1 flex-col text-center'>
-        <CardTitle className='flex-1 text-xl md:text-2xl'>{name}</CardTitle>
+        <CardTitle className='flex-1 pb-1 text-xl !leading-7 md:text-2xl'>
+          {name}
+        </CardTitle>
         <CardDescription className='text-sm text-text'>
           {kcal} kcal
         </CardDescription>
@@ -65,17 +72,17 @@ const DishCard = ({
           <Link href='/recipes/65945e825ad1ae5006790515'>Xem chi tiết</Link>
         </p>
       </CardFooter>
-
+      {/* 
       <RecipeDialog
         open={open}
         onOpenChange={setOpen}
         name={name}
         image={image}
         rating={rating}
-        ingredients={ingredients}
-        steps={steps}
-        stepDescription={stepDescription}
-      />
+        // ingredients={ingredients}
+        // steps={steps}
+        // stepDescription={stepDescription}
+      /> */}
     </Card>
   );
 };
