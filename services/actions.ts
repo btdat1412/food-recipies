@@ -1,6 +1,7 @@
 'use server';
 import { db } from '@/lib/prismaDb';
 import { Step } from '../types';
+import { revalidatePath } from 'next/cache';
 
 export async function addRecipe(recipeData: any) {
   try {
@@ -24,6 +25,7 @@ export async function addRecipe(recipeData: any) {
         })),
       },
     });
+    revalidatePath('/recipes');
     return recipe;
   } catch (error) {
     console.error('Failed to add recipe:', error);
@@ -41,6 +43,7 @@ export async function createIngredient(ingredientData: any) {
         type: ingredientData.type,
       },
     });
+    revalidatePath('/');
     return ingredient;
   } catch (error) {
     console.error('Failed to create ingredient:', error);
