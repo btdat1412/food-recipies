@@ -10,6 +10,9 @@ export async function addRecipe(recipeData: any) {
         image: recipeData.image,
         kcal: recipeData.kcal,
         rating: recipeData.rating,
+        time: recipeData.time,
+        healthy: recipeData.healthy,
+        difficulty: recipeData.difficulty,
         recipeItems: recipeData.ingredients.map((ingredient: any) => ({
           amount: ingredient.amount,
           ingredientId: ingredient.ingredientId,
