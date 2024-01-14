@@ -52,6 +52,12 @@ export function ShareDialog({
     { title: '', description: '', imageUrl: '' },
   ]);
 
+  const [selectedTime, setSelectedTime] = useState('');
+  const [selectedDifficulty, setSelectedDifficulty] = useState('');
+  const [selectedHealthiness, setSelectedHealthiness] = useState('');
+
+  const [kcal, setKcal] = useState<number>(0);
+
   const [activeInputIndex, setActiveInputIndex] = useState<number | null>(null);
 
   const filteredIngredients = dbIngredients.filter((ingredient) =>
@@ -155,18 +161,24 @@ export function ShareDialog({
     });
     const recipeIngredients = await Promise.all(ingredientPromises);
 
-    console.log('recipeIngredients', recipeIngredients);
+    const preparedSteps = steps.map((step) => ({
+      ...step,
+      imageUrl: step.imageUrl || 'https://via.placeholder.com/400',
+    }));
 
     const recipeData = {
       name: recipeName,
       image: imageUrl,
       ingredients: recipeIngredients,
-      steps,
+      steps: preparedSteps,
       rating: {
         average: 0,
         quantity: 0,
       },
-      kcals: 0,
+      kcal: kcal,
+      time: selectedTime,
+      difficulty: selectedDifficulty,
+      healthy: selectedHealthiness,
     };
 
     const newRecipe = await addRecipe(recipeData);
@@ -264,7 +276,12 @@ export function ShareDialog({
             {/* Calories input, filter values */}
             <div className='col-start-1 col-end-13 xl:col-start-5'>
               <div className='flex flex-col md:flex-row'>
-                <Select>
+                <Select
+                  required
+                  onValueChange={(value) => {
+                    setSelectedTime(value);
+                  }}
+                >
                   <SelectTrigger>
                     <SelectValue placeholder='Buổi' />
                   </SelectTrigger>
@@ -280,7 +297,12 @@ export function ShareDialog({
                   </SelectContent>
                 </Select>
 
-                <Select>
+                <Select
+                  required
+                  onValueChange={(value) => {
+                    setSelectedDifficulty(value);
+                  }}
+                >
                   <SelectTrigger>
                     <SelectValue placeholder='Độ khó' />
                   </SelectTrigger>
@@ -296,7 +318,12 @@ export function ShareDialog({
                   </SelectContent>
                 </Select>
 
-                <Select>
+                <Select
+                  required
+                  onValueChange={(value) => {
+                    setSelectedHealthiness(value);
+                  }}
+                >
                   <SelectTrigger>
                     <SelectValue placeholder='Độ lành mạnh' />
                   </SelectTrigger>
@@ -318,6 +345,9 @@ export function ShareDialog({
               <Input
                 placeholder='Nhập lượng calories mà món ăn cung cấp'
                 className='rounded-none border-0 border-b-2 border-highlight p-0 text-xl focus-visible:ring-transparent focus-visible:ring-offset-transparent'
+                required
+                value={kcal}
+                onChange={(e) => setKcal(Number(e.target.value))}
               />
             </div>
 
@@ -337,6 +367,7 @@ export function ShareDialog({
                         handleIngredientChange(index, 'name', e.target.value);
                         handleIngredientSearchChange(e);
                       }}
+                      required
                       onFocus={() => setActiveInputIndex(index)}
                       onBlur={() => setActiveInputIndex(null)}
                       placeholder='Chọn nguyên liệu...'
@@ -367,6 +398,7 @@ export function ShareDialog({
                           e.target.value
                         )
                       }
+                      required
                       placeholder='Khối lượng'
                       className='rounded-none border-0 border-b-2 border-highlight p-0 text-xl focus-visible:ring-transparent focus-visible:ring-offset-transparent'
                     />
@@ -424,6 +456,7 @@ export function ShareDialog({
                       <Input
                         placeholder='Tên bước'
                         className='w-1/2 rounded-none border-0 border-b-[1px] border-darkbg p-0 text-xl focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent dark:border-white'
+                        required
                         value={step.title}
                         onChange={(e) =>
                           handleStepChange(index, 'title', e.target.value)
@@ -434,6 +467,7 @@ export function ShareDialog({
                         placeholder='Mô tả chi tiết'
                         className='h-full w-full rounded-none border-[1px] border-darkbg p-2 text-lg focus-visible:border-b-[2px] focus-visible:ring-transparent focus-visible:ring-offset-transparent dark:border-white'
                         value={step.description}
+                        required
                         onChange={(e) =>
                           handleStepChange(index, 'description', e.target.value)
                         }
