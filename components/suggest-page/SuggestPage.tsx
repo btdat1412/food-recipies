@@ -48,35 +48,15 @@ export default function SuggestPage({
     return !hasMissingIngredient;
   });
 
-  console.log(suggestRecipes);
-
   const [selectedIngredients, setSelectedIngredients] = useState(
     ingredients.filter((i) => ingredientsId?.includes(i.id))
   );
-  const [filterDishes, setFilterDishes] = useState(suggestRecipes);
   const [termFilter, setTermFilter] = useState('');
   const [difficultyFilter, setDifficultyFilter] = useState('');
   const [healthyFilter, setHealthyFilter] = useState('');
   const [caloriesFilter, setCaloriesFilter] = useState('');
   const [timeFilter, setTimeFilter] = useState('');
   const [showFilter, setShowFilter] = useState(true);
-
-  useEffect(() => {
-    setFilterDishes(
-      suggestRecipes.filter(
-        (d) =>
-          d.name.toLowerCase().includes(termFilter.toLowerCase()) &&
-          (timeFilter === 'Tất cả' ||
-            d.time === 'Tất cả' ||
-            d.time.includes(timeFilter)) &&
-          (difficultyFilter === 'Tất cả' ||
-            d.difficulty.includes(difficultyFilter)) &&
-          (healthyFilter === 'Tất cả' || d.healthy.includes(healthyFilter)) &&
-          (caloriesFilter === 'Tất cả' || matchFilterCalories(d.kcal))
-      )
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [termFilter, difficultyFilter, healthyFilter, caloriesFilter, timeFilter]);
 
   const matchFilterCalories = (kcal: number) => {
     switch (caloriesFilter) {
@@ -90,6 +70,18 @@ export default function SuggestPage({
         return true;
     }
   };
+
+  const filterDishes = suggestRecipes.filter(
+    (d) =>
+      d.name.toLowerCase().includes(termFilter.toLowerCase()) &&
+      (timeFilter === 'Tất cả' ||
+        d.time === 'Tất cả' ||
+        d.time.includes(timeFilter)) &&
+      (difficultyFilter === 'Tất cả' ||
+        d.difficulty.includes(difficultyFilter)) &&
+      (healthyFilter === 'Tất cả' || d.healthy.includes(healthyFilter)) &&
+      (caloriesFilter === 'Tất cả' || matchFilterCalories(d.kcal))
+  );
 
   const removeIngredient = (ingredient: Ingredient) => {
     const newSelectedIngredients = selectedIngredients.filter(
