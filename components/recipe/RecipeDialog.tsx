@@ -14,6 +14,9 @@ import StarRatings from 'react-star-ratings';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { Recipes } from '@/types';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { getIngredientName } from '@/services/actions';
 
 type RecipeDialogProps = {
   recipe: Recipes;
@@ -23,7 +26,21 @@ type RecipeDialogProps = {
 
 const RecipeDialog = ({ recipe, open, onOpenChange }: RecipeDialogProps) => {
   const { toast } = useToast();
-  const { name, image, rating, recipeItems, steps } = recipe || {};
+  const { id, name, image, rating, recipeItems, steps } = recipe || {};
+  const [ingredients, setIngredients] = useState<
+    { name: string; amount: string }[]
+  >([]);
+
+  useEffect(() => {
+    if (recipeItems) {
+      Promise.all(
+        recipeItems.map(async (item) => {
+          const name = await getIngredientName(item.ingredientId);
+          return { name, amount: item.amount };
+        })
+      ).then(setIngredients);
+    }
+  }, [recipeItems]);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -104,9 +121,9 @@ const RecipeDialog = ({ recipe, open, onOpenChange }: RecipeDialogProps) => {
                 <h3 className='text-2xl text-highlight'>Nguyên liệu</h3>
 
                 <ul className='list-inside list-disc pb-6 indent-6'>
-                  {recipeItems?.map((item, index) => (
+                  {ingredients.map((ingredient, index) => (
                     <li key={index} className='text-lg'>
-                      {item.amount}
+                      {ingredient.name} - {ingredient.amount}
                     </li>
                   ))}
                 </ul>
@@ -114,40 +131,36 @@ const RecipeDialog = ({ recipe, open, onOpenChange }: RecipeDialogProps) => {
                 <div className='mb-2 flex items-center'>
                   <h3 className='text-2xl text-highlight'>Công thức</h3>
 
-                  <Button
-                    className='ml-12 animate-bounce bg-highlight text-sm text-white md:text-xl'
-                    onClick={() => {
-                      toast({
-                        title: 'Tính năng này hiện đang được phát triển.',
-                      });
-                    }}
-                  >
-                    Xem chi tiết các bước
-                    <Play className='ml-1 h-4 w-4 md:h-6 md:w-6' />
-                  </Button>
+                  <Link href={`/recipes/${id}`}>
+                    <Button className='ml-12 animate-bounce bg-highlight text-sm text-white md:text-xl'>
+                      Xem chi tiết các bước
+                      <Play className='ml-1 h-4 w-4 md:h-6 md:w-6' />
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
 
-            {/* <ul>
-              {Object.entries(steps).map(([key, value], index) => (
-                <li key={index} className='grid grid-cols-12 gap-4 text-lg'>
-                  <div className='justify-self-end'>
-                    <Badge className='text-xl'>{key}</Badge>
-                  </div>
+            <ul>
+              {steps &&
+                steps.map((step, index) => (
+                  <li key={index} className='grid grid-cols-12 gap-4 text-lg mb-4'>
+                    <div className='justify-self-end'>
+                      <Badge className='text-xl aspect-square rounded-lg'>{index + 1}</Badge>
+                    </div>
 
-                  <div className='col-span-11'>
-                    <h3 className='pb-2 text-xl'>{value}</h3>
+                    <div className='col-span-11'>
+                      <h3 className='pb-2 text-xl'>{step.title}</h3>
 
-                    <ul className='list-inside list-disc pb-4 indent-6'>
-                      {stepDescription?.[key]?.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </li>
-              ))}
-            </ul> */}
+                      <ul className='list-inside list-disc pb-4 indent-6'>
+                        {step.descriptions.map((description, i) => (
+                          <li key={i}>{description}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </li>
+                ))}
+            </ul>
           </div>
         </div>
       </DialogContent>
