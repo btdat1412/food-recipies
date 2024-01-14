@@ -18,6 +18,8 @@ import { ShareDialog } from '@/components/ShareDialog';
 import { getAllIngredients, getAllRecipes } from '@/services';
 import { Ingredient, Recipe } from '@prisma/client';
 import { LoadingSpinner } from '@/public/icon-loading';
+import RecipeDialog from '@/components/recipe/RecipeDialog';
+import { Recipes } from '@/types';
 
 let timeoutId: ReturnType<typeof setTimeout>;
 
@@ -31,6 +33,18 @@ export default function Recipes() {
   const [showFilter, setShowFilter] = useState(true);
   const [ingredients, setIngredients] = useState<Ingredient[]>();
   const [recipes, setRecipes] = useState<Recipe[]>();
+
+  const [open, setOpen] = useState(false);
+  const [selectedDish, setSelectedDish] = useState<Recipes | null>(null);
+
+  const handleClickOpen = (dish: Recipes) => {
+    setSelectedDish(dish);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const getIngredients = async () => {
     const data = await getAllIngredients();
@@ -206,16 +220,24 @@ export default function Recipes() {
           {filterDishes.map((item, index) => (
             <DishCard
               key={index}
+              id={item.id}
               image={item.image}
               rating={item.rating.average}
               name={item.name}
               kcal={item.kcal}
-              // ingredients={item.ingredients}
-              // steps={item.steps}
-              // stepDescription={item.stepDescription}
+              onClick={() => {
+                handleClickOpen(item);
+                console.log(item);
+              }}
             />
           ))}
         </div>
+
+        <RecipeDialog
+          open={open}
+          onOpenChange={handleClose}
+          recipe={selectedDish}
+        />
       </div>
     </div>
   );

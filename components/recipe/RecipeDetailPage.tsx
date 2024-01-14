@@ -14,16 +14,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '../ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import StarRatings from 'react-star-ratings';
-
-type Recipe = {
-  id: string;
-  name: string;
-  image: string;
-  kcal: number;
-  recipeItems: { ingredientId: string; amount: string }[];
-  rating: { quantity: number; average: number };
-  steps: { title: string; imageUrl: string; descriptions: string[] }[];
-} | null;
+import { Recipe } from '@/types';
 
 type RecipeDetailPageParams = {
   recipe: Recipe;
