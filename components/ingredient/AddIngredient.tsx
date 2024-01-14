@@ -7,6 +7,13 @@ import { ImagePlus, X } from 'lucide-react';
 import { UploadDropzone } from '@/lib/uploadThing';
 import { Input } from '../ui/input';
 import { createIngredient } from '../../services/actions';
+import {
+  Select,
+  SelectValue,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+} from '@/components/ui/select';
 
 export default function AddIngredient() {
   const [ingredientName, setIngredientName] = useState('');
@@ -22,14 +29,14 @@ export default function AddIngredient() {
     event.preventDefault();
 
     const newIngredient: { [key: string]: string | number } = {
-        name: ingredientName,
-        kcal: parseFloat(kcal),
-        imageUrl: imageUrl,
-      };
-    
-      if (ingredientType) {
-        newIngredient.type = ingredientType;
-      }
+      name: ingredientName,
+      kcal: parseFloat(kcal),
+      image: imageUrl,
+    };
+
+    if (ingredientType) {
+      newIngredient.type = ingredientType;
+    }
 
     try {
       const newlyCreatedIngredient = await createIngredient(newIngredient);
@@ -108,12 +115,17 @@ export default function AddIngredient() {
           className='rounded-none border-0 border-b-2 border-highlight p-0 text-xl focus-visible:ring-transparent focus-visible:ring-offset-transparent'
         />
 
-        <Input
-          value={ingredientType}
-          onChange={(e) => setIngredientType(e.target.value)}
-          placeholder='Loại nguyên liệu'
-          className='rounded-none border-0 border-b-2 border-highlight p-0 text-xl focus-visible:ring-transparent focus-visible:ring-offset-transparent'
-        />
+        <Select onValueChange={setIngredientType}>
+          <SelectTrigger aria-label='Select ingredient type'>
+            <SelectValue placeholder='Loại nguyên liệu' />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value='meat'>Meat</SelectItem>
+            <SelectItem value='spicy'>Spicy</SelectItem>
+            <SelectItem value='vegetable'>Vegetable</SelectItem>
+            <SelectItem value='other'>Other</SelectItem>
+          </SelectContent>
+        </Select>
 
         <Button
           className='bg-highlight text-lg text-white md:text-xl'
