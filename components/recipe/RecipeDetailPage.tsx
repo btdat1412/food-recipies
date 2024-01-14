@@ -43,7 +43,6 @@ export default function RecipeDetailPage({ recipe }: RecipeDetailPageParams) {
   if (!recipe) {
     return <div>No recipe found</div>;
   }
-  console.log(recipe.steps[2].descriptions);
 
   return (
     <div className='container flex flex-col items-center pt-5'>

@@ -161,13 +161,16 @@ export function ShareDialog({
     });
     const recipeIngredients = await Promise.all(ingredientPromises);
 
-    console.log('recipeIngredients', recipeIngredients);
+    const preparedSteps = steps.map((step) => ({
+      ...step,
+      imageUrl: step.imageUrl || 'https://via.placeholder.com/400',
+    }));
 
     const recipeData = {
       name: recipeName,
       image: imageUrl,
       ingredients: recipeIngredients,
-      steps,
+      steps: preparedSteps,
       rating: {
         average: 0,
         quantity: 0,
