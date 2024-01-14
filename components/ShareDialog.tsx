@@ -163,6 +163,7 @@ export function ShareDialog({
 
     const preparedSteps = steps.map((step) => ({
       ...step,
+      description: step.description.split('\n').filter(line => line.trim()), 
       imageUrl: step.imageUrl || 'https://via.placeholder.com/400',
     }));
 
