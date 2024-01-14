@@ -67,7 +67,7 @@ export default function RecipeDetailPage({ recipe }: RecipeDetailPageParams) {
         {recipe.steps.map((step: any, index: any) => (
           <li
             key={index}
-            className={`mb-16 flex items-center justify-between space-x-8 ${
+            className={`mb-16 flex items-center justify-between lg:space-x-10 ${
               index % 2 === 0
                 ? 'flex-col lg:flex-row'
                 : 'flex-col lg:flex-row-reverse lg:space-x-reverse'
