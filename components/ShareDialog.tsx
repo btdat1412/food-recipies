@@ -234,7 +234,7 @@ export function ShareDialog({
                       return <ImagePlus className='h-8 w-8' />;
                     },
                     label: 'Thêm hình ảnh món ăn',
-                    allowedContent: 'Dưới 4MB thôi nha!',
+                    allowedContent: 'Hình ảnh dưới 4MB',
                     button: 'Tải ảnh lên',
                   }}
                   appearance={{
@@ -512,7 +512,7 @@ export function ShareDialog({
                             return <ImagePlus className='h-8 w-8' />;
                           },
                           label: `Thêm hình ảnh bước ${index + 1}`,
-                          allowedContent: 'Dưới 4MB thôi nha!',
+                          allowedContent: 'Hình ảnh dưới 4MB',
                           button: 'Tải ảnh lên',
                         }}
                         appearance={{
