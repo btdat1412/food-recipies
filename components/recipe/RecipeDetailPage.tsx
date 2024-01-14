@@ -14,10 +14,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '../ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import StarRatings from 'react-star-ratings';
-import { Recipe } from '@/types';
+import { Recipes } from '@/types';
 
 type RecipeDetailPageParams = {
-  recipe: Recipe;
+  recipe: Recipes;
 };
 
 export default function RecipeDetailPage({ recipe }: RecipeDetailPageParams) {

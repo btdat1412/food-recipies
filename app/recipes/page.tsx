@@ -227,7 +227,6 @@ export default function Recipes() {
               kcal={item.kcal}
               onClick={() => {
                 handleClickOpen(item);
-                console.log(item);
               }}
             />
           ))}

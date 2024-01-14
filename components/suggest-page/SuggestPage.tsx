@@ -2,7 +2,7 @@
 import IngredientsPick from '@/components/ingredient/IngredientsPick';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { Ingredient } from '@/types';
+import { Ingredient, Recipes } from '@/types';
 import { Search as SearchButton } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -27,6 +27,7 @@ import {
 import { ShoppingBag } from 'lucide-react';
 import { calories, difficulty, healthy, time } from '@/lib/constants';
 import { Recipe } from '@prisma/client';
+import RecipeDialog from '../recipe/RecipeDialog';
 
 let timeoutId: ReturnType<typeof setTimeout>;
 
@@ -57,6 +58,18 @@ export default function SuggestPage({
   const [caloriesFilter, setCaloriesFilter] = useState('');
   const [timeFilter, setTimeFilter] = useState('');
   const [showFilter, setShowFilter] = useState(true);
+
+  const [open, setOpen] = useState(false);
+  const [selectedDish, setSelectedDish] = useState<Recipes | null>(null);
+
+  const handleClickOpen = (dish: Recipes) => {
+    setSelectedDish(dish);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const matchFilterCalories = (kcal: number) => {
     switch (caloriesFilter) {
@@ -240,18 +253,23 @@ export default function SuggestPage({
             {filterDishes.map((item, index) => (
               <DishCard
                 key={index}
+                id={item.id}
                 image={item.image}
                 rating={item.rating.average}
                 name={item.name}
                 kcal={item.kcal}
-                // ingredients={item.recipeItems.map(
-                //   (recipeItem) => recipeItem.ingredientId
-                // )}
-                // steps={item.steps}
-                // stepDescription={item.stepDescription}
+                onClick={() => {
+                  handleClickOpen(item);
+                }}
               />
             ))}
           </div>
+
+          <RecipeDialog
+          open={open}
+          onOpenChange={handleClose}
+          recipe={selectedDish}
+        />
         </div>
       </div>
     </div>
