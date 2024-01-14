@@ -17,34 +17,34 @@ async function seedIngredients() {
   }
 }
 
-async function seedRecipes() {
-  for (const recipeData of recipesData) {
-    const recipeItems = recipeData.recipeItems.map((item) => ({
-      ingredientId: item.ingredientId,
-      amount: item.amount,
-    }));
+// async function seedRecipes() {
+//   for (const recipeData of recipesData) {
+//     const recipeItems = recipeData.recipeItems.map((item) => ({
+//       ingredientId: item.ingredientId,
+//       amount: item.amount,
+//     }));
 
-    const steps = recipeData.steps.map((step) => ({
-      title: step.title,
-      imageUrl: step.imageUrl,
-      descriptions: step.descriptions,
-    }));
+//     const steps = recipeData.steps.map((step) => ({
+//       title: step.title,
+//       imageUrl: step.imageUrl,
+//       descriptions: step.descriptions,
+//     }));
 
-    await prisma.recipe.create({
-      data: {
-        name: recipeData.name,
-        image: recipeData.image,
-        kcal: recipeData.kcal,
-        rating: {
-          quantity: recipeData.rating.quantity,
-          average: recipeData.rating.average,
-        },
-        recipeItems,
-        steps,
-      },
-    });
-  }
-}
+//     await prisma.recipe.create({
+//       data: {
+//         name: recipeData.name,
+//         image: recipeData.image,
+//         kcal: recipeData.kcal,
+//         rating: {
+//           quantity: recipeData.rating.quantity,
+//           average: recipeData.rating.average,
+//         },
+//         recipeItems,
+//         steps,
+//       },
+//     });
+//   }
+// }
 
 async function main() {
   // await seedIngredients();
