@@ -80,7 +80,7 @@ export default function AddIngredient() {
                 return <ImagePlus className='h-8 w-8' />;
               },
               label: 'Thêm hình ảnh nguyên liệu',
-              allowedContent: 'Dưới 4MB thôi nha!',
+              allowedContent: 'Hình ảnh dưới 4MB',
               button: 'Tải ảnh lên',
             }}
             appearance={{

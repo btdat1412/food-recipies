@@ -50,3 +50,10 @@ export async function createIngredient(ingredientData: any) {
     throw error;
   }
 }
+
+export async function getIngredientName(id: string): Promise<string> {
+  const ingredient = await db.ingredient.findUnique({
+    where: { id },
+  });
+  return ingredient?.name || '';
+}

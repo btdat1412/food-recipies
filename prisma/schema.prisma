@@ -38,7 +38,7 @@ model Recipe {
   name        String
   difficulty  String
   healthy     String
-  time        String              
+  time        String
   rating      RecipeRating
   recipeItems RecipeItems[]
   steps       RecipeSteps[]
