@@ -37,7 +37,7 @@ export default function RecipeDetailPage({ recipe }: RecipeDetailPageParams) {
 
   return (
     <div className='container flex flex-col items-center pt-5'>
-      <h1 className='text-5xl text-highlight'>{recipe.name}</h1>
+      <h1 className='text-center text-5xl text-highlight'>{recipe.name}</h1>
 
       <div className='mb-32 mt-4 flex flex-col items-center justify-between space-x-2 sm:flex-row'>
         <Image
@@ -52,7 +52,9 @@ export default function RecipeDetailPage({ recipe }: RecipeDetailPageParams) {
         <p className='text-lg'>datphan</p>
       </div>
 
-      <h1 className='mb-16 text-4xl text-highlight'>Các bước thực hiện</h1>
+      <h1 className='mb-16 text-center text-4xl text-highlight'>
+        Các bước thực hiện
+      </h1>
 
       <ul className='container'>
         {recipe.steps.map((step: any, index: any) => (
