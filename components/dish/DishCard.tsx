@@ -29,7 +29,7 @@ const DishCard = ({
   onClick,
 }: IngredientsCardProps) => {
   return (
-    <Card className='flex cursor-pointer flex-col rounded-2xl border-highlight'>
+    <Card className='flex cursor-pointer flex-col rounded-2xl border-highlight dark:border-0'>
       <CardHeader
         className='flex flex-row justify-center p-2'
         onClick={onClick}
