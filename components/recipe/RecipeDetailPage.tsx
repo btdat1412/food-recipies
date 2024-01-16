@@ -14,30 +14,21 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '../ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import StarRatings from 'react-star-ratings';
-
-type Recipe = {
-  id: string;
-  name: string;
-  image: string;
-  kcal: number;
-  recipeItems: { ingredientId: string; amount: string }[];
-  rating: { quantity: number; average: number };
-  steps: { title: string; imageUrl: string; descriptions: string[] }[];
-} | null;
+import { Recipes } from '@/types';
 
 type RecipeDetailPageParams = {
-  recipe: Recipe;
+  recipe: Recipes;
 };
 
 export default function RecipeDetailPage({ recipe }: RecipeDetailPageParams) {
   const { toast } = useToast();
 
   const reviews = [
-    'Theo tôi thì mì Quảng Hội An phải có tí thịt cua, tôm và một tẹo heo quay nữa là hoàn hảo.',
-    'Riêng mỳ Quảng, có nấu gì nấu, đừng chan nước lỏm bõm như tô bún, thấy là mất hứng ăn.',
-    'Hương vị đặc trưng củ nén bị thiếu sao ngon đc.',
-    'Tùy dòng mỳ bạn nấu, nếu nấu mỳ Quảng kiểu Phú Triêm (tôm, thịt mỡ, trứng) thì phải có dầu phi củ nén. Còn dòng mỳ Quảng Đà Nẵng hoặc Túy Loan thì không dùng dầu phi củ nén.',
-    'Nhìn thèm quá. Mình nghe nói rằng mì Quảng nhất định phải có củ nén, không thì nó sẽ không ra mì Quảng nên chưa dám thử nấu bao giờ.',
+    'Món ăn ở đây không chỉ là để no bụng mà còn để thỏa mãn tâm hồn. Từ cách nấu cho đến cách trình bày thành phẩm, tất cả đều được thực hiện một cách cẩn thận và tỉ mỉ. Tôi sẽ thử công thức này ngay ngày mai.',
+    'Nhìn thèm quá.',
+    'Đã thử nấu và thấy rất ngon miệng, hương vị rất hấp dẫn.',
+    `Món ${recipe?.name} này khiến mình thèm từ cái nhìn đầu tiên.`,
+    'Không chỉ ngon miệng mà còn rất đẹp mắt nha.',
   ];
 
   if (!recipe) {

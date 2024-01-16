@@ -1,6 +1,5 @@
 import { PrismaClient } from '@prisma/client';
 import ingredientsData from '../../fakedb/ingredients.json';
-import recipesData from '../../fakedb/seedRecipes.json';
 
 const prisma = new PrismaClient();
 

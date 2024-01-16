@@ -4,7 +4,6 @@ import { Search as SearchButton } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Filter } from 'lucide-react';
-import dishesData from '../../fakedb/recipes.json';
 import DishCard from '@/components/dish/DishCard';
 import { calories, difficulty, healthy, time } from '@/lib/constants';
 import {
@@ -15,28 +14,69 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { ShareDialog } from '@/components/ShareDialog';
+import { getAllIngredients, getAllRecipes } from '@/services';
+import { Ingredient, Recipe } from '@prisma/client';
+import { LoadingSpinner } from '@/public/icon-loading';
+import RecipeDialog from '@/components/recipe/RecipeDialog';
+import { Recipes } from '@/types';
 
 let timeoutId: ReturnType<typeof setTimeout>;
 
 export default function Recipes() {
-  const [filterDishes, setFilterDishes] = useState(dishesData);
+  const [filterDishes, setFilterDishes] = useState<Recipe[]>([]);
   const [termFilter, setTermFilter] = useState('');
   const [difficultyFilter, setDifficultyFilter] = useState('');
   const [healthyFilter, setHealthyFilter] = useState('');
   const [caloriesFilter, setCaloriesFilter] = useState('');
   const [timeFilter, setTimeFilter] = useState('');
   const [showFilter, setShowFilter] = useState(true);
+  const [ingredients, setIngredients] = useState<Ingredient[]>();
+  const [recipes, setRecipes] = useState<Recipe[]>();
+
+  const [open, setOpen] = useState(false);
+  const [selectedDish, setSelectedDish] = useState<Recipes | null>(null);
+
+  const handleClickOpen = (dish: Recipes) => {
+    setSelectedDish(dish);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const getIngredients = async () => {
+    const data = await getAllIngredients();
+    setIngredients(data.ingredients);
+  };
+
+  const getRecipes = async () => {
+    const data = await getAllRecipes();
+    setRecipes(data.recipes);
+    setFilterDishes(data.recipes);
+  };
 
   useEffect(() => {
+    getIngredients();
+    getRecipes();
+  }, []);
+  useEffect(() => {
     setFilterDishes(
-      dishesData.filter(
-        (d) =>
-          d.name.toLowerCase().includes(termFilter.toLowerCase()) &&
-          d.difficulty.includes(difficultyFilter) &&
-          d.healthy.includes(healthyFilter) &&
-          (timeFilter.length === 0 || d.time.includes(timeFilter)) &&
-          matchFilterCalories(d.kcal)
-      )
+      recipes
+        ? recipes.filter(
+            (d) =>
+              d.name.toLowerCase().includes(termFilter.toLowerCase()) &&
+              (timeFilter === 'Tất cả' ||
+                d.time === 'Tất cả' ||
+                d.time.includes(timeFilter)) &&
+              (difficultyFilter === 'Tất cả' ||
+                d.difficulty.includes(difficultyFilter)) &&
+              (healthyFilter === 'Tất cả' ||
+                d.healthy.includes(healthyFilter)) &&
+              (caloriesFilter === 'Tất cả' || matchFilterCalories(d.kcal))
+          )
+        : []
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [termFilter, difficultyFilter, healthyFilter, caloriesFilter, timeFilter]);
@@ -71,6 +111,13 @@ export default function Recipes() {
     setShowFilter(!showFilter);
   };
 
+  if (!recipes)
+    return (
+      <div className='flex w-full items-center justify-center py-14'>
+        <LoadingSpinner width={40} height={40} />
+      </div>
+    );
+
   return (
     <div className=' h-full w-full flex-1 overflow-y-auto p-5 md:px-12 md:py-10'>
       <div className='flex items-center justify-between'>
@@ -100,11 +147,11 @@ export default function Recipes() {
           </div>
         </div>
       </div>
-      <div className='p-5'>
+      <div className='py-5'>
         {showFilter && (
           <div className='mb-5 flex gap-6 text-[#5B5B5B]'>
             <Select onValueChange={(value) => setTimeFilter(value)}>
-              <SelectTrigger className='w-[100px]'>
+              <SelectTrigger className='w-[115px]'>
                 <SelectValue placeholder='Buổi' />
               </SelectTrigger>
               <SelectContent>
@@ -168,19 +215,28 @@ export default function Recipes() {
           <div className='text-center text-lg'>No dish found</div>
         )}
         <div className='grid-custom gap-5'>
+          <ShareDialog dbIngredients={ingredients || []} />
+
           {filterDishes.map((item, index) => (
             <DishCard
               key={index}
+              id={item.id}
               image={item.image}
-              rating={item.rating}
+              rating={item.rating.average}
               name={item.name}
               kcal={item.kcal}
-              ingredients={item.ingredients}
-              steps={item.steps}
-              stepDescription={item.stepDescription}
+              onClick={() => {
+                handleClickOpen(item);
+              }}
             />
           ))}
         </div>
+
+        <RecipeDialog
+          open={open}
+          onOpenChange={handleClose}
+          recipe={selectedDish}
+        />
       </div>
     </div>
   );

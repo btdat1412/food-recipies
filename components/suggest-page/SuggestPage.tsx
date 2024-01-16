@@ -2,13 +2,12 @@
 import IngredientsPick from '@/components/ingredient/IngredientsPick';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { Ingredient } from '@/types';
+import { Ingredient, Recipes } from '@/types';
 import { Search as SearchButton } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Filter } from 'lucide-react';
-import dishesData from '../../fakedb/recipes.json';
 import DishCard from '@/components/dish/DishCard';
 import {
   Select,
@@ -26,39 +25,51 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { ShoppingBag } from 'lucide-react';
-import { calories, difficulty, healthy } from '@/lib/constants';
+import { calories, difficulty, healthy, time } from '@/lib/constants';
+import { Recipe } from '@prisma/client';
+import RecipeDialog from '../recipe/RecipeDialog';
 
 let timeoutId: ReturnType<typeof setTimeout>;
 
 export default function SuggestPage({
   ingredients,
+  recipes,
 }: {
   ingredients: Ingredient[];
+  recipes: Recipe[];
 }) {
   const searchParams = useSearchParams();
   const ingredientsId = searchParams.get('ingredients')?.split(',').map(String);
+
+  const suggestRecipes = recipes.filter((recipe) => {
+    const hasMissingIngredient = recipe.recipeItems.some((recipeItem) => {
+      return !ingredientsId?.includes(recipeItem.ingredientId);
+    });
+
+    return !hasMissingIngredient;
+  });
+
   const [selectedIngredients, setSelectedIngredients] = useState(
     ingredients.filter((i) => ingredientsId?.includes(i.id))
   );
-  const [filterDishes, setFilterDishes] = useState(dishesData);
   const [termFilter, setTermFilter] = useState('');
   const [difficultyFilter, setDifficultyFilter] = useState('');
   const [healthyFilter, setHealthyFilter] = useState('');
   const [caloriesFilter, setCaloriesFilter] = useState('');
+  const [timeFilter, setTimeFilter] = useState('');
   const [showFilter, setShowFilter] = useState(true);
 
-  useEffect(() => {
-    setFilterDishes(
-      dishesData.filter(
-        (d) =>
-          d.name.toLowerCase().includes(termFilter.toLowerCase()) &&
-          d.difficulty.includes(difficultyFilter) &&
-          d.healthy.includes(healthyFilter) &&
-          matchFilterCalories(d.kcal)
-      )
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [termFilter, difficultyFilter, healthyFilter, caloriesFilter]);
+  const [open, setOpen] = useState(false);
+  const [selectedDish, setSelectedDish] = useState<Recipes | null>(null);
+
+  const handleClickOpen = (dish: Recipes) => {
+    setSelectedDish(dish);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const matchFilterCalories = (kcal: number) => {
     switch (caloriesFilter) {
@@ -72,6 +83,18 @@ export default function SuggestPage({
         return true;
     }
   };
+
+  const filterDishes = suggestRecipes.filter(
+    (d) =>
+      d.name.toLowerCase().includes(termFilter.toLowerCase()) &&
+      (timeFilter === 'Tất cả' ||
+        d.time === 'Tất cả' ||
+        d.time.includes(timeFilter)) &&
+      (difficultyFilter === 'Tất cả' ||
+        d.difficulty.includes(difficultyFilter)) &&
+      (healthyFilter === 'Tất cả' || d.healthy.includes(healthyFilter)) &&
+      (caloriesFilter === 'Tất cả' || matchFilterCalories(d.kcal))
+  );
 
   const removeIngredient = (ingredient: Ingredient) => {
     const newSelectedIngredients = selectedIngredients.filter(
@@ -159,9 +182,24 @@ export default function SuggestPage({
             </div>
           </div>
         </div>
-        <div className='p-5'>
+        <div className='py-5'>
           {showFilter && (
             <div className='mb-5 flex gap-6 text-[#5B5B5B]'>
+              <Select onValueChange={(value) => setTimeFilter(value)}>
+                <SelectTrigger className='w-[115px]'>
+                  <SelectValue placeholder='Buổi' />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    {time.map((item) => (
+                      <SelectItem key={item} value={item}>
+                        {item}
+                      </SelectItem>
+                    ))}
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+
               <Select onValueChange={(value) => setDifficultyFilter(value)}>
                 <SelectTrigger className='w-[120px]'>
                   <SelectValue placeholder='Độ khó' />
@@ -209,22 +247,29 @@ export default function SuggestPage({
             </div>
           )}
           {filterDishes.length === 0 && (
-            <div className='text-center text-lg'>No dish found</div>
+            <div className='text-center text-lg'>No recipes found</div>
           )}
           <div className='grid-custom gap-5'>
             {filterDishes.map((item, index) => (
               <DishCard
                 key={index}
+                id={item.id}
                 image={item.image}
-                rating={item.rating}
+                rating={item.rating.average}
                 name={item.name}
                 kcal={item.kcal}
-                ingredients={item.ingredients}
-                steps={item.steps}
-                stepDescription={item.stepDescription}
+                onClick={() => {
+                  handleClickOpen(item);
+                }}
               />
             ))}
           </div>
+
+          <RecipeDialog
+          open={open}
+          onOpenChange={handleClose}
+          recipe={selectedDish}
+        />
         </div>
       </div>
     </div>

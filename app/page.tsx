@@ -1,8 +1,8 @@
 import PickIngredientsPage from '../components/ingredient/PickIngredientsPage';
-import { db } from '../lib/prismaDb';
+import { getAllIngredients } from '../services';
 
 export default async function Home() {
-  const ingredients = await db.ingredient.findMany();
+  const ingredients = await getAllIngredients();
 
-  return <PickIngredientsPage ingredients={ingredients} />;
+  return <PickIngredientsPage ingredients={ingredients.ingredients} />;
 }
