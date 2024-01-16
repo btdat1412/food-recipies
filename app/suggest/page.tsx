@@ -5,5 +5,10 @@ export default async function Suggest() {
   const ingredients = await getAllIngredients();
   const recipes = await getAllRecipes();
 
-  return <SuggestPage ingredients={ingredients} recipes={recipes} />;
+  return (
+    <SuggestPage
+      ingredients={ingredients.ingredients}
+      recipes={recipes.recipes}
+    />
+  );
 }

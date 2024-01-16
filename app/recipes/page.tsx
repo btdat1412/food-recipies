@@ -48,13 +48,13 @@ export default function Recipes() {
 
   const getIngredients = async () => {
     const data = await getAllIngredients();
-    setIngredients(data);
+    setIngredients(data.ingredients);
   };
 
   const getRecipes = async () => {
     const data = await getAllRecipes();
-    setRecipes(data);
-    setFilterDishes(data);
+    setRecipes(data.recipes);
+    setFilterDishes(data.recipes);
   };
 
   useEffect(() => {
