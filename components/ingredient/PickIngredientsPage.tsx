@@ -182,7 +182,7 @@ export default function PickIngredientsPage({
               </CardContent>
             </Card>
           </TabsContent>
-          <TabsContent value='meat'>
+          <TabsContent value='meat' className='h-full overflow-y-auto pb-5'>
             <Card className='flex-1 border-none'>
               <CardContent className='grid-custom gap-6 bg-background p-0 '>
                 {filteredMeats.map((item, index) => (
@@ -200,7 +200,7 @@ export default function PickIngredientsPage({
               </CardContent>
             </Card>
           </TabsContent>
-          <TabsContent value='spice'>
+          <TabsContent value='spice' className='h-full overflow-y-auto pb-5'>
             <Card className='flex-1 border-none'>
               <CardContent className='grid-custom gap-6 bg-background p-0 '>
                 {filteredSpices.map((item, index) => (
@@ -218,7 +218,7 @@ export default function PickIngredientsPage({
               </CardContent>
             </Card>
           </TabsContent>
-          <TabsContent value='other'>
+          <TabsContent value='other' className='h-full overflow-y-auto pb-5'>
             <Card className='flex-1 border-none'>
               <CardContent className='grid-custom gap-6 bg-background p-0 '>
                 {filteredOthers.map((item, index) => (
