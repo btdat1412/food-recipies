@@ -38,6 +38,7 @@ export default function SuggestPage({
   ingredients: Ingredient[];
   recipes: Recipe[];
 }) {
+  console.log(123);
   const searchParams = useSearchParams();
   const ingredientsId = searchParams.get('ingredients')?.split(',').map(String);
 
@@ -256,6 +257,7 @@ export default function SuggestPage({
                 id={item.id}
                 image={item.image}
                 rating={item.rating.average}
+                quantityRating={item.rating.quantity}
                 name={item.name}
                 kcal={item.kcal}
                 onClick={() => {
@@ -266,10 +268,10 @@ export default function SuggestPage({
           </div>
 
           <RecipeDialog
-          open={open}
-          onOpenChange={handleClose}
-          recipe={selectedDish}
-        />
+            open={open}
+            onOpenChange={handleClose}
+            recipe={selectedDish}
+          />
         </div>
       </div>
     </div>

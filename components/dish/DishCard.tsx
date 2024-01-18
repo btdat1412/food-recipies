@@ -17,6 +17,7 @@ type IngredientsCardProps = {
   name: string;
   rating: number;
   kcal: number;
+  quantityRating: number;
   onClick: () => void;
 };
 
@@ -25,6 +26,7 @@ const DishCard = ({
   image,
   name,
   rating,
+  quantityRating,
   kcal,
   onClick,
 }: IngredientsCardProps) => {
@@ -49,13 +51,16 @@ const DishCard = ({
         <CardDescription className='text-sm text-text'>
           {kcal} kcal
         </CardDescription>
-        <StarRatings
-          rating={rating}
-          starRatedColor='#FEBC0B'
-          starDimension='16px'
-          starSpacing='2px'
-          name='rating'
-        />
+        <div className='flex justify-center gap-2'>
+          <StarRatings
+            rating={rating}
+            starRatedColor='#FEBC0B'
+            starDimension='16px'
+            starSpacing='2px'
+            name='rating'
+          />
+          <p className='text-[15px]'>({quantityRating})</p>
+        </div>
       </CardContent>
       <CardFooter className='dark:text- cursor-default rounded-b-2xl bg-[#FAE0DB] p-3 text-highlight underline dark:bg-[#50343A]'>
         <p className='w-full text-center'>
