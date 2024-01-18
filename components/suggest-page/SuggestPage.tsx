@@ -38,7 +38,6 @@ export default function SuggestPage({
   ingredients: Ingredient[];
   recipes: Recipe[];
 }) {
-  console.log(123);
   const searchParams = useSearchParams();
   const ingredientsId = searchParams.get('ingredients')?.split(',').map(String);
 
