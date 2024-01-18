@@ -256,6 +256,7 @@ export default function SuggestPage({
                 id={item.id}
                 image={item.image}
                 rating={item.rating.average}
+                quantityRating={item.rating.quantity}
                 name={item.name}
                 kcal={item.kcal}
                 onClick={() => {
@@ -266,10 +267,10 @@ export default function SuggestPage({
           </div>
 
           <RecipeDialog
-          open={open}
-          onOpenChange={handleClose}
-          recipe={selectedDish}
-        />
+            open={open}
+            onOpenChange={handleClose}
+            recipe={selectedDish}
+          />
         </div>
       </div>
     </div>
