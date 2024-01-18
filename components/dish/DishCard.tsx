@@ -51,7 +51,7 @@ const DishCard = ({
         <CardDescription className='text-sm text-text'>
           {kcal} kcal
         </CardDescription>
-        <div className='flex justify-center gap-2'>
+        <div className='flex items-center justify-center gap-2'>
           <StarRatings
             rating={rating}
             starRatedColor='#FEBC0B'
