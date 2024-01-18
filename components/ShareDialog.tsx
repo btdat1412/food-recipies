@@ -195,7 +195,7 @@ export function ShareDialog({
         </Card>
       </DialogTrigger>
 
-      <DialogContent className='max-h-[90vh] overflow-auto sm:max-w-[80vw]'>
+      <DialogContent className='max-h-[90vh] overflow-auto sm:max-w-[80vw] md:max-w-[70vw]'>
         <form onSubmit={handleSubmit}>
           <div className='flex justify-center pb-10'>
             <Input
