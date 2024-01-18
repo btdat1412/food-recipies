@@ -44,7 +44,7 @@ const RecipeDialog = ({ recipe, open, onOpenChange }: RecipeDialogProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className='max-h-[90vh] overflow-auto sm:max-w-[80vw]'>
+      <DialogContent className='max-h-[90vh] overflow-auto sm:max-w-[80vw] md:max-w-[65vw]'>
         {/* name */}
         <DialogHeader className='pb-3'>
           <DialogTitle>
@@ -144,9 +144,14 @@ const RecipeDialog = ({ recipe, open, onOpenChange }: RecipeDialogProps) => {
             <ul>
               {steps &&
                 steps.map((step, index) => (
-                  <li key={index} className='grid grid-cols-12 gap-4 text-lg mb-4'>
+                  <li
+                    key={index}
+                    className='mb-4 grid grid-cols-12 gap-4 text-lg'
+                  >
                     <div className='justify-self-end'>
-                      <Badge className='text-xl aspect-square rounded-lg'>{index + 1}</Badge>
+                      <Badge className='aspect-square rounded-lg text-xl'>
+                        {index + 1}
+                      </Badge>
                     </div>
 
                     <div className='col-span-11'>

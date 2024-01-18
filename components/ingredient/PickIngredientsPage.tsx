@@ -98,7 +98,7 @@ export default function PickIngredientsPage({
 
   return (
     <div className='flex h-full justify-between gap-9 px-2 pt-4 md:px-12 md:pt-8'>
-      <div className='relative flex h-full w-full flex-col gap-6'>
+      <div className='relative flex h-full w-full flex-col gap-6 pb-7'>
         <div className='flex flex-col gap-4 md:flex-row md:items-center md:justify-between '>
           <h1 className='text-3xl'>Chọn Nguyên Liệu</h1>
           <div className='relative'>
@@ -134,7 +134,7 @@ export default function PickIngredientsPage({
             </SheetContent>
           </Sheet>
         </div>
-        <Tabs defaultValue='vegetable' className='h-full overflow-auto'>
+        <Tabs defaultValue='vegetable' className='h-full overflow-hidden pb-8'>
           <TabsList className='flex justify-center gap-8 rounded-none border-b border-[#aaaaaa] bg-inherit px-0 text-left text-foreground dark:border-[#393c49] md:justify-start'>
             <TabsTrigger
               value='vegetable'
@@ -161,7 +161,10 @@ export default function PickIngredientsPage({
               Khác
             </TabsTrigger>
           </TabsList>
-          <TabsContent value='vegetable'>
+          <TabsContent
+            value='vegetable'
+            className='h-full overflow-y-auto pb-5'
+          >
             <Card className='flex-1 border-none'>
               <CardContent className='grid-custom gap-6 bg-background p-0 '>
                 {filteredVegetables.map((item, index) => (
