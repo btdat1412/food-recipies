@@ -260,6 +260,7 @@ export default function SuggestPage({
                 id={item.id}
                 image={item.image}
                 rating={item.rating.average}
+                quantityRating={item.rating.quantity}
                 name={item.name}
                 kcal={item.kcal}
                 onClick={() => {

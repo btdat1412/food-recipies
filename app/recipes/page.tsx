@@ -225,6 +225,7 @@ export default function Recipes() {
               rating={item.rating.average}
               name={item.name}
               kcal={item.kcal}
+              quantityRating={item.rating.quantity}
               onClick={() => {
                 handleClickOpen(item);
               }}
