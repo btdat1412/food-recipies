@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Food Recipes - Hôm nay ăn gì
+
+Welcome to "Food Recipes - Hôm nay ăn gì", a convenient app designed to help you choose recipes faster. With our app, you can easily find recipes that you can make using the ingredients available in your fridge.
+
+## Deployed App
+
+[Food Recipes - Hôm nay ăn gì](https://food-recipes.vercel.app/)
+
+## Features
+
+Our app has three main flows:
+
+1. **Suggest Recipes:** Select the ingredients you have, and the app will recommend recipes you can prepare.
+2. **Show Detailed Recipes:** View detailed steps and ingredients for each recipe.
+3. **Add Recipes:** Contribute your own recipes to the app.
+
+## Technology Stack
+
+- **Frontend:** Next.js 14
+- **Backend:** Server actions in Next.js 14, integrated with Prisma and MongoDB for database management.
+- **Image Uploads:** Handled by Uploadthing.
 
 ## Getting Started
 
-First, run the development server:
+Follow these instructions to set up the app on your local machine for development and testing purposes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ensure you have Node.js installed on your machine. If not, download and install it from [Node.js official website](https://nodejs.org/).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Clone the repository:**
 
-## Learn More
+   ```bash
+   git clone https://github.com/btdat1412/food-recipies.git
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Navigate to the project directory:**
+   ```bash
+   cd food-recipies
+   ```
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+4. **Set up environment variables:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   -Create a `.env` file in the root of the project and add the following:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```bash
+   DATABASE_URL=your_database_url
+   UPLOADTHING_SECRET=your_uploadthing_secret
+   UPLOADTHING_APP_ID=your_uploadthing_app_id
+   ```
 
-## Deploy on Vercel
+   -Replace `your_database_url`, `your_uploadthing_secret`, and `your_uploadthing_app_id` with your actual MongoDB URL, Uploadthing secret, and app ID respectively.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+5. **Run the app:**
+   ```bash
+   npm run dev
+   ```
+   The app will start running on `localhost:3000` (or another port if specified).

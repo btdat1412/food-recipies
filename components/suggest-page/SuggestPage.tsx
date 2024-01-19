@@ -49,6 +49,10 @@ export default function SuggestPage({
     return !hasMissingIngredient;
   });
 
+  useEffect(() => {
+    console.log(suggestRecipes);
+  }, [suggestRecipes]);
+
   const [selectedIngredients, setSelectedIngredients] = useState(
     ingredients.filter((i) => ingredientsId?.includes(i.id))
   );
@@ -266,10 +270,10 @@ export default function SuggestPage({
           </div>
 
           <RecipeDialog
-          open={open}
-          onOpenChange={handleClose}
-          recipe={selectedDish}
-        />
+            open={open}
+            onOpenChange={handleClose}
+            recipe={selectedDish}
+          />
         </div>
       </div>
     </div>
