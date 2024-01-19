@@ -4,7 +4,7 @@ Welcome to "Food Recipes - Hôm nay ăn gì", a convenient app designed to help 
 
 ## Deployed App
 
-[Food Recipes - Hôm nay ăn gì](https://food-recipes.vercel.app/)
+[Food Recipes - Hôm nay ăn gì]([https://food-recipes.vercel.app/](https://food-recipies-taupe.vercel.app/)
 
 ## Features
 
